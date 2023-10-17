@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <!-- Base Info -->
+    <meta charset='utf-8'/> <!--Setting document to UTF-8-->
+    <meta content='width-device-width, initial-scale=1.0' name='viewport'/>
+    <meta name='keywords' content='style,html,css,page,headers'/> <!--Setting basic description & info-->
+    <meta name='description' content='Welcome to my website. Here you can download free stuff, look at my portfolio, buy merch, and more!'/>
+    <meta name='author' content='Mack'/>
+    <meta name='robots' content='index, follow'/>
+    <meta name="google-site-verification" content="zI4ReyW17rDregFpRqXQeuboyq1lW2IK5WiADOPwbJU" />
+    <title>Welcome - MAKC</title>
+    <!-- Favicons -->
+    <link href='/images/favicons/favicon.ico' rel='icon' type='image/ico'/>
+    <link href='/images/favicons/favicon.png' rel='icon' type='image/png'/>
+    <link href='/images/favicons/apple-touch-icon.png' rel='apple-touch-icon'/>
+    <link href='/images/favicons/ios-ipad-144x144.png' sizes='144x144' rel='apple-touch-icon-precomposed'/>
+    <link href='/images/favicons/ios-iphone-114x144.png' sizes='114x114' rel='apple-touch-icon-precomposed'/>
+    <link href='/images/favicons/ios-default-homescreen-57x57.png' sizes='57x57' rel='apple-touch-icon-precomposed'/>
+    <!-- Imports -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf' crossorigin='anonymous'/>
+    <link href='/css/index.css' rel='stylesheet'/>
+    <script src="/script/menu.js"></script>
+  </head>
+  <body>
+  <section class="bg">
+    <div class="motion-bg">
+      <video src="/images/bgBlue.mp4" autoplay muted loop></video>
+    </div>
+      <div id="mobile-links">
+        <div class="mobile-links-container">
+          <ul>
+            <li class="mobile"><a href="https://www.youtube.com/channel/UCWh6YtclgTAzReTASc4uSKw/" target="_blank" title="My YouTube Channel">Videos</a></li><br>
+            <li class="mobile"><a href="/portfolio.html" title="My Motion Graphics Work">Portfolio</a></li><br>
+            <li class="mobile"><a href="/downloads.html" title="Download free stuff">Downloads</a></li><br>
+            <li class="mobile"><a href="/merch.html" title="Check out My Merch">Merch</a></li><br>
+            <li class="mobile"><a href="https://makccr.medium.com" target="_blank" title="My Medium Blog">Blog</a></li><br>
+          </ul>
+        </div>
+      </div>
+    <header>
+      <div class="header-flex">
+      <a href="/index.html" title="Homepage"><div class="logo"></div></a>
+      <nav>
+        <ul class="linksB">
+          <li><a href="https://www.youtube.com/channel/UCWh6YtclgTAzReTASc4uSKw/" target="_blank" title="My YouTube Channel">Videos</a></li>
+          <li><a href="/portfolio.html" title="My Motion Graphics Work">Portfolio</a></li>
+          <li><a href="/downloads.html" title="Download free stuff">Downloads</a></li>
+          <li><a href="/merch.html">Merch</a></li>
+          <li><a href="https://makccr.medium.com" target="_blank" title="My Medium Blog">Blog</a></li>
+        </ul>
+      <div class="bars" onclick="mobileMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      </nav>
+      </div>
+    </header>
+
+    <div class="content">
+      <h1>Welcome</h1>
+      <h3>I am a low-brow YouTuber, and something adjacent to a bad, low-level developer. I'm sure you found this site by accident, but thanks for stopping by anyway.</h3>
+    </div>
+      <div class="social">
+        <a href='https://youtube.com/channel/UCWh6YtclgTAzReTASc4uSKw' title='youtube/MACK' target='_blank'><i class="fab fa-youtube"></i></a>
+        <a href='https://github.com/makccr' title='github/makccr' target='_blank'><i class='fab fa-github'></i></a>
+        <a href='https://reddit.com/user/mack_criswell' title='reddit/mack_criswell' target='_blank'><i class='fab fa-reddit-alien'></i></a>
+        <a href='https://twitter.com/makccr' title='twitter/makccr' target='_blank'><i class='fab fa-twitter'></i></a>
+        <a href='https://snapchat.com/add/mack_criswell' title='snapchat/mack_criswell' target='_blank'><i class="fab fa-snapchat-ghost"></i></a>
+        <a href='https://odysee.com/@makc:a' title='Odysee Channel' target='_blank'><i class="fas fa-book-open"></i></a>
+        <a href='https://open.spotify.com/playlist/0py1J5FB6qM9bQBe8lLC1n' title='Pickled Red Onions' target='_blank'><i class='fab fa-spotify'></i></a>
+      </div>
+  </section>
+  </body>
+</html>
