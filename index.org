@@ -1,6 +1,6 @@
 #+TITLE: Javier Pacheco Website.
 #+STARTUP: showeverything
-#+OPTIONS: date:nil
+#+OPTIONS: timestamp:nil
 #+HTML_DOCTYPE: html5
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="styles/styles.css"> <!-- Link your CSS file -->
 
@@ -8,4 +8,7 @@ file:8.png
 * Description
 This is my personal webpage, I will posting here some things about my life, personal and other things that maybe (or not) could be usefull.
 
-#+HTML_FOOTER: <footer>Copyright &copy; 2023 Your Name</footer>
+* links:
+- [[https://codeberg.org/jpacheco][Codeberg]]
+- [[https://codeberg.org/jpacheco/noobemacs][Noobemacs, a minimal emacs configuration with evil mode.]]
+#+HTML_FOOTER: <footer>Copyright &copy; 2023 Javier Pacheco</footer>
