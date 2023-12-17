@@ -1,0 +1,17 @@
+#+TITLE: Your Page Title
+#+HTML_DOCTYPE: html5
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link your CSS file -->
+#+PROPERTY: header-args :tangle index.html
+#+auto_tangle: t
+
+* Your Page Title
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget libero vitae nisi ultricies fringilla.
+
+** Section 1
+   Some content for section 1.
+
+** Section 2
+   More content for section 2.
+
+#+HTML_FOOTER: <footer>Copyright &copy; 2023 Your Name</footer>

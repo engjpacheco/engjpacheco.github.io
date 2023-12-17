@@ -1,0 +1,22 @@
+/* Solarized Light color scheme */
+
+/* Base colors */
+:root {
+  --background: #fdf6e3;
+  --foreground: #657b83;
+  --accent: #859900;
+  --text: #657b83;
+  --link: #268bd2;
+}
+
+/* Update specific elements with the colors */
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+a {
+  color: var(--link);
+}
+
+/* Add more styles as needed */
