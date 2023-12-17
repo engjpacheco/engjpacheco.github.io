@@ -1,6 +1,6 @@
 #+TITLE: Your Page Title
 #+HTML_DOCTYPE: html5
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link your CSS file -->
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./styles/styles.css"> <!-- Link your CSS file -->
 
 * Your Page Title
 
