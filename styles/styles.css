@@ -2,11 +2,11 @@
 
 /* Base colors */
 :root {
-  --background: #fdf6e3;
-  --foreground: #657b83;
-  --accent: #859900;
-  --text: #657b83;
-  --link: #268bd2;
+	--background: #282828;
+	--foreground: #657b83;
+	--accent: #859900;
+	--text: #657b83;
+	--link: #268bd2;
 }
 
 /* Update specific elements with the colors */
