@@ -1,8 +1,6 @@
 #+TITLE: Your Page Title
 #+HTML_DOCTYPE: html5
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link your CSS file -->
-#+PROPERTY: header-args :tangle index.html
-#+auto_tangle: t
 
 * Your Page Title
 
