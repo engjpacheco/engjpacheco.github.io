@@ -6,7 +6,7 @@
 
 body {
     /*margin: 0;*/
-    background-color: #282828;
+    background-color: #fdfaf7;
 } 
 
 @media screen and (min-width: 600px) {
@@ -22,9 +22,9 @@ body {
 }
 
 a img[src$="rss.png"] {
-  margin-right: 10px;
-  vertical-align: middle;
-  margin-top: -3px;
+	margin-right: 10px;
+	vertical-align: middle;
+	margin-top: -3px;
 }
 
 .title {
@@ -42,10 +42,10 @@ a img[src$="rss.png"] {
 }
 
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-  font-family: 'Roboto Slab', serif;
-  color: #000000;}
+	font-size: 2em;
+	margin: 0.67em 0;
+	font-family: 'Roboto Slab', serif;
+	color: #000000;}
 
 h2 {
     font-family:  'Roboto Slab', serif;
@@ -144,24 +144,24 @@ a {
 }
 
 pre.src, pre.example {
-  border-width: 0;
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-left-color: var(--back-medium);
-  margin: 1em auto;
-  padding: 0;
-  padding-left: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-  font-size: 14px;
-  line-height: 1.4;
-  overflow-x: visible;
-  box-shadow: none;
-  white-space: pre-wrap;
-  background-color: #282828;
-  position: relative;
-  width: 90%;
+	border-width: 0;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: var(--back-medium);
+	margin: 1em auto;
+	padding: 0;
+	padding-left: 15px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+	font-size: 14px;
+	line-height: 1.4;
+	overflow-x: visible;
+	box-shadow: none;
+	white-space: pre-wrap;
+	background-color: #F5F5F5;
+	position: relative;
+	width: 90%;
 }
 
 pre.example {
@@ -174,29 +174,29 @@ pre.example {
 }
 
 .org-src-container .org-keyword {
-  color: #a90d91;
+	color: #a90d91;
 }
 
 .org-src-container .org-variable-name {
-  color: #715ab1;
+	color: #715ab1;
 }
 
 .org-src-container .org-function-name {
-  color: #3a81c3;
+	color: #3a81c3;
 }
 
 .org-src-container .org-string {
-  color: #2d9574;
+	color: #2d9574;
 }
 
 .org-src-container .org-comment-delimiter {
-  font-style: italic;
-  color: #e06666;
+	font-style: italic;
+	color: #e06666;
 }
 
 .org-src-container .org-comment {
-  font-style: italic;
-  color: #e06666;
+	font-style: italic;
+	color: #e06666;
 }
 
 /* Add other language-specific rules as needed */
