@@ -4,14 +4,18 @@
 /*   line-height: 1.15; */
 /*   -webkit-text-size-adjust: 100%; } */
 
-*:not(img) {
-	filter: invert(1);
+.invert {
+	filter: invert(100%);
 }
 
-/* body { */
-/*     /\*margin: 0;*\/ */
-/*     background-color: #fdfaf7; */
-/* }  */
+.invert img {
+	filter: invert(0%);
+}
+
+body {
+    /*margin: 0;*/
+    background-color: #fdfaf7;
+}
 
 @media screen and (min-width: 600px) {
     body {
