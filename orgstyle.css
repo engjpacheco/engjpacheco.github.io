@@ -29,7 +29,6 @@ a img[src$="rss.png"] {
 	margin-right: 10px;
 	vertical-align: middle;
 	margin-top: -3px;
-	filter: invert(1);
 }
 
 img {
