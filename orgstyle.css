@@ -6,8 +6,8 @@
 
 body {
     /*margin: 0;*/
-    background-color: #282828; /* Changed background color */
-    color: #ffffff; /* Changed foreground text color */} 
+    background-color: #fdfaf7;
+} 
 
 @media screen and (min-width: 600px) {
     body {
@@ -30,7 +30,7 @@ a img[src$="rss.png"] {
 .title {
     text-align: left;
     margin: 0.8em auto;
-    color: #527d9a;
+    color: black;
 }
 
 .subtitle {
@@ -45,28 +45,28 @@ h1 {
 	font-size: 2em;
 	margin: 0.67em 0;
 	font-family: 'Roboto Slab', serif;
-	color: #527d9a;}
+	color: #000000;}
 
 h2 {
-	font-family:  'Roboto Slab', serif;
+    font-family:  'Roboto Slab', serif;
 }
 
 h3 {
-	font-style: : italic;
+    font-style: : italic;
 }
 
 h2, h3 {
-	/* color: #000000; */
+    color: #000000;
 }
 
 h4 {
-	/* color: #000000; */
-	font-style: italic;
+    color: #000000;
+    font-style: italic;
 }
 
 a {
-	/* color: #2f2f4f; */
-	text-decoration: none;
+    color: #2f2f4f;
+    text-decoration: none;
 }
 
 /* hr { */
@@ -135,12 +135,12 @@ a {
 /*! end normalise.css */
 
 .org-src-container {
-	border: 0px;
-	box-shadow: 0px 0px 0px #eee;
-	font-family: $monospace;
-	font-size: $code-size;
-	margin: 1em auto;
-	position: relative;
+    border: 0px;
+    box-shadow: 0px 0px 0px #eee;
+    font-family: $monospace;
+    font-size: $code-size;
+    margin: 1em auto;
+    position: relative;
 }
 
 pre.src, pre.example {
@@ -165,12 +165,12 @@ pre.src, pre.example {
 }
 
 pre.example {
-	border-left-style: dotted;
-	border-left-width: 3px; 
-	margin: 1em auto;
-	padding-left: 15px;
-	position: relative;
-	width: 79%
+    border-left-style: dotted;
+    border-left-width: 3px; 
+    margin: 1em auto;
+    padding-left: 15px;
+    position: relative;
+    width: 79%
 }
 
 .org-src-container .org-keyword {
