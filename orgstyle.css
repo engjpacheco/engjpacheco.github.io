@@ -8,10 +8,10 @@
 	filter: invert(1);
 }
 
-body {
-    /*margin: 0;*/
-    background-color: #fdfaf7;
-} 
+/* body { */
+/*     /\*margin: 0;*\/ */
+/*     background-color: #fdfaf7; */
+/* }  */
 
 @media screen and (min-width: 600px) {
     body {
