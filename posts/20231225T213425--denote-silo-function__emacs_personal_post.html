@@ -33,19 +33,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd05b47b">Use custom commands to select a silo.</a>
+<li><a href="#orga8c9e84">Use custom commands to select a silo.</a>
 <ul>
-<li><a href="#org1eabc65">The Silo funcitons:</a></li>
+<li><a href="#org4283bdd">The Silo funcitons:</a></li>
 </ul>
 </li>
-<li><a href="#org7e7742d">links:</a></li>
+<li><a href="#org4fecbae">links:</a></li>
 </ul>
 </div>
 </nav>
 <p>
 
 </p>
-<div class="PREVIEW" id="orgc24a0ef">
+<div class="PREVIEW" id="org95cf69f">
 <p>
 I have been reading some thing information about denote, and its powerful tools
 that the good <code>prots</code> give to us the mortals. I am starting this "post" thing, and 
@@ -56,18 +56,18 @@ in the creation of notes.
 
 </div>
 
-<div id="outline-container-orgd05b47b" class="outline-2">
-<h2 id="orgd05b47b">Use custom commands to select a silo.</h2>
-<div class="outline-text-2" id="text-orgd05b47b">
+<div id="outline-container-orga8c9e84" class="outline-2">
+<h2 id="orga8c9e84">Use custom commands to select a silo.</h2>
+<div class="outline-text-2" id="text-orga8c9e84">
 <p>
 As you can read in the tittle, <code>prots</code> creates this singular <i>elsip</i>, that  prompts
 for a entry point directory and then a denote function.
 </p>
 </div>
 
-<div id="outline-container-org1eabc65" class="outline-3">
-<h3 id="org1eabc65">The Silo funcitons:</h3>
-<div class="outline-text-3" id="text-org1eabc65">
+<div id="outline-container-org4283bdd" class="outline-3">
+<h3 id="org4283bdd">The Silo funcitons:</h3>
+<div class="outline-text-3" id="text-org4283bdd">
 <ul class="org-ul">
 <li>First part of the function:</li>
 </ul>
@@ -76,7 +76,7 @@ Define a list of directories. This is very convenient, because whit this I can s
 my notes directory of my posts directory:
 </p>
 <div class="org-src-container">
-<pre class="src src-elisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">my-denote-silo-directories</span>
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">my-denote-silo-directories</span>
   `(<span class="org-string">"/home/prot/Videos/recordings"</span>
     <span class="org-string">"/home/prot/Documents/books"</span>
     <span class="org-comment-delimiter">;; </span><span class="org-comment">You don't actually need to include the `</span><span class="org-comment"><span class="org-constant">denote-directory</span></span><span class="org-comment">' here</span>
@@ -92,7 +92,7 @@ my notes directory of my posts directory:
 <li>Then define a list of the denote commands that usually I use:</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-elisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">my-denote-commands-for-silos</span>
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">my-denote-commands-for-silos</span>
   '(denote
     denote-date
     denote-subdirectory
@@ -108,7 +108,7 @@ my notes directory of my posts directory:
 <li>The Silo Command in action:</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">my-denote-pick-silo-then-command</span> (silo command)
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">my-denote-pick-silo-then-command</span> (silo command)
   <span class="org-doc">"Select SILO and run Denote COMMAND in it.</span>
 <span class="org-doc">  SILO is a file path from `</span><span class="org-doc"><span class="org-constant">my-denote-silo-directories</span></span><span class="org-doc">', while</span>
 <span class="org-doc">  COMMAND is one among `</span><span class="org-doc"><span class="org-constant">my-denote-commands-for-silos</span></span><span class="org-doc">'."</span>
@@ -126,7 +126,7 @@ my notes directory of my posts directory:
 <li><b>The complete functions:</b></li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-elisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">my-denote-silo-directories</span>
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">my-denote-silo-directories</span>
   `(<span class="org-string">"/home/prot/Videos/recordings"</span>
     <span class="org-string">"/home/prot/Documents/books"</span>
     <span class="org-comment-delimiter">;; </span><span class="org-comment">You don't actually need to include the `</span><span class="org-comment"><span class="org-constant">denote-directory</span></span><span class="org-comment">' here</span>
@@ -173,9 +173,9 @@ that <code>protesilaos</code> provide to us, so, Thank you prot.
 </div>
 </div>
 
-<div id="outline-container-org7e7742d" class="outline-2">
-<h2 id="org7e7742d">links:</h2>
-<div class="outline-text-2" id="text-org7e7742d">
+<div id="outline-container-org4fecbae" class="outline-2">
+<h2 id="org4fecbae">links:</h2>
+<div class="outline-text-2" id="text-org4fecbae">
 <dl class="org-dl">
 <dt><a href="https://protesilaos.com/emacs/denote">Protesilaos web page</a></dt><dd>3.5.1. Use custom commands to select a silo</dd>
 </dl>
