@@ -4,6 +4,10 @@
 /*   line-height: 1.15; */
 /*   -webkit-text-size-adjust: 100%; } */
 
+html {
+	filter: invert(1);
+}
+
 body {
     /*margin: 0;*/
     background-color: #fdfaf7;
