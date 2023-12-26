@@ -4,12 +4,12 @@
 /*   line-height: 1.15; */
 /*   -webkit-text-size-adjust: 100%; } */
 
-html {
+body {
 	filter: invert(1);
 }
 
-.invert img {
-	filter: invert(0%);
+img {
+	filter: invert(0);
 }
 
 body {
