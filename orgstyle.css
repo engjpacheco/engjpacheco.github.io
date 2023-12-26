@@ -5,15 +5,7 @@
 /*   -webkit-text-size-adjust: 100%; } */
 
 html {
-	filter: invert(100%);
-}
-
-img {
-	filter: invert(100%);
-}
-
-html img {
-	filter: invert(0%);
+	filter: invert(1);
 }
 
 body {
@@ -37,6 +29,10 @@ a img[src$="rss.png"] {
 	margin-right: 10px;
 	vertical-align: middle;
 	margin-top: -3px;
+}
+
+img {
+	filter: invert(1);
 }
 
 .title {
