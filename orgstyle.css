@@ -30,7 +30,7 @@ a img[src$="rss.png"] {
 .title {
     text-align: left;
     margin: 0.8em auto;
-    /* color: black; */
+    color: #458588;
 }
 
 .subtitle {
