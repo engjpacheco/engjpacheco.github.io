@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<author><name>Javier Pacheco</name></author>
+<title>Javier Pacheco's Blog</title>
+<description>Posts, information and resources from Javier Pacheco</description>
+<generator>Emacs webfeeder.el</generator>
+<link>https://jpacheco.codeberg.page/</link>
+<atom:link href="https://jpacheco.codeberg.page/rss.xml" rel="self" type="application/rss+xml"/>
+<lastBuildDate>Tue, 26 Dec 2023 14:44:44 -0600</lastBuildDate>
+<item>
+  <title>Attempt to test RSS feeds</title>
+  <description><![CDATA[<div id="content" class="content">
+ <p>
+
+</p>
+ <div class="PREVIEW" id="orgd46b2f4">
+ <p>
+Hello.
+</p>
+
+ <p>
+This post, is about  more like a testing, because, I'm trying to add RSS feeds into 
+this "web-page", so basically this is a test, and see if when I build the webpage
+is going to work… or not.
+So, this is the preview and read this post to see what I'm trying to do.
+</p>
+
+</div>
+
+ <div id="outline-container-org4239bde" class="outline-2">
+ <h2 id="org4239bde">Rss Feeds.</h2>
+ <div class="outline-text-2" id="text-org4239bde">
+ <p>
+First, what is  <code>rss feeds</code>?
+This is what wikipedia have in theri page:
+</p>
+ <pre class="example" id="orgd4f94c4">
+RSS (RDF Site Summary or Really Simple Syndication) is a web feed that allows users and applications to access updates to websites in a standardized, computer-readable format. Subscribing to RSS feeds can allow a user to keep track of many different websites in a single news aggregator, which constantly monitor sites for new content, removing the need for the user to manually check them. News aggregators (or "RSS readers") can be built into a browser, installed on a desktop computer, or installed on a mobile device.
+</pre>
+
+ <p>
+Well whit that read, what I'm going to do is to export a file with the  <code>.xml</code> extension,
+and stored in my host  <code>codeberg pages</code>, well that is the goal, but I'm not sure about it.
+</p>
+</div>
+</div>
+
+ <div id="outline-container-org4844869" class="outline-2">
+ <h2 id="org4844869">Packages needed:</h2>
+ <div class="outline-text-2" id="text-org4844869">
+ <p>
+These are the packages that we need to use to make the rss file:
+</p>
+ <ul class="org-ul"> <li>ox-publish.</li>
+ <li>ox-rss.</li>
+ <li>webfeeder.</li>
+ <li>esxml.</li>
+</ul> <p>
+and these need to be in the  <code>build-site.el</code> script:
+</p>
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp"> <span class="org-comment-delimiter">;; </span> <span class="org-comment">Check and install dependencies</span>
+( <span class="org-keyword">dolist</span> (package '(htmlize ox-rss webfeeder esxml))
+  ( <span class="org-keyword">unless</span> (package-installed-p package)
+    (package-install package)))
+
+ <span class="org-comment-delimiter">;; </span> <span class="org-comment">Load publishing system</span>
+( <span class="org-keyword">require</span> ' <span class="org-constant">ox-publish</span>)
+( <span class="org-keyword">require</span> ' <span class="org-constant">ox-rss</span>)
+( <span class="org-keyword">require</span> ' <span class="org-constant">webfeeder</span>)
+( <span class="org-keyword">require</span> ' <span class="org-constant">esxml</span>)
+</pre>
+</div>
+</div>
+</div>
+
+ <div id="outline-container-org6b3a083" class="outline-2">
+ <h2 id="org6b3a083">Functions to use:</h2>
+ <div class="outline-text-2" id="text-org6b3a083">
+ <p>
+Now declare some functions to parse in the public folder that we create for save the
+exported  <code>html</code> files.
+</p>
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp"> <span class="org-comment-delimiter">;;; </span> <span class="org-comment">build RSS feed</span>
+
+( <span class="org-keyword">defun</span>  <span class="org-function-name">dw/rss-extract-date</span> (html-file)
+   <span class="org-doc">"Extract the post date from an HTML file."</span>
+  ( <span class="org-keyword">with-temp-buffer</span>
+    (insert-file-contents html-file)
+    ( <span class="org-keyword">let*</span> ((dom (libxml-parse-html-region (point-min) (point-max)))
+           (date-string (dom-text (car (dom-by-class dom  <span class="org-string">"date"</span>))))
+           (parsed-date (parse-time-string date-string))
+           (day (nth 3 parsed-date))
+           (month (nth 4 parsed-date))
+           (year (nth 5 parsed-date)))
+       <span class="org-comment-delimiter">;; </span> <span class="org-comment">NOTE: Hardcoding this at 8am for now</span>
+      (encode-time 0 0 8 day month year))))
+
+( <span class="org-keyword">setq</span> webfeeder-date-function #'dw/rss-extract-date)
+
+(webfeeder-build  <span class="org-string">"rss.xml"</span>
+                  <span class="org-string">"./public"</span>
+                  <span class="org-string">"https://jpacheco.codeberg.page/"</span>
+                 (mapcar ( <span class="org-keyword">lambda</span> (file) (concat  <span class="org-string">"posts/"</span> file))
+                         ( <span class="org-keyword">let</span> ((default-directory (expand-file-name  <span class="org-string">"./public/posts/"</span>)))
+                           (directory-files-recursively  <span class="org-string">"./"</span>  <span class="org-string">".*\\.html$"</span>)))
+                  <span class="org-builtin">:builder</span> 'webfeeder-make-rss
+                  <span class="org-builtin">:title</span>  <span class="org-string">"Javier Pacheco's Blog"</span>
+                  <span class="org-builtin">:description</span>  <span class="org-string">"Posts, information and resources from Javier Pacheco"</span>
+                  <span class="org-builtin">:author</span>  <span class="org-string">"Javier Pacheco"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+ <div id="outline-container-orged60ade" class="outline-2">
+ <h2 id="orged60ade">Testing.</h2>
+ <div class="outline-text-2" id="text-orged60ade">
+ <p>
+Well, this post ends here, now in a few minutes this post is going to be uploaded,
+and I'll see if rss feeds generator actually works whit the functions and  commands
+above.
+</p>
+</div>
+</div>
+</div>]]></description>
+  <link>https://jpacheco.codeberg.page/posts/./20231226T142110--attempt-to-test-rss-feeds__personal_post.html</link>
+  <guid isPermaLink="false">https://jpacheco.codeberg.page/posts/./20231226T142110--attempt-to-test-rss-feeds__personal_post.html</guid>
+  <pubDate>Tue, 26 Dec 2023 08:00:00 -0600</pubDate>
+</item>
+<item>
+  <title>denote silo function</title>
+  <description><![CDATA[<div id="content" class="content">
+ <p>
+
+</p>
+ <div class="PREVIEW" id="org60da7f4">
+ <p>
+I have been reading some thing information about denote, and its powerful tools
+that the good  <code>prots</code> give to us the mortals. I am starting this "post" thing, and 
+is good to have my notes apart from the posts that I'm going to write in the 
+future, so reading I find a interesting function that prots suggest to use 
+in the creation of notes.
+</p>
+
+</div>
+
+ <div id="outline-container-org090c6af" class="outline-2">
+ <h2 id="org090c6af">Use custom commands to select a silo.</h2>
+ <div class="outline-text-2" id="text-org090c6af">
+ <p>
+As you can read in the tittle,  <code>prots</code> creates this singular  <i>elsip</i>, that  prompts
+for a entry point directory and then a denote function.
+</p>
+</div>
+
+ <div id="outline-container-org4b1c756" class="outline-3">
+ <h3 id="org4b1c756">The Silo funcitons:</h3>
+ <div class="outline-text-3" id="text-org4b1c756">
+ <ul class="org-ul"> <li>First part of the function:</li>
+</ul> <p>
+Define a list of directories. This is very convenient, because whit this I can separate
+my notes directory of my posts directory:
+</p>
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp">( <span class="org-keyword">defvar</span>  <span class="org-variable-name">my-denote-silo-directories</span>
+  `( <span class="org-string">"/home/prot/Videos/recordings"</span>
+     <span class="org-string">"/home/prot/Documents/books"</span>
+     <span class="org-comment-delimiter">;; </span> <span class="org-comment">You don't actually need to include the `</span> <span class="org-comment"> <span class="org-constant">denote-directory</span></span> <span class="org-comment">' here</span>
+     <span class="org-comment-delimiter">;; </span> <span class="org-comment">if you use the regular commands in their global context.  I am</span>
+     <span class="org-comment-delimiter">;; </span> <span class="org-comment">including it for completeness.</span>
+    ,denote-directory)
+   <span class="org-doc">"List of file paths pointing to my Denote silos.</span>
+ <span class="org-doc">  This is a list of strings."</span>)
+</pre>
+</div>
+
+ <ul class="org-ul"> <li>Then define a list of the denote commands that usually I use:</li>
+</ul> <div class="org-src-container">
+ <pre class="src src-emacs-lisp">( <span class="org-keyword">defvar</span>  <span class="org-variable-name">my-denote-commands-for-silos</span>
+  '(denote
+    denote-date
+    denote-subdirectory
+    denote-template
+    denote-type)
+   <span class="org-doc">"List of Denote commands to call after selecting a silo.</span>
+ <span class="org-doc">  This is a list of symbols that specify the note-creating</span>
+ <span class="org-doc">  interactive functions that Denote provides."</span>)
+</pre>
+</div>
+
+ <ul class="org-ul"> <li>The Silo Command in action:</li>
+</ul> <div class="org-src-container">
+ <pre class="src src-emacs-lisp">( <span class="org-keyword">defun</span>  <span class="org-function-name">my-denote-pick-silo-then-command</span> (silo command)
+   <span class="org-doc">"Select SILO and run Denote COMMAND in it.</span>
+ <span class="org-doc">  SILO is a file path from `</span> <span class="org-doc"> <span class="org-constant">my-denote-silo-directories</span></span> <span class="org-doc">', while</span>
+ <span class="org-doc">  COMMAND is one among `</span> <span class="org-doc"> <span class="org-constant">my-denote-commands-for-silos</span></span> <span class="org-doc">'."</span>
+  ( <span class="org-keyword">interactive</span>
+   (list (completing-read  <span class="org-string">"Select a silo: "</span> my-denote-silo-directories nil t)
+         (intern (completing-read
+                   <span class="org-string">"Run command in silo: "</span>
+                  my-denote-commands-for-silos nil t))))
+  ( <span class="org-keyword">let</span> ((denote-user-enforced-denote-directory silo))
+    (call-interactively command)))
+</pre>
+</div>
+
+ <ul class="org-ul"> <li> <b>The complete functions:</b></li>
+</ul> <div class="org-src-container">
+ <pre class="src src-emacs-lisp">( <span class="org-keyword">defvar</span>  <span class="org-variable-name">my-denote-silo-directories</span>
+  `( <span class="org-string">"/home/prot/Videos/recordings"</span>
+     <span class="org-string">"/home/prot/Documents/books"</span>
+     <span class="org-comment-delimiter">;; </span> <span class="org-comment">You don't actually need to include the `</span> <span class="org-comment"> <span class="org-constant">denote-directory</span></span> <span class="org-comment">' here</span>
+     <span class="org-comment-delimiter">;; </span> <span class="org-comment">if you use the regular commands in their global context.  I am</span>
+     <span class="org-comment-delimiter">;; </span> <span class="org-comment">including it for completeness.</span>
+    ,denote-directory)
+   <span class="org-doc">"List of file paths pointing to my Denote silos.</span>
+ <span class="org-doc">  This is a list of strings."</span>)
+
+( <span class="org-keyword">defvar</span>  <span class="org-variable-name">my-denote-commands-for-silos</span>
+  '(denote
+    denote-date
+    denote-subdirectory
+    denote-template
+    denote-type)
+   <span class="org-doc">"List of Denote commands to call after selecting a silo.</span>
+ <span class="org-doc">  This is a list of symbols that specify the note-creating</span>
+ <span class="org-doc">  interactive functions that Denote provides."</span>)
+
+( <span class="org-keyword">defun</span>  <span class="org-function-name">my-denote-pick-silo-then-command</span> (silo command)
+   <span class="org-doc">"Select SILO and run Denote COMMAND in it.</span>
+ <span class="org-doc">  SILO is a file path from `</span> <span class="org-doc"> <span class="org-constant">my-denote-silo-directories</span></span> <span class="org-doc">', while</span>
+ <span class="org-doc">  COMMAND is one among `</span> <span class="org-doc"> <span class="org-constant">my-denote-commands-for-silos</span></span> <span class="org-doc">'."</span>
+  ( <span class="org-keyword">interactive</span>
+   (list (completing-read  <span class="org-string">"Select a silo: "</span> my-denote-silo-directories nil t)
+         (intern (completing-read
+                   <span class="org-string">"Run command in silo: "</span>
+                  my-denote-commands-for-silos nil t))))
+  ( <span class="org-keyword">let</span> ((denote-user-enforced-denote-directory silo))
+    (call-interactively command)))
+</pre>
+</div>
+
+ <p>
+Now whit these couple of functions we can have a better way to take our notes, 
+posts, and other denote related things.
+</p>
+
+ <p>
+So, for now it's all, I was able to write this post within emacs and this silo function
+that  <code>protesilaos</code> provide to us, so, Thank you prot.
+</p>
+</div>
+</div>
+</div>
+
+ <div id="outline-container-org346cf95" class="outline-2">
+ <h2 id="org346cf95">links:</h2>
+ <div class="outline-text-2" id="text-org346cf95">
+ <dl class="org-dl"> <dt> <a href="https://protesilaos.com/emacs/denote#h:0f72e6ea-97f0-42e1-8fd4-0684af0422e0">Protesilaos web page</a></dt> <dd>3.5.1. Use custom commands to select a silo</dd>
+</dl></div>
+</div>
+</div>]]></description>
+  <link>https://jpacheco.codeberg.page/posts/./20231225T213425--denote-silo-function__emacs_personal_post.html</link>
+  <guid isPermaLink="false">https://jpacheco.codeberg.page/posts/./20231225T213425--denote-silo-function__emacs_personal_post.html</guid>
+  <pubDate>Mon, 25 Dec 2023 08:00:00 -0600</pubDate>
+</item>
+<item>
+  <title>Themes and end of the year</title>
+  <description><![CDATA[<div id="content" class="content">
+ <p>
+
+</p>
+ <div class="PREVIEW" id="org343275b">
+ <p>
+This is the first of a few posts I'm creating this "web" only for my knowledge,
+and contribute with some of it.
+</p>
+
+ <p>
+Some things are happening by a reason, so, instead of see the "bad" things that
+happens; is a better practice to see the good side of the thing, these more or less
+are some phrases that my dad says to me when me and my family have some problems.
+</p>
+
+</div>
+
+ <div id="outline-container-h:0f3ffdd6-6b21-4e10-a01b-ce72a618a1f5" class="outline-2">
+ <h2 id="h:0f3ffdd6-6b21-4e10-a01b-ce72a618a1f5">Themes in emacs and end of the year.</h2>
+ <div class="outline-text-2" id="text-h:0f3ffdd6-6b21-4e10-a01b-ce72a618a1f5">
+ <p>
+I started to manage my themes, actually only one, I get rid off the  <i>doom-themes</i>.
+and add the atom-one-dark theme, lets see what will happens,
+I actually like this theme the most, the only thing that is an issue from me
+is the actual fonts management, so I'm going to "hack" this theme a little bit.
+</p>
+
+ <p>
+A end of another year is happening, this year  was a very though, health issues,
+lack of money, lack of time, but at the end of the road, there is a minimal light
+I hope that last call be the key, and hope this new year came with new challenges
+and more opportunities.
+</p>
+
+ <p>
+This year I learn a lot of things, like:
+</p>
+ <ul class="org-ul"> <li>Emacs.</li>
+ <li>nvim/vim.</li>
+ <li>voidlinux.</li>
+ <li>re-learn how to program a robot.</li>
+</ul> <p>
+This ending year was a very good one, strong to get in trough but a very good one.
+</p>
+</div>
+</div>
+</div>]]></description>
+  <link>https://jpacheco.codeberg.page/posts/./20231224T095629--themes-and-end-of-the-year__personal_post.html</link>
+  <guid isPermaLink="false">https://jpacheco.codeberg.page/posts/./20231224T095629--themes-and-end-of-the-year__personal_post.html</guid>
+  <pubDate>Sat, 23 Dec 2023 08:00:00 -0600</pubDate>
+</item>
+</channel>
+</rss>
