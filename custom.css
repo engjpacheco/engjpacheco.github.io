@@ -2387,13 +2387,14 @@ a:hover {
     text-decoration: underline
 }
 
+/* Color of text */
 body {
     width: 95%;
     margin: 2% auto;
     font-size: 14px;
     line-height: 1.4em;
     font-family: Georgia,serif;
-    color: #333
+    color: white
 }
 
 @media screen and (min-width: 600px) {
@@ -2426,7 +2427,7 @@ dl,ol,ul {
 
 .title {
     margin: .8em auto;
-    color: #458588
+    color: #a5573e;
 }
 
 .subtitle,.title {
@@ -2508,7 +2509,7 @@ img {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    color: #458588;
+    color: #a5573e;
     line-height: 1em;
     font-family: Helvetica,sans-serif
 }
@@ -2706,7 +2707,7 @@ p.verse {
     border: 1px solid #ddd;
     border-radius: 3px;
     background-clip: padding-box;
-    color: #333;
+    color: #458588;
     font-size: 80%
 }
 
