@@ -187,7 +187,7 @@ textarea {
 
 body {
     color: #fff;
-    background-color: #282828
+    background-color: #000
 }
 
 .org-alert-high {
@@ -2712,8 +2712,8 @@ p.verse {
 
 .org-src-container {
     border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    font-family: Lucida Console,monospace;
+    /* box-shadow: 3px 3px 3px #282828; */
+	font-family: Lucida Console,monospace;
     font-size: 80%;
     margin: 1em auto;
     padding: .1em .5em;
@@ -2722,15 +2722,14 @@ p.verse {
 
 /* Actual src-block */
 .org-src-container>pre {
-    overflow: auto;
-	background-color: #28282885;
+    overflow: auto
 }
 
 /* Label in src blocks */
 .org-src-container>pre:before {
     display: block;
     position: absolute;
-    background-color: #b3b3b3;
+    background-color: #458588;
     top: 0;
     right: 0;
     padding: 0 .5em;
