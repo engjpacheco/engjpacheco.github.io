@@ -1,0 +1,515 @@
+/* Body */
+html {
+	font-size: 62.5%;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; }
+
+body {
+	font-size: 1.8rem;
+	line-height: 1.618;
+	max-width: 38em;
+	margin: auto;
+	color: #c9c9c9;
+	background-color: #222222;
+	padding: 13px; }
+
+@media (max-width: 684px) {
+	body {
+		font-size: 1.53rem; } }
+
+@media (max-width: 382px) {
+	body {
+		font-size: 1.35rem; } }
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.1;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+	font-weight: 700;
+	margin-top: 3rem;
+	margin-bottom: 1.5rem;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-word; }
+
+h1 {
+	font-size: 2.35em; }
+
+h2 {
+	font-size: 2.00em; }
+
+h3 {
+	font-size: 1.75em; }
+
+h4 {
+	font-size: 1.5em; }
+
+h5 {
+	font-size: 1.25em; }
+
+h6 {
+	font-size: 1em; }
+
+p {
+	margin-top: 0px;
+	margin-bottom: 2.5rem; }
+
+small, sub, sup {
+	font-size: 75%; }
+
+hr {
+	border-color: #ffffff; }
+
+a {
+	text-decoration: none;
+	color: #ffffff; }
+a:hover {
+    color: #c9c9c9;
+    border-bottom: 2px solid #c9c9c9; }
+a:visited {
+    color: #e6e6e6; }
+
+ul {
+	padding-left: 1.4em;
+	margin-top: 0px;
+	margin-bottom: 2.5rem; }
+
+li {
+	margin-bottom: 0.4em; }
+
+blockquote {
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 1em;
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+	padding-right: 0.8em;
+	border-left: 5px solid #ffffff;
+	margin-bottom: 2.5rem;
+	background-color: #4a4a4a; }
+
+blockquote p {
+	margin-bottom: 0; }
+
+img {
+	height: auto;
+	max-width: 100%;
+	margin-top: 0px;
+	margin-bottom: 2.5rem; }
+
+/* Pre and Code */
+:not(pre)>code {
+    padding: 2px 5px;
+    margin: auto 1px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-clip: padding-box;
+    color: #458588;
+    font-size: 80%
+}
+
+.org-src-container {
+    border: 1px solid #ccc;
+    /* box-shadow: 3px 3px 3px #282828; */
+	font-family: lucida console,monospace;
+    font-size: 80%;
+    margin: 1em auto;
+    padding: .1em .5em;
+    position: relative
+}
+
+/* actual src-block */
+.org-src-container>pre {
+    overflow: auto
+}
+
+/* label in src blocks */
+.org-src-container>pre:before {
+    display: block;
+    position: absolute;
+    background-color: #458588;
+    top: 0;
+    right: 0;
+    padding: 0 .5em;
+    border-bottom-left-radius: 8px;
+    border: 0;
+    color: #fff;
+    font-size: 80%
+}
+
+.org-src-container>pre.src-sh:before {
+    content: "sh"
+}
+
+.org-src-container>pre.src-bash:before {
+    content: "bash"
+}
+
+.org-src-container>pre.src-emacs-lisp:before {
+    content: "emacs lisp"
+}
+
+.org-src-container>pre.src-elisp:before {
+    content: "emacs lisp"
+}
+
+.org-src-container>pre.src-r:before {
+    content: "r"
+}
+
+.org-src-container>pre.src-cpp:before {
+    content: "c++"
+}
+
+.org-src-container>pre.src-c:before {
+    content: "c"
+}
+
+.org-src-container>pre.src-html:before {
+    content: "html"
+}
+
+.org-src-container>pre.src-javascript:before,.org-src-container>pre.src-js:before {
+    content: "javascript"
+}
+
+// more languages 0% http://orgmode.org/worg/org-contrib/babel/languages.html .org-src-container>pre.src-abc:before {
+    content: "abc"
+}
+
+.org-src-container>pre.src-asymptote:before {
+    content: "asymptote"
+}
+
+.org-src-container>pre.src-awk:before {
+    content: "awk"
+}
+
+.org-src-container>pre.src-c:before {
+    content: "c"
+}
+
+.org-src-container>pre.src-calc:before {
+    content: "calc"
+}
+
+.org-src-container>pre.src-clojure:before {
+    content: "clojure"
+}
+
+.org-src-container>pre.src-comint:before {
+    content: "comint"
+}
+
+.org-src-container>pre.src-css:before {
+    content: "css"
+}
+
+.org-src-container>pre.src-d:before {
+    content: "d"
+}
+
+.org-src-container>pre.src-ditaa:before {
+    content: "ditaa"
+}
+
+.org-src-container>pre.src-dot:before {
+    content: "dot"
+}
+
+.org-src-container>pre.src-ebnf:before {
+    content: "ebnf"
+}
+
+.org-src-container>pre.src-forth:before {
+    content: "forth"
+}
+
+.org-src-container>pre.src-f90:before {
+    content: "fortran"
+}
+
+.org-src-container>pre.src-gnuplot:before {
+    content: "gnuplot"
+}
+
+.org-src-container>pre.src-haskell:before {
+    content: "haskell"
+}
+
+.org-src-container>pre.src-io:before {
+    content: "io"
+}
+
+.org-src-container>pre.src-java:before {
+    content: "java"
+}
+
+.org-src-container>pre.src-latex:before {
+    content: "latex"
+}
+
+.org-src-container>pre.src-ledger:before {
+    content: "ledger"
+}
+
+.org-src-container>pre.src-ly:before {
+    content: "lilypond"
+}
+
+.org-src-container>pre.src-lisp:before {
+    content: "lisp"
+}
+
+.org-src-container>pre.src-makefile:before {
+    content: "make"
+}
+
+.org-src-container>pre.src-matlab:before {
+    content: "matlab"
+}
+
+.org-src-container>pre.src-max:before {
+    content: "maxima"
+}
+
+.org-src-container>pre.src-mscgen:before {
+    content: "mscgen"
+}
+
+.org-src-container>pre.src-caml:before {
+    content: "objective"
+}
+
+.org-src-container>pre.src-octave:before {
+    content: "octave"
+}
+
+.org-src-container>pre.src-org:before {
+    content: "org"
+}
+
+.org-src-container>pre.src-perl:before {
+    content: "perl"
+}
+
+.org-src-container>pre.src-picolisp:before {
+    content: "picolisp"
+}
+
+.org-src-container>pre.src-plantuml:before {
+    content: "plantuml"
+}
+
+.org-src-container>pre.src-python:before {
+    content: "python"
+}
+
+.org-src-container>pre.src-ruby:before {
+    content: "ruby"
+}
+
+.org-src-container>pre.src-sass:before {
+    content: "sass"
+}
+
+.org-src-container>pre.src-scala:before {
+    content: "scala"
+}
+
+.org-src-container>pre.src-scheme:before {
+    content: "scheme"
+}
+
+.org-src-container>pre.src-screen:before {
+    content: "screen"
+}
+
+.org-src-container>pre.src-sed:before {
+    content: "sed"
+}
+
+.org-src-container>pre.src-shell:before {
+    content: "shell"
+}
+
+.org-src-container>pre.src-shen:before {
+    content: "shen"
+}
+
+.org-src-container>pre.src-sql:before {
+    content: "sql"
+}
+
+.org-src-container>pre.src-sqlite:before {
+    content: "sqlite"
+}
+
+.org-src-container>pre.src-stan:before {
+    content: "stan"
+}
+
+.org-src-container>pre.src-vala:before {
+    content: "vala"
+}
+
+.org-src-container>pre.src-axiom:before {
+    content: "axiom"
+}
+
+.org-src-container>pre.src-browser:before {
+    content: "html"
+}
+
+.org-src-container>pre.src-cypher:before {
+    content: "neo4j"
+}
+
+.org-src-container>pre.src-elixir:before {
+    content: "elixir"
+}
+
+.org-src-container>pre.src-request:before {
+    content: "http"
+}
+
+.org-src-container>pre.src-ipython:before {
+    content: "ipython"
+}
+
+.org-src-container>pre.src-kotlin:before {
+    content: "kotlin"
+}
+
+.org-src-container>pre.src-flavored erlang lfe:before {
+    content: "lisp"
+}
+
+.org-src-container>pre.src-mongo:before {
+    content: "mongodb"
+}
+
+.org-src-container>pre.src-prolog:before {
+    content: "prolog"
+}
+
+.org-src-container>pre.src-rec:before {
+    content: "rec"
+}
+
+.org-src-container>pre.src-ml sml:before {
+    content: "standard"
+}
+
+.org-src-container>pre.src-translate translate:before {
+    content: "google"
+}
+
+.org-src-container>pre.src-typescript:before {
+    content: "typescript"
+}
+
+.org-src-container>pre.src-rust:before {
+    content: "rust"
+}
+
+.inlinetask {
+    background: #ffc;
+    border: 2px solid grey;
+    margin: 10px;
+    padding: 10px
+}
+
+#org-div-home-and-up {
+    font-size: 70%;
+    text-align: right;
+    white-space: nowrap
+}
+
+.linenr {
+    font-size: 90%
+}
+
+.code-highlighted {
+    background-color: #ff0
+}
+
+#bibliography {
+    font-size: 90%
+}
+
+#bibliography table {
+    width: 100%
+}
+
+.creator {
+    display: block
+}
+
+@media screen and (min-width: 600px) {
+    .creator {
+        display:inline;
+        float: right
+    }
+}
+
+/* Tables */
+table {
+	text-align: justify;
+	width: 100%;
+	border-collapse: collapse; }
+
+td, th {
+	padding: 0.5em;
+	border-bottom: 1px solid #4a4a4a; }
+
+/* Buttons, forms and input */
+input, textarea {
+	border: 1px solid #c9c9c9; }
+input:focus, textarea:focus {
+    border: 1px solid #ffffff; }
+
+textarea {
+	width: 100%; }
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+	display: inline-block;
+	padding: 5px 10px;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	background-color: #ffffff;
+	color: #222222;
+	border-radius: 1px;
+	border: 1px solid #ffffff;
+	cursor: pointer;
+	box-sizing: border-box; }
+.button[disabled], button[disabled], input[type="submit"][disabled], input[type="reset"][disabled], input[type="button"][disabled] {
+    cursor: default;
+    opacity: .5; }
+.button:focus:enabled, .button:hover:enabled, button:focus:enabled, button:hover:enabled, input[type="submit"]:focus:enabled, input[type="submit"]:hover:enabled, input[type="reset"]:focus:enabled, input[type="reset"]:hover:enabled, input[type="button"]:focus:enabled, input[type="button"]:hover:enabled {
+    background-color: #c9c9c9;
+    border-color: #c9c9c9;
+    color: #222222;
+    outline: 0; }
+
+textarea, select, input {
+	color: #c9c9c9;
+	padding: 6px 10px;
+	/* The 6px vertically centers text on FF, ignored by Webkit */
+	margin-bottom: 10px;
+	background-color: #4a4a4a;
+	border: 1px solid #4a4a4a;
+	border-radius: 4px;
+	box-shadow: none;
+	box-sizing: border-box; }
+textarea:focus, select:focus, input:focus {
+    border: 1px solid #ffffff;
+    outline: 0; }
+
+input[type="checkbox"]:focus {
+	outline: 1px dotted #ffffff; }
+
+label, legend, fieldset {
+	display: block;
+	margin-bottom: .5rem;
+	font-weight: 600; }
