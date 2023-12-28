@@ -930,7 +930,7 @@ label, legend, fieldset {
 }
 
 .org-doc {
-    color: #8b2252
+    color: #98C379
 }
 
 .org-eldoc-highlight-function-argument {
@@ -1533,7 +1533,7 @@ label, legend, fieldset {
 }
 
 .org-keyword {
-    color: #a020f0
+    color: #C678DD
 }
 
 .org-lazy-highlight {
@@ -2492,7 +2492,7 @@ label, legend, fieldset {
 }
 
 .org-string {
-    color: #8b2252
+    color: #98C379
 }
 
 .org-success {
@@ -2568,7 +2568,7 @@ label, legend, fieldset {
 }
 
 .org-variable-name {
-    color: sienna
+    color: #E06C75
 }
 
 .org-vhlXdefault {
