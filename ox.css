@@ -75,7 +75,7 @@ a {
 	color: #528BFF; }
 a:hover {
     color: #5C6370;
-    border-bottom: 2px solid #d9d8dc; }
+    border-bottom: 1px solid #5C6370; }
 a:visited {
     color: #528BFF; }
 
