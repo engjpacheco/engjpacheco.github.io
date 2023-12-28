@@ -10,7 +10,7 @@ body {
 	max-width: 80em;
 	margin: auto;
 	color: #828997;
-	background-color: #120c0e;
+	background-color: #282d34;
 	padding: 13px; }
 
 @media screen and (min-width: 600px) {
@@ -123,7 +123,7 @@ pre.src, pre.example {
 	overflow-x: visible;
 	box-shadow: none;
 	white-space: pre-wrap;
-	background-color: #120c0e;
+	background-color: #282d34;
 	position: relative;
 	width: 90%;
 }
