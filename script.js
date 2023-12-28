@@ -55,25 +55,3 @@ function copyTextToClipboard(text) {
 
 		document.body.removeChild(textArea);
 }
-
-
-var copyBobBtn = document.querySelector('.js-copy-bob-btn'),
-		copyJaneBtn = document.querySelector('.js-copy-jane-btn');
-
-copyBobBtn.addEventListener('click', function(event) {
-		copyTextToClipboard('Bob');
-});
-
-
-copyJaneBtn.addEventListener('click', function(event) {
-		copyTextToClipboard('Jane');
-});
-		<div style="display:inline-block; vertical-align:top;">
-		<button class="js-copy-bob-btn">Set clipboard to BOB</button><br /><br />
-		<button class="js-copy-jane-btn">Set clipboard to JANE</button>
-		</div>
-		<div style="display:inline-block;">
-		<textarea class="js-test-textarea" cols="35" rows="4">Try pasting into here to see what you have on your clipboard:
-
-</textarea>
-		</div>
