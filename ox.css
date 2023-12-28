@@ -160,7 +160,7 @@ pre.example {
 .org-src-container>pre:before {
     display: block;
     position: absolute;
-    background-color: #458588;
+    background-color: #C678DD;
     top: 0;
     right: 0;
     padding: 0 .5em;
