@@ -9,7 +9,7 @@ body {
 	line-height: 1.0;
 	max-width: 80em;
 	margin: auto;
-	color: #d9d8dc;
+	color: #828997;
 	background-color: #120c0e;
 	padding: 13px; }
 
@@ -648,7 +648,7 @@ label, legend, fieldset {
 }
 
 .org-builtin {
-    color: #483d8b
+    color: #61AFEF
 }
 
 .org-button {
