@@ -66,12 +66,12 @@ hr {
 
 a {
 	text-decoration: none;
-	color: #eb99a1; }
+	color: #528BFF; }
 a:hover {
-    color: #DA4453;
+    color: #528BFF;
     border-bottom: 2px solid #d9d8dc; }
 a:visited {
-    color: #e26f7a; }
+    color: #56B6C2; }
 
 ul {
 	padding-left: 1.4em;
