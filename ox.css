@@ -166,13 +166,13 @@ pre.example {
 .org-src-container>pre:before {
     display: block;
     position: absolute;
-    background-color: #C678DD;
+    background-color: #56B6C2;
     top: 0;
     right: 0;
     padding: 0 .5em;
     border-bottom-left-radius: 8px;
     border: 0;
-    color: #fff;
+    color: black;
     font-size: 80%
 }
 
