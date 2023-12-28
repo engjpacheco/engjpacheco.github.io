@@ -38,12 +38,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: 2.35em;
-	color: #56B6C2
+	color: #E06C75;
 }
 
 h2 {
 	font-size: 2.00em;
-	color: #E06C75;
+	color: #56B6C2
 }
 
 h3 {
@@ -68,7 +68,7 @@ small, sub, sup {
 	font-size: 75%; }
 
 hr {
-	border-color: #C678DD; }
+	border-color: #5C6370; }
 
 a {
 	text-decoration: none;
