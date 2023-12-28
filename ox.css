@@ -149,7 +149,11 @@ pre.example {
 
 .org-src-container {
     border: 1px solid #ccc;
-    /* box-shadow: 3px 3px 3px #282828; */
+    box-shadow: 3px 3px 3px #458588;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 	font-family: lucida console,monospace;
     font-size: 80%;
     margin: 1em auto;
