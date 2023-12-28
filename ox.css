@@ -101,6 +101,36 @@ img {
 	margin-top: 0px;
 	margin-bottom: 2.5rem; }
 
+pre.src, pre.example {
+	border-width: 0;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: var(--back-medium);
+	margin: 1em auto;
+	padding: 0;
+	padding-left: 15px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+	font-size: 14px;
+	line-height: 1.4;
+	overflow-x: visible;
+	box-shadow: none;
+	white-space: pre-wrap;
+	background-color: #F5F5F5;
+	position: relative;
+	width: 90%;
+}
+
+pre.example {
+    border-left-style: dotted;
+    border-left-width: 3px; 
+    margin: 1em auto;
+    padding-left: 15px;
+    position: relative;
+    width: 79%
+}
+
 :not(pre)>code {
     padding: 2px 5px;
     margin: auto 1px;
