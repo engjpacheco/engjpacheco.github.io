@@ -74,10 +74,10 @@ a {
 	text-decoration: none;
 	color: #528BFF; }
 a:hover {
-    color: #528BFF;
+    color: #5C6370;
     border-bottom: 2px solid #d9d8dc; }
 a:visited {
-    color: #56B6C2; }
+    color: #528BFF; }
 
 ul {
 	padding-left: 1.4em;
