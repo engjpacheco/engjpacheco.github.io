@@ -76,8 +76,8 @@ a {
 a:hover {
     color: #5C6370;
     border-bottom: 1px solid #5C6370; }
-a:visited {
-    color: #528BFF; }
+/* a:visited { */
+/*     color: #528BFF; } */
 
 ul {
 	padding-left: 1.4em;
