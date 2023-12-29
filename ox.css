@@ -6,6 +6,7 @@
 
 body {
 	font-size: 1.0rem;
+	font-family: 'JetBrains Mono';
 	line-height: 1.2;
 	max-width: 80em;
 	margin: auto;
@@ -27,7 +28,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.1;
-	font-family: 'Roboto Slab', serif;
+	font-family: 'JetBrains Mono', serif;
 	font-weight: 700;
 	margin-top: 3rem;
 	margin-bottom: 1.5rem;
