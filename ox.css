@@ -2747,3 +2747,29 @@ h4 {
  .org-window-divider-last-pixel {
      color: #666
  }
+
+ *,
+ *:before,
+ *:after {
+	 box-sizing: border-box;
+ }
+
+
+ pre[class*="src src-"] button {
+	 position: absolute;
+	 right: 5px;
+	 bottom: 5px;
+
+	 font-size: 0.9rem;
+	 padding: 0.15rem;
+	 background-color: #828282;
+
+	 border: ridge 1px #7b7b7c;
+	 border-radius: 5px;
+	 text-shadow: #c4c4c4 0 0 2px;
+ }
+
+ pre[class*="src src-emacs-"] button:hover {
+	 cursor: pointer;
+	 background-color: #bcbabb;
+ }
