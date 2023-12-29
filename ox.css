@@ -124,7 +124,7 @@ pre.src, pre.example {
 	overflow-x: visible;
 	box-shadow: none;
 	white-space: pre-wrap;
-	background-color: #282d34;
+	background-color: #282828;
 	position: relative;
 	width: 90%;
 }
@@ -149,12 +149,8 @@ pre.example {
 }
 
 .org-src-container {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #C678DD;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
+    border: 0px solid #ccc;
+    /* box-shadow: 3px 3px 3px #C678DD; */
 	font-family: lucida console,monospace;
     font-size: 80%;
     margin: 1em auto;
