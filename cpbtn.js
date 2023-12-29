@@ -53,8 +53,8 @@ function createCopyButtonForDivs() {
     const button = document.createElement('button');
     button.textContent = 'Copy Text';
     button.addEventListener('click', () => {
-      const classesToSearch = ['src.src-emacs-lisp', 'src.src-python', 'src.src-javascript']; // Add more classes/languages as needed
-      copyPreTextToClipboard(container, classesToSearch);
+				const classesToSearch = ['src.src-emacs-lisp', 'src.src-python', 'src.src-javascript', 'src.src-c']; // Add more classes/languages as needed
+				copyPreTextToClipboard(container, classesToSearch);
     });
 
     container.appendChild(button);
