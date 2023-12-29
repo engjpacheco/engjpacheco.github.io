@@ -7,14 +7,14 @@
 <generator>Emacs webfeeder.el</generator>
 <link>https://jpacheco.codeberg.page/</link>
 <atom:link href="https://jpacheco.codeberg.page/rss.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Fri, 29 Dec 2023 10:07:51 -0600</lastBuildDate>
+<lastBuildDate>Fri, 29 Dec 2023 10:50:38 -0600</lastBuildDate>
 <item>
   <title>Attempt to test RSS feeds</title>
   <description><![CDATA[<div id="content" class="content">
  <p>
 
 </p>
- <div class="PREVIEW" id="org3e1915a">
+ <div class="PREVIEW" id="org413aac4">
  <p>
 Hello.
 </p>
@@ -28,14 +28,14 @@ So, this is the preview and read this post to see what I'm trying to do.
 
 </div>
 
- <div id="outline-container-org919fba2" class="outline-2">
- <h2 id="org919fba2">Rss Feeds.</h2>
- <div class="outline-text-2" id="text-org919fba2">
+ <div id="outline-container-orgb6d2172" class="outline-2">
+ <h2 id="orgb6d2172">Rss Feeds.</h2>
+ <div class="outline-text-2" id="text-orgb6d2172">
  <p>
 First, what is  <code>rss feeds</code>?
 This is what wikipedia have in their page:
 </p>
- <pre class="example" id="orgce45c4b">
+ <pre class="example" id="org9edcb85">
 RSS (RDF Site Summary or Really Simple Syndication) is a web feed that allows users and applications to access updates to websites in a standardized, computer-readable format. Subscribing to RSS feeds can allow a user to keep track of many different websites in a single news aggregator, which constantly monitor sites for new content, removing the need for the user to manually check them. News aggregators (or "RSS readers") can be built into a browser, installed on a desktop computer, or installed on a mobile device.
 </pre>
 
@@ -46,9 +46,9 @@ and stored in my host  <code>codeberg pages</code>, well that is the goal, but I
 </div>
 </div>
 
- <div id="outline-container-orgf634efb" class="outline-2">
- <h2 id="orgf634efb">Packages needed:</h2>
- <div class="outline-text-2" id="text-orgf634efb">
+ <div id="outline-container-org7735b87" class="outline-2">
+ <h2 id="org7735b87">Packages needed:</h2>
+ <div class="outline-text-2" id="text-org7735b87">
  <p>
 These are the packages that we need to use to make the rss file:
 </p>
@@ -75,9 +75,9 @@ and these need to be in the  <code>build-site.el</code> script:
 </div>
 </div>
 
- <div id="outline-container-orgb4d8d9f" class="outline-2">
- <h2 id="orgb4d8d9f">Functions to use:</h2>
- <div class="outline-text-2" id="text-orgb4d8d9f">
+ <div id="outline-container-orgf004590" class="outline-2">
+ <h2 id="orgf004590">Functions to use:</h2>
+ <div class="outline-text-2" id="text-orgf004590">
  <p>
 Now declare some functions to parse in the public folder that we create for save the
 exported  <code>html</code> files.
@@ -115,9 +115,9 @@ exported  <code>html</code> files.
 </div>
 </div>
 
- <div id="outline-container-org9ec791e" class="outline-2">
- <h2 id="org9ec791e">Testing.</h2>
- <div class="outline-text-2" id="text-org9ec791e">
+ <div id="outline-container-orgb495f56" class="outline-2">
+ <h2 id="orgb495f56">Testing.</h2>
+ <div class="outline-text-2" id="text-orgb495f56">
  <p>
 Well, this post ends here, now in a few minutes this post is going to be uploaded,
 and I'll see if rss feeds generator actually works whit the functions and  commands
@@ -136,7 +136,7 @@ above.
  <p>
 
 </p>
- <div class="PREVIEW" id="orgdd410a5">
+ <div class="PREVIEW" id="org30bd7f5">
  <p>
 I have been reading some thing information about denote, and its powerful tools
 that the good  <code>prots</code> give to us the mortals. I am starting this "post" thing, and 
@@ -147,22 +147,22 @@ in the creation of notes.
 
 </div>
 
- <div id="outline-container-orgd19328f" class="outline-2">
- <h2 id="orgd19328f">Use custom commands to select a silo.</h2>
- <div class="outline-text-2" id="text-orgd19328f">
+ <div id="outline-container-org4641ee5" class="outline-2">
+ <h2 id="org4641ee5">Use custom commands to select a silo.</h2>
+ <div class="outline-text-2" id="text-org4641ee5">
  <p>
 As you can read in the tittle,  <code>prots</code> creates this singular  <i>elsip</i> function, that  prompts
 for a entry point directory and then a denote function.
 </p>
 </div>
 
- <div id="outline-container-org74a2d20" class="outline-3">
- <h3 id="org74a2d20">The Silo funcitons:</h3>
- <div class="outline-text-3" id="text-org74a2d20">
+ <div id="outline-container-org428269c" class="outline-3">
+ <h3 id="org428269c">The Silo funcitons:</h3>
+ <div class="outline-text-3" id="text-org428269c">
 </div>
- <div id="outline-container-org7033bd5" class="outline-4">
- <h4 id="org7033bd5">First part of the function:</h4>
- <div class="outline-text-4" id="text-org7033bd5">
+ <div id="outline-container-orgd7b0a76" class="outline-4">
+ <h4 id="orgd7b0a76">First part of the function:</h4>
+ <div class="outline-text-4" id="text-orgd7b0a76">
  <p>
 Define a list of directories. This is very convenient, because whit this I can separate
 my notes directory of my posts directory:
@@ -183,9 +183,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
- <div id="outline-container-orgac6c488" class="outline-4">
- <h4 id="orgac6c488">Then define a list of the denote commands that usually I use:</h4>
- <div class="outline-text-4" id="text-orgac6c488">
+ <div id="outline-container-org0faf419" class="outline-4">
+ <h4 id="org0faf419">Then define a list of the denote commands that usually I use:</h4>
+ <div class="outline-text-4" id="text-org0faf419">
  <div class="org-src-container">
  <pre class="src src-emacs-lisp">( <span class="org-keyword">defvar</span>  <span class="org-variable-name">my-denote-commands-for-silos</span>
   '(denote
@@ -201,9 +201,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
- <div id="outline-container-org0723ee2" class="outline-4">
- <h4 id="org0723ee2">The Silo Command in action:</h4>
- <div class="outline-text-4" id="text-org0723ee2">
+ <div id="outline-container-orga15f016" class="outline-4">
+ <h4 id="orga15f016">The Silo Command in action:</h4>
+ <div class="outline-text-4" id="text-orga15f016">
  <div class="org-src-container">
  <pre class="src src-emacs-lisp">( <span class="org-keyword">defun</span>  <span class="org-function-name">my-denote-pick-silo-then-command</span> (silo command)
    <span class="org-doc">"Select SILO and run Denote COMMAND in it.</span>
@@ -221,9 +221,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
- <div id="outline-container-orgafc3c98" class="outline-4">
- <h4 id="orgafc3c98"> <b>The complete functions:</b></h4>
- <div class="outline-text-4" id="text-orgafc3c98">
+ <div id="outline-container-org62e811d" class="outline-4">
+ <h4 id="org62e811d"> <b>The complete functions:</b></h4>
+ <div class="outline-text-4" id="text-org62e811d">
  <div class="org-src-container">
  <pre class="src src-emacs-lisp">( <span class="org-keyword">defvar</span>  <span class="org-variable-name">my-denote-silo-directories</span>
   `( <span class="org-string">"/home/prot/Videos/recordings"</span>
@@ -273,9 +273,9 @@ that  <code>protesilaos</code> provide to us, so, Thank you  <code>prot</code>.
 </div>
 </div>
 
- <div id="outline-container-org35975aa" class="outline-2">
- <h2 id="org35975aa">Reference:</h2>
- <div class="outline-text-2" id="text-org35975aa">
+ <div id="outline-container-org52c6960" class="outline-2">
+ <h2 id="org52c6960">Reference:</h2>
+ <div class="outline-text-2" id="text-org52c6960">
  <dl class="org-dl"> <dt> <a href="https://protesilaos.com/emacs/denote#h:0f72e6ea-97f0-42e1-8fd4-0684af0422e0">Protesilaos web page</a></dt> <dd>3.5.1. Use custom commands to select a silo</dd>
 </dl></div>
 </div>
@@ -290,7 +290,7 @@ that  <code>protesilaos</code> provide to us, so, Thank you  <code>prot</code>.
  <p>
 
 </p>
- <div class="PREVIEW" id="org1ed6f8f">
+ <div class="PREVIEW" id="org347441f">
  <p>
 This is the first of a few posts I'm creating this "web" only for my knowledge,
 and contribute with some of it.
