@@ -9,7 +9,8 @@
 <link rel="stylesheet" type="text/css" href="/ox.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
 <script src="/cpbtn.js"></script>
@@ -52,17 +53,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org1a07c83">Rss Feeds.</a></li>
-<li><a href="#org402532a">Packages needed:</a></li>
-<li><a href="#org4bf08d3">Functions to use:</a></li>
-<li><a href="#org8cb7971">Testing.</a></li>
+<li><a href="#org0c7e2df">Rss Feeds.</a></li>
+<li><a href="#org45873be">Packages needed:</a></li>
+<li><a href="#org476ea90">Functions to use:</a></li>
+<li><a href="#org823cf1c">Testing.</a></li>
 </ul>
 </div>
 </nav>
 <p>
 
 </p>
-<div class="PREVIEW" id="orgf0397d2">
+<div class="PREVIEW" id="orgf67b1a7">
 <p>
 Hello.
 </p>
@@ -76,14 +77,14 @@ So, this is the preview and read this post to see what I'm trying to do.
 
 </div>
 
-<div id="outline-container-org1a07c83" class="outline-2">
-<h2 id="org1a07c83">Rss Feeds.</h2>
-<div class="outline-text-2" id="text-org1a07c83">
+<div id="outline-container-org0c7e2df" class="outline-2">
+<h2 id="org0c7e2df">Rss Feeds.</h2>
+<div class="outline-text-2" id="text-org0c7e2df">
 <p>
 First, what is <code>rss feeds</code>?
 This is what wikipedia have in their page:
 </p>
-<pre class="example" id="org2a9efa1">
+<pre class="example" id="org94180bc">
 RSS (RDF Site Summary or Really Simple Syndication) is a web feed that allows users and applications to access updates to websites in a standardized, computer-readable format. Subscribing to RSS feeds can allow a user to keep track of many different websites in a single news aggregator, which constantly monitor sites for new content, removing the need for the user to manually check them. News aggregators (or "RSS readers") can be built into a browser, installed on a desktop computer, or installed on a mobile device.
 </pre>
 
@@ -94,9 +95,9 @@ and stored in my host <code>codeberg pages</code>, well that is the goal, but I'
 </div>
 </div>
 
-<div id="outline-container-org402532a" class="outline-2">
-<h2 id="org402532a">Packages needed:</h2>
-<div class="outline-text-2" id="text-org402532a">
+<div id="outline-container-org45873be" class="outline-2">
+<h2 id="org45873be">Packages needed:</h2>
+<div class="outline-text-2" id="text-org45873be">
 <p>
 These are the packages that we need to use to make the rss file:
 </p>
@@ -126,9 +127,9 @@ and these need to be in the <code>build-site.el</code> script:
 </div>
 </div>
 
-<div id="outline-container-org4bf08d3" class="outline-2">
-<h2 id="org4bf08d3">Functions to use:</h2>
-<div class="outline-text-2" id="text-org4bf08d3">
+<div id="outline-container-org476ea90" class="outline-2">
+<h2 id="org476ea90">Functions to use:</h2>
+<div class="outline-text-2" id="text-org476ea90">
 <p>
 Now declare some functions to parse in the public folder that we create for save the
 exported <code>html</code> files.
@@ -166,9 +167,9 @@ exported <code>html</code> files.
 </div>
 </div>
 
-<div id="outline-container-org8cb7971" class="outline-2">
-<h2 id="org8cb7971">Testing.</h2>
-<div class="outline-text-2" id="text-org8cb7971">
+<div id="outline-container-org823cf1c" class="outline-2">
+<h2 id="org823cf1c">Testing.</h2>
+<div class="outline-text-2" id="text-org823cf1c">
 <p>
 Well, this post ends here, now in a few minutes this post is going to be uploaded,
 and I'll see if rss feeds generator actually works whit the functions and  commands
