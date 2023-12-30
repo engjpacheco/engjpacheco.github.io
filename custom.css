@@ -1,6 +1,6 @@
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 html {
-    font-family: sans-serif;
+    font-family: "JetBrains Mono";
     line-height: 1.15;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
@@ -9,6 +9,36 @@ html {
 body {
     margin: 0
 }
+
+.title {
+    text-align: left;
+    margin: .8em auto;
+    color: black;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 5em 0;
+	
+	color: #000000;}
+
+h2 {
+    font-family:  'JetBrains Mono', serif;
+}
+
+h3 {
+    font-style: : italic;
+}
+
+h2, h3 {
+    color: #000000;
+}
+
+h4 {
+    color: #000000;
+    font-style: italic;
+}
+
 
 article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary {
     display: block
@@ -186,8 +216,8 @@ textarea {
 }
 
 body {
-    color: #fff;
-    background-color: #000
+    color: #000;
+    background-color: #fff
 }
 
 .org-alert-high {
@@ -1453,8 +1483,8 @@ body {
 }
 
 .org-org-agenda-calendar-event,.org-org-agenda-calendar-sexp {
-    color: #fff;
-    background-color: #282828
+    color: #000;
+    background-color: #fff
 }
 
 .org-org-agenda-clocking {
@@ -1485,8 +1515,8 @@ body {
 }
 
 .org-org-agenda-diary {
-    color: #fff;
-    background-color: #282828
+    color: #000;
+    background-color: #fff
 }
 
 .org-org-agenda-dimmed-todo {
@@ -1498,8 +1528,8 @@ body {
 }
 
 .org-org-agenda-filter-category,.org-org-agenda-filter-effort,.org-org-agenda-filter-regexp,.org-org-agenda-filter-tags {
-    color: #fff;
-    background-color: #282828
+    color: #000;
+    background-color: #bfbfbf
 }
 
 .org-org-agenda-restriction-lock {
@@ -1564,8 +1594,8 @@ body {
 }
 
 .org-org-default {
-    color: #fff;
-	background-color: #282828
+    color: #000;
+    background-color: #fff
 }
 
 .org-org-document-info {
@@ -1827,8 +1857,8 @@ body {
 }
 
 .org-package-description {
-    color: #fff;
-	background-color: #282828
+    color: #000;
+    background-color: #fff
 }
 
 .org-package-name {
@@ -1841,8 +1871,8 @@ body {
 }
 
 .org-package-status-available {
-    color: #fff;
-    background-color: #282828
+    color: #000;
+    background-color: #fff
 }
 
 .org-package-status-built-in {
@@ -2387,14 +2417,13 @@ a:hover {
     text-decoration: underline
 }
 
-/* Color of text */
 body {
     width: 95%;
     margin: 2% auto;
     font-size: 14px;
     line-height: 1.4em;
-    font-family: Georgia,serif;
-    color: white
+    font-family: "JetBrains Mono",serif;
+    color: #333
 }
 
 @media screen and (min-width: 600px) {
@@ -2414,7 +2443,7 @@ body {
 }
 
 ::selection {
-    background: #aaa;
+    background: #d6edff
 }
 
 p {
@@ -2427,7 +2456,7 @@ dl,ol,ul {
 
 .title {
     margin: .8em auto;
-    color: #a5573e;
+    color: #000
 }
 
 .subtitle,.title {
@@ -2509,9 +2538,8 @@ img {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    color: #a5573e;
     line-height: 1em;
-    font-family: Helvetica,sans-serif
+    font-family: "JetBrains Mono"
 }
 
 h1,h2,h3 {
@@ -2707,30 +2735,28 @@ p.verse {
     border: 1px solid #ddd;
     border-radius: 3px;
     background-clip: padding-box;
-    color: #458588;
+    color: #333;
     font-size: 80%
 }
 
 .org-src-container {
     border: 1px solid #ccc;
-    /* box-shadow: 3px 3px 3px #282828; */
-	font-family: Lucida Console,monospace;
+    /* box-shadow: 3px 3px 3px #eee; */
+    font-family: Lucida Console,monospace;
     font-size: 80%;
     margin: 1em auto;
     padding: .1em .5em;
     position: relative
 }
 
-/* Actual src-block */
 .org-src-container>pre {
     overflow: auto
 }
 
-/* Label in src blocks */
 .org-src-container>pre:before {
     display: block;
     position: absolute;
-    background-color: #458588;
+    background-color: #b3b3b3;
     top: 0;
     right: 0;
     padding: 0 .5em;
@@ -2749,10 +2775,6 @@ p.verse {
 }
 
 .org-src-container>pre.src-emacs-lisp:before {
-    content: "Emacs Lisp"
-}
-
-.org-src-container>pre.src-elisp:before {
     content: "Emacs Lisp"
 }
 
@@ -3054,4 +3076,10 @@ p.verse {
         display:inline;
         float: right
     }
+}
+h2 {
+	color: black;
+}
+a {
+	color: black
 }

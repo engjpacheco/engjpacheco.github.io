@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Attempt to test RSS feeds</title>
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" type="text/css" href="/ox.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="/ox.css"/> -->
+<link rel="stylesheet" type="text/css" href="/custom.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono" rel="stylesheet">
@@ -51,17 +52,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5dca821">Rss Feeds.</a></li>
-<li><a href="#orge5484b3">Packages needed:</a></li>
-<li><a href="#orged03f63">Functions to use:</a></li>
-<li><a href="#orga578d88">Testing.</a></li>
+<li><a href="#orgb7963cc">Rss Feeds.</a></li>
+<li><a href="#org0bd1936">Packages needed:</a></li>
+<li><a href="#org460a198">Functions to use:</a></li>
+<li><a href="#org037be1c">Testing.</a></li>
 </ul>
 </div>
 </nav>
 <p>
 
 </p>
-<div class="PREVIEW" id="org0392cd2">
+<div class="PREVIEW" id="orge401a81">
 <p>
 Hello.
 </p>
@@ -75,14 +76,14 @@ So, this is the preview and read this post to see what I'm trying to do.
 
 </div>
 
-<div id="outline-container-org5dca821" class="outline-2">
-<h2 id="org5dca821">Rss Feeds.</h2>
-<div class="outline-text-2" id="text-org5dca821">
+<div id="outline-container-orgb7963cc" class="outline-2">
+<h2 id="orgb7963cc">Rss Feeds.</h2>
+<div class="outline-text-2" id="text-orgb7963cc">
 <p>
 First, what is <code>rss feeds</code>?
 This is what wikipedia have in their page:
 </p>
-<pre class="example" id="org1ed2fe3">
+<pre class="example" id="org7e5741c">
 RSS (RDF Site Summary or Really Simple Syndication) is a web feed that allows users and applications to access updates to websites in a standardized, computer-readable format. Subscribing to RSS feeds can allow a user to keep track of many different websites in a single news aggregator, which constantly monitor sites for new content, removing the need for the user to manually check them. News aggregators (or "RSS readers") can be built into a browser, installed on a desktop computer, or installed on a mobile device.
 </pre>
 
@@ -93,9 +94,9 @@ and stored in my host <code>codeberg pages</code>, well that is the goal, but I'
 </div>
 </div>
 
-<div id="outline-container-orge5484b3" class="outline-2">
-<h2 id="orge5484b3">Packages needed:</h2>
-<div class="outline-text-2" id="text-orge5484b3">
+<div id="outline-container-org0bd1936" class="outline-2">
+<h2 id="org0bd1936">Packages needed:</h2>
+<div class="outline-text-2" id="text-org0bd1936">
 <p>
 These are the packages that we need to use to make the rss file:
 </p>
@@ -125,9 +126,9 @@ and these need to be in the <code>build-site.el</code> script:
 </div>
 </div>
 
-<div id="outline-container-orged03f63" class="outline-2">
-<h2 id="orged03f63">Functions to use:</h2>
-<div class="outline-text-2" id="text-orged03f63">
+<div id="outline-container-org460a198" class="outline-2">
+<h2 id="org460a198">Functions to use:</h2>
+<div class="outline-text-2" id="text-org460a198">
 <p>
 Now declare some functions to parse in the public folder that we create for save the
 exported <code>html</code> files.
@@ -165,9 +166,9 @@ exported <code>html</code> files.
 </div>
 </div>
 
-<div id="outline-container-orga578d88" class="outline-2">
-<h2 id="orga578d88">Testing.</h2>
-<div class="outline-text-2" id="text-orga578d88">
+<div id="outline-container-org037be1c" class="outline-2">
+<h2 id="org037be1c">Testing.</h2>
+<div class="outline-text-2" id="text-org037be1c">
 <p>
 Well, this post ends here, now in a few minutes this post is going to be uploaded,
 and I'll see if rss feeds generator actually works whit the functions and  commands
