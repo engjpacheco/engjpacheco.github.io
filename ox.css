@@ -521,6 +521,7 @@ h4 {
 
 	 .button, button, input[type="submit"], input[type="reset"], input[type="button"] {
 		 display: inline-block;
+		 font-family: "JetBrains Mono";
 		 padding: 5px 10px;
 		 text-align: center;
 		 text-decoration: none;
@@ -2763,10 +2764,4 @@ h4 {
 	 bottom: 5px;
 
 	 /* more stuff */
- }
-
- button {
-	 font-family: 'JetBrains Mono';
-	 background-color: #56B6C2;
-	 border-block-color: #56B6C2;
  }
