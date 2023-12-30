@@ -1,4 +1,4 @@
-/*! normalize.custoubts v4.1.1 | MIT License | github.com/necolas/normalize.css */
+@charset "UTF-8";
 html {
     font-family: "JetBrains Mono";
     line-height: 1.15;
@@ -23,13 +23,11 @@ h1 {
 
 h2 {
     font-family:  'JetBrains Mono', serif;
+    color: #000000;
 }
 
 h3 {
     font-style: : italic;
-}
-
-h2, h3 {
     color: #000000;
 }
 
@@ -2427,7 +2425,7 @@ body {
 
 @media screen and (min-width: 600px) {
     body {
-        font-size:18px
+        font-size:12px
     }
 }
 
@@ -2528,28 +2526,6 @@ img {
 
  h4,h5,h6 {
      font-size: 1em
- }
-
- @media screen and (min-width: 600px) {
-     h1 {
-         font-size:2em
-     }
-
-     h2 {
-         font-size: 1.5em
-     }
-
-     h3 {
-         font-size: 1.3em
-     }
-
-     h1,h2,h3 {
-         line-height: 1.4em
-     }
-
-     h4,h5,h6 {
-         font-size: 1.1em
-     }
  }
 
  dt {
