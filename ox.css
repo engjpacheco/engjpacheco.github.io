@@ -2764,3 +2764,9 @@ h4 {
 
 	 /* more stuff */
  }
+
+ button {
+	 font-family: 'JetBrains Mono';
+	 background-color: #56B6C2;
+	 border-block-color: #56B6C2;
+ }
