@@ -5,14 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Denote silo function</title>
 <meta name="generator" content="Org Mode" />
-<!-- <link rel="stylesheet" type="text/css" href="/custom.css"/> -->
 <link rel="stylesheet" type="text/css" href="/ox.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono" rel="stylesheet">
-<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+<!-- copy org-blocks to clipboard  -->
 <script src="/cpbtn.js"></script>
 <script>
   window.onload = function() {
@@ -53,26 +51,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org99e8b0d">Use custom commands to select a silo.</a>
+<li><a href="#orgd3eb2ae">Use custom commands to select a silo.</a>
 <ul>
-<li><a href="#org59043d0">The Silo funcitons:</a>
+<li><a href="#org71a67b1">The Silo funcitons:</a>
 <ul>
-<li><a href="#orgfdf059a">First part of the function:</a></li>
-<li><a href="#org102c391">Then define a list of the denote commands that usually I use:</a></li>
-<li><a href="#org160fff2">The Silo Command in action:</a></li>
-<li><a href="#org3a65af8"><b>The complete functions:</b></a></li>
+<li><a href="#orgdf90c77">First part of the function:</a></li>
+<li><a href="#orgff4369b">Then define a list of the denote commands that usually I use:</a></li>
+<li><a href="#orge425625">The Silo Command in action:</a></li>
+<li><a href="#orgf8e85c8"><b>The complete functions:</b></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org256a92e">Reference:</a></li>
+<li><a href="#org0b7ed41">Reference:</a></li>
 </ul>
 </div>
 </nav>
 <p>
 
 </p>
-<div class="PREVIEW" id="org83d7ac1">
+<div class="PREVIEW" id="orga38baa1">
 <p>
 I have been reading some thing information about denote, and its powerful tools
 that the good <code>prots</code> give to us the mortals. I am starting this "post" thing, and 
@@ -83,22 +81,22 @@ in the creation of notes.
 
 </div>
 
-<div id="outline-container-org99e8b0d" class="outline-2">
-<h2 id="org99e8b0d">Use custom commands to select a silo.</h2>
-<div class="outline-text-2" id="text-org99e8b0d">
+<div id="outline-container-orgd3eb2ae" class="outline-2">
+<h2 id="orgd3eb2ae">Use custom commands to select a silo.</h2>
+<div class="outline-text-2" id="text-orgd3eb2ae">
 <p>
 As you can read in the tittle, <code>prots</code> creates this singular <i>elsip</i> function, that  prompts
 for a entry point directory and then a denote function.
 </p>
 </div>
 
-<div id="outline-container-org59043d0" class="outline-3">
-<h3 id="org59043d0">The Silo funcitons:</h3>
-<div class="outline-text-3" id="text-org59043d0">
+<div id="outline-container-org71a67b1" class="outline-3">
+<h3 id="org71a67b1">The Silo funcitons:</h3>
+<div class="outline-text-3" id="text-org71a67b1">
 </div>
-<div id="outline-container-orgfdf059a" class="outline-4">
-<h4 id="orgfdf059a">First part of the function:</h4>
-<div class="outline-text-4" id="text-orgfdf059a">
+<div id="outline-container-orgdf90c77" class="outline-4">
+<h4 id="orgdf90c77">First part of the function:</h4>
+<div class="outline-text-4" id="text-orgdf90c77">
 <p>
 Define a list of directories. This is very convenient, because whit this I can separate
 my notes directory of my posts directory:
@@ -119,9 +117,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
-<div id="outline-container-org102c391" class="outline-4">
-<h4 id="org102c391">Then define a list of the denote commands that usually I use:</h4>
-<div class="outline-text-4" id="text-org102c391">
+<div id="outline-container-orgff4369b" class="outline-4">
+<h4 id="orgff4369b">Then define a list of the denote commands that usually I use:</h4>
+<div class="outline-text-4" id="text-orgff4369b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">my-denote-commands-for-silos</span>
   '(denote
@@ -137,9 +135,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
-<div id="outline-container-org160fff2" class="outline-4">
-<h4 id="org160fff2">The Silo Command in action:</h4>
-<div class="outline-text-4" id="text-org160fff2">
+<div id="outline-container-orge425625" class="outline-4">
+<h4 id="orge425625">The Silo Command in action:</h4>
+<div class="outline-text-4" id="text-orge425625">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">my-denote-pick-silo-then-command</span> (silo command)
   <span class="org-doc">"Select SILO and run Denote COMMAND in it.</span>
@@ -157,9 +155,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
-<div id="outline-container-org3a65af8" class="outline-4">
-<h4 id="org3a65af8"><b>The complete functions:</b></h4>
-<div class="outline-text-4" id="text-org3a65af8">
+<div id="outline-container-orgf8e85c8" class="outline-4">
+<h4 id="orgf8e85c8"><b>The complete functions:</b></h4>
+<div class="outline-text-4" id="text-orgf8e85c8">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">my-denote-silo-directories</span>
   `(<span class="org-string">"/home/prot/Videos/recordings"</span>
@@ -209,9 +207,9 @@ that <code>protesilaos</code> provide to us, so, Thank you <code>prot</code>.
 </div>
 </div>
 
-<div id="outline-container-org256a92e" class="outline-2">
-<h2 id="org256a92e">Reference:</h2>
-<div class="outline-text-2" id="text-org256a92e">
+<div id="outline-container-org0b7ed41" class="outline-2">
+<h2 id="org0b7ed41">Reference:</h2>
+<div class="outline-text-2" id="text-org0b7ed41">
 <dl class="org-dl">
 <dt><a href="https://protesilaos.com/emacs/denote#h:0f72e6ea-97f0-42e1-8fd4-0684af0422e0">Protesilaos web page</a></dt><dd>3.5.1. Use custom commands to select a silo</dd>
 </dl>
