@@ -109,6 +109,14 @@ h4 {
  blockquote p {
 	 margin-bottom: 0; }
 
+ figcaption {
+     display: block;
+     margin: 0 auto; /* Auto margins horizontally center the caption */
+     text-align: center; /* Center-aligns the text within the caption */
+     font-style: italic; /* Optional: Add styling to the caption */
+     font-size: 14px; /* Optional: Define font size */
+ }
+ 
  img {
 	 height: auto;
 	 max-width: 100%;
@@ -401,8 +409,8 @@ h4 {
  }
 
  .org-src-container>pre.src-axiom:before {
-		 content: "axiom"
-	 }
+	 content: "axiom"
+ }
 
 	 .org-src-container>pre.src-browser:before {
 		 content: "html"
