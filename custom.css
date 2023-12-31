@@ -3080,3 +3080,9 @@ pre[class*="src src-"] button{
     bottom: 5px;
     /* more stuff */
 }
+
+/* Buttons, forms and input */
+input, textarea {
+	border: 1px solid #d9d8dc; }
+input:focus, textarea:focus {
+		 border: 1px solid #eb99a1; }

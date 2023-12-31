@@ -33,12 +33,12 @@ function copyPreTextToClipboard(orgSrcContainer, classes) {
     // Change button label to "Copied"
     const button = orgSrcContainer.querySelector('button');
     if (button) {
-      button.textContent = 'Copied';
+      button.textContent = '📋 ✅ Copied';
       button.disabled = true; // Disable the button after copying
 
       // Revert button to its initial state after 3 seconds
       setTimeout(() => {
-        button.textContent = 'Copy Text';
+        button.textContent = '📋 Copy Text';
         button.disabled = false; // Enable the button after timeout
       }, 3000);
     }
