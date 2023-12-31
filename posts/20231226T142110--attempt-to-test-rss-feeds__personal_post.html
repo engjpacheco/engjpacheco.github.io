@@ -26,9 +26,9 @@
 <div class='topnav' style='display: flex; justify-content: space-between; align-items: center;'>
   <h2 style='margin-top: 0; margin-bottom: 0; margin-left:0px;'>Javier Pacheco</h2> 
   <div>
-    <a href='/index.html' style='font-weight:bold;'>Home</a> /
-    <a href='/archive.html' style='font-weight:bold;'>Blog</a> / 
-    <a href='/about.html' style='font-weight:bold;'>About Me</a> /
+    <a href='/index.html' style='font-weight:bold;'>[Home]</a> 
+    <a href='/archive.html' style='font-weight:bold;'>[Blog]</a> 
+    <a href='/about.html' style='font-weight:bold;'>[About Me]</a> 
 	<a href="/rss.xml">📰 </a>
   </div>
 </div>
@@ -41,17 +41,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9db2690">Rss Feeds.</a></li>
-<li><a href="#org6f3798b">Packages needed:</a></li>
-<li><a href="#org4b9132f">Functions to use:</a></li>
-<li><a href="#orgfe64eaf">Testing.</a></li>
+<li><a href="#org11f391c">Rss Feeds.</a></li>
+<li><a href="#org851af2d">Packages needed:</a></li>
+<li><a href="#orgbd63768">Functions to use:</a></li>
+<li><a href="#orga52487e">Testing.</a></li>
 </ul>
 </div>
 </nav>
 <p>
 
 </p>
-<div class="PREVIEW" id="orgb597327">
+<div class="PREVIEW" id="orgc2cb214">
 <p>
 Hello.
 </p>
@@ -65,14 +65,14 @@ So, this is the preview and read this post to see what I'm trying to do.
 
 </div>
 
-<div id="outline-container-org9db2690" class="outline-2">
-<h2 id="org9db2690">Rss Feeds.</h2>
-<div class="outline-text-2" id="text-org9db2690">
+<div id="outline-container-org11f391c" class="outline-2">
+<h2 id="org11f391c">Rss Feeds.</h2>
+<div class="outline-text-2" id="text-org11f391c">
 <p>
 First, what is <code>rss feeds</code>?
 This is what wikipedia have in their page:
 </p>
-<pre class="example" id="orgab468ab">
+<pre class="example" id="org274b6d1">
 RSS (RDF Site Summary or Really Simple Syndication) is a web feed that allows users and applications to access updates to websites in a standardized, computer-readable format. Subscribing to RSS feeds can allow a user to keep track of many different websites in a single news aggregator, which constantly monitor sites for new content, removing the need for the user to manually check them. News aggregators (or "RSS readers") can be built into a browser, installed on a desktop computer, or installed on a mobile device.
 </pre>
 
@@ -83,9 +83,9 @@ and stored in my host <code>codeberg pages</code>, well that is the goal, but I'
 </div>
 </div>
 
-<div id="outline-container-org6f3798b" class="outline-2">
-<h2 id="org6f3798b">Packages needed:</h2>
-<div class="outline-text-2" id="text-org6f3798b">
+<div id="outline-container-org851af2d" class="outline-2">
+<h2 id="org851af2d">Packages needed:</h2>
+<div class="outline-text-2" id="text-org851af2d">
 <p>
 These are the packages that we need to use to make the rss file:
 </p>
@@ -115,9 +115,9 @@ and these need to be in the <code>build-site.el</code> script:
 </div>
 </div>
 
-<div id="outline-container-org4b9132f" class="outline-2">
-<h2 id="org4b9132f">Functions to use:</h2>
-<div class="outline-text-2" id="text-org4b9132f">
+<div id="outline-container-orgbd63768" class="outline-2">
+<h2 id="orgbd63768">Functions to use:</h2>
+<div class="outline-text-2" id="text-orgbd63768">
 <p>
 Now declare some functions to parse in the public folder that we create for save the
 exported <code>html</code> files.
@@ -155,9 +155,9 @@ exported <code>html</code> files.
 </div>
 </div>
 
-<div id="outline-container-orgfe64eaf" class="outline-2">
-<h2 id="orgfe64eaf">Testing.</h2>
-<div class="outline-text-2" id="text-orgfe64eaf">
+<div id="outline-container-orga52487e" class="outline-2">
+<h2 id="orga52487e">Testing.</h2>
+<div class="outline-text-2" id="text-orga52487e">
 <p>
 Well, this post ends here, now in a few minutes this post is going to be uploaded,
 and I'll see if rss feeds generator actually works whit the functions and  commands
