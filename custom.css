@@ -23,12 +23,12 @@ h1 {
 
 h2 {
     font-family:  'JetBrains Mono', serif;
-    color: #C678DD;
+    color: #E06C75;
 }
 
 h3 {
     font-style: : italic;
-    color: #E06C75;
+    color: #C678DD;
 }
 
 h4 {
@@ -2404,7 +2404,7 @@ body {
 
 
 a {
-    color: #C678DD;
+    color: #E06C75;
     background-color: inherit;
     font: inherit;
     text-decoration: inherit
