@@ -33,12 +33,12 @@ function copyPreTextToClipboard(orgSrcContainer, classes) {
     // Change button label to "Copied"
     const button = orgSrcContainer.querySelector('button');
     if (button) {
-      button.textContent = '  ';
+      button.textContent = '📋 ✅ Copied';
       button.disabled = true; // Disable the button after copying
 
       // Revert button to its initial state after 3 seconds
       setTimeout(() => {
-        button.textContent = '  ';
+        button.textContent = '📋 Copy Code';
         button.disabled = false; // Enable the button after timeout
       }, 3000);
     }
@@ -51,7 +51,7 @@ function createCopyButtonForDivs() {
   const orgSrcContainers = document.querySelectorAll('div.org-src-container');
   orgSrcContainers.forEach((container) => {
     const button = document.createElement('button');
-    button.textContent = '  ';
+    button.textContent = '📋 Copy Code';
     button.addEventListener('click', () => {
 				const classesToSearch = [
 						'src.src-emacs-lisp',
