@@ -38,7 +38,7 @@ function copyPreTextToClipboard(orgSrcContainer, classes) {
 
       // Revert button to its initial state after 3 seconds
       setTimeout(() => {
-        button.textContent = '📋 Copy Text';
+        button.textContent = '📋 Copy Code';
         button.disabled = false; // Enable the button after timeout
       }, 3000);
     }
@@ -51,7 +51,7 @@ function createCopyButtonForDivs() {
   const orgSrcContainers = document.querySelectorAll('div.org-src-container');
   orgSrcContainers.forEach((container) => {
     const button = document.createElement('button');
-    button.textContent = '📋 Copy Text';
+    button.textContent = '📋 Copy Code';
     button.addEventListener('click', () => {
 				const classesToSearch = [
 						'src.src-emacs-lisp',
