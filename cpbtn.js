@@ -51,7 +51,7 @@ function createCopyButtonForDivs() {
   const orgSrcContainers = document.querySelectorAll('div.org-src-container');
   orgSrcContainers.forEach((container) => {
     const button = document.createElement('button');
-    button.textContent = 'Copy Text';
+    button.textContent = '📋 Copy Text';
     button.addEventListener('click', () => {
 				const classesToSearch = [
 						'src.src-emacs-lisp',
