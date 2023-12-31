@@ -2446,7 +2446,8 @@ body {
 }
 
 p {
-    margin: 1em auto
+    margin: 1em auto;
+	text-align: justify;
 }
 
 dl,ol,ul {
