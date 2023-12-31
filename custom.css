@@ -2411,7 +2411,8 @@ a {
 }
 
 a:hover {
-    text-decoration: underline
+    text-decoration: underline;
+	color: darkgray;
 }
 
 body {
