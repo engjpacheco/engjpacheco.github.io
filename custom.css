@@ -2724,6 +2724,7 @@ pre.example {
 	border: 1px solid #ddd;
 	border-radius: 3px;
 	background-clip: padding-box;
+	background: #282828;
 	color: #458588;
 	font-size: 80%
 }
