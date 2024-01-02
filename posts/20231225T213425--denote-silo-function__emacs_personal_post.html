@@ -43,26 +43,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd83160b">Use custom commands to select a silo.</a>
+<li><a href="#orgce0db35">Use custom commands to select a silo.</a>
 <ul>
-<li><a href="#org4c0997c">The Silo funcitons:</a>
+<li><a href="#org8e78f82">The Silo funcitons:</a>
 <ul>
-<li><a href="#orgf574a51">First part of the function:</a></li>
-<li><a href="#org35e2670">Then define a list of the denote commands that usually I use:</a></li>
-<li><a href="#org62696e4">The Silo Command in action:</a></li>
-<li><a href="#orge9ed280"><b>The complete functions:</b></a></li>
+<li><a href="#org45d85bd">First part of the function:</a></li>
+<li><a href="#orge8ba325">Then define a list of the denote commands that usually I use:</a></li>
+<li><a href="#org412e300">The Silo Command in action:</a></li>
+<li><a href="#orgeaef85f"><b>The complete functions:</b></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org4b4711c">Reference:</a></li>
+<li><a href="#org84d459f">Reference:</a></li>
 </ul>
 </div>
 </nav>
 <p>
 
 </p>
-<div class="PREVIEW" id="org6c40631">
+<div class="PREVIEW" id="org1e00318">
 <p>
 I have been reading some thing information about denote, and its powerful tools
 that the good <code>prots</code> give to us the mortals. I am starting this "post" thing, and 
@@ -73,22 +73,22 @@ in the creation of notes.
 
 </div>
 
-<div id="outline-container-orgd83160b" class="outline-2">
-<h2 id="orgd83160b">Use custom commands to select a silo.</h2>
-<div class="outline-text-2" id="text-orgd83160b">
+<div id="outline-container-orgce0db35" class="outline-2">
+<h2 id="orgce0db35">Use custom commands to select a silo.</h2>
+<div class="outline-text-2" id="text-orgce0db35">
 <p>
 As you can read in the tittle, <code>prots</code> creates this singular <i>elsip</i> function, that  prompts
 for a entry point directory and then a denote function.
 </p>
 </div>
 
-<div id="outline-container-org4c0997c" class="outline-3">
-<h3 id="org4c0997c">The Silo funcitons:</h3>
-<div class="outline-text-3" id="text-org4c0997c">
+<div id="outline-container-org8e78f82" class="outline-3">
+<h3 id="org8e78f82">The Silo funcitons:</h3>
+<div class="outline-text-3" id="text-org8e78f82">
 </div>
-<div id="outline-container-orgf574a51" class="outline-4">
-<h4 id="orgf574a51">First part of the function:</h4>
-<div class="outline-text-4" id="text-orgf574a51">
+<div id="outline-container-org45d85bd" class="outline-4">
+<h4 id="org45d85bd">First part of the function:</h4>
+<div class="outline-text-4" id="text-org45d85bd">
 <p>
 Define a list of directories. This is very convenient, because whit this I can separate
 my notes directory of my posts directory:
@@ -109,9 +109,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
-<div id="outline-container-org35e2670" class="outline-4">
-<h4 id="org35e2670">Then define a list of the denote commands that usually I use:</h4>
-<div class="outline-text-4" id="text-org35e2670">
+<div id="outline-container-orge8ba325" class="outline-4">
+<h4 id="orge8ba325">Then define a list of the denote commands that usually I use:</h4>
+<div class="outline-text-4" id="text-orge8ba325">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">my-denote-commands-for-silos</span>
   '(denote
@@ -127,9 +127,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
-<div id="outline-container-org62696e4" class="outline-4">
-<h4 id="org62696e4">The Silo Command in action:</h4>
-<div class="outline-text-4" id="text-org62696e4">
+<div id="outline-container-org412e300" class="outline-4">
+<h4 id="org412e300">The Silo Command in action:</h4>
+<div class="outline-text-4" id="text-org412e300">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">my-denote-pick-silo-then-command</span> (silo command)
   <span class="org-doc">"Select SILO and run Denote COMMAND in it.</span>
@@ -147,9 +147,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
-<div id="outline-container-orge9ed280" class="outline-4">
-<h4 id="orge9ed280"><b>The complete functions:</b></h4>
-<div class="outline-text-4" id="text-orge9ed280">
+<div id="outline-container-orgeaef85f" class="outline-4">
+<h4 id="orgeaef85f"><b>The complete functions:</b></h4>
+<div class="outline-text-4" id="text-orgeaef85f">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">my-denote-silo-directories</span>
   `(<span class="org-string">"/home/prot/Videos/recordings"</span>
@@ -199,9 +199,9 @@ that <code>protesilaos</code> provide to us, so, Thank you <code>prot</code>.
 </div>
 </div>
 
-<div id="outline-container-org4b4711c" class="outline-2">
-<h2 id="org4b4711c">Reference:</h2>
-<div class="outline-text-2" id="text-org4b4711c">
+<div id="outline-container-org84d459f" class="outline-2">
+<h2 id="org84d459f">Reference:</h2>
+<div class="outline-text-2" id="text-org84d459f">
 <dl class="org-dl">
 <dt><a href="https://protesilaos.com/emacs/denote#h:0f72e6ea-97f0-42e1-8fd4-0684af0422e0">Protesilaos web page</a></dt><dd>3.5.1. Use custom commands to select a silo</dd>
 </dl>
