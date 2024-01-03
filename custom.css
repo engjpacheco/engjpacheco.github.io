@@ -2710,12 +2710,11 @@ pre.src, pre.example {
 }
 
 pre.example {
-	border-left-style: dotted;
+	border-left-style: solid;
 	border-left-width: 3px; 
 	margin: 1em auto;
 	padding-left: 15px;
 	position: relative;
-	width: 79%
 }
 
 :not(pre)>code {
