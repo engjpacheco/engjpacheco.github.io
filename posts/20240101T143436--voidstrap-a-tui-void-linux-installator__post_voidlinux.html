@@ -43,22 +43,22 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org1691b80">VoidStrap installer.</a></li>
-<li><a href="#org3b528d0">Usage:</a>
+<li><a href="#org2eea9e1">VoidStrap installer.</a></li>
+<li><a href="#orgaa88b29">Usage:</a>
 <ul>
-<li><a href="#org0524b59">Running install.sh</a></li>
-<li><a href="#orgfe79b16">Running postinstall.sh</a></li>
+<li><a href="#org5ec803a">Running install.sh</a></li>
+<li><a href="#org80592e2">Running postinstall.sh</a></li>
 </ul>
 </li>
-<li><a href="#org3af9a60">The custom.sh script</a></li>
-<li><a href="#orgfcf6598">References:</a></li>
+<li><a href="#org3845e10">The custom.sh script</a></li>
+<li><a href="#org303cf53">References:</a></li>
 </ul>
 </div>
 </nav>
 <p>
 
 </p>
-<div class="PREVIEW" id="org3da0731">
+<div class="PREVIEW" id="org0062741">
 <p>
 This is the first post of the 2024, this is a project that I am working on in the last
 year, is a minimialist voidlinux instalator it is based in some recomendations in 
@@ -67,9 +67,9 @@ a guides that some friends of my have but "semiautomated".
 
 </div>
 
-<div id="outline-container-org1691b80" class="outline-2">
-<h2 id="org1691b80">VoidStrap installer.</h2>
-<div class="outline-text-2" id="text-org1691b80">
+<div id="outline-container-org2eea9e1" class="outline-2">
+<h2 id="org2eea9e1">VoidStrap installer.</h2>
+<div class="outline-text-2" id="text-org2eea9e1">
 <p>
 A basic minimalist installer of <code>void-linux</code> with some packages to get ready to enjoy
 this amazing GNU/Linux distribution.
@@ -77,13 +77,13 @@ this amazing GNU/Linux distribution.
 </div>
 </div>
 
-<div id="outline-container-org3b528d0" class="outline-2">
-<h2 id="org3b528d0">Usage:</h2>
-<div class="outline-text-2" id="text-org3b528d0">
+<div id="outline-container-orgaa88b29" class="outline-2">
+<h2 id="orgaa88b29">Usage:</h2>
+<div class="outline-text-2" id="text-orgaa88b29">
 </div>
-<div id="outline-container-org0524b59" class="outline-3">
-<h3 id="org0524b59">Running install.sh</h3>
-<div class="outline-text-3" id="text-org0524b59">
+<div id="outline-container-org5ec803a" class="outline-3">
+<h3 id="org5ec803a">Running install.sh</h3>
+<div class="outline-text-3" id="text-org5ec803a">
 <p>
 Download the iso, and once in root inside the live, git clone this repo:
 (You need to update inside the iso and install <code>git</code>)
@@ -101,7 +101,7 @@ NOTE: there are 3 <code>branches:</code>
 <li>If you want musl you can change the link to the mirror in the <code>install.sh</code> script:</li>
 </ul></dd>
 </dl>
-<pre class="example" id="org2e3996c">
+<pre class="example" id="orgca20ff5">
 - Change this in line 11:
 export XBPS_ARCH=x86_64 &amp;&amp; xbps-install -Suy -R http://mirrors.servercentral.com/voidlinux/current -r /mnt \
 - For this:
@@ -119,7 +119,7 @@ sh install.sh
 Once there the script will open <code>cfdisk</code>, and you need to format the HDD in this 
 specific format:
 </p>
-<pre class="example" id="org4ed7f61">
+<pre class="example" id="org794780f">
 - /dev/sdX1 -&gt; as the boot partition.
 - /dev/sdY2 -&gt; as the swap partition.
 - /dev/sdZ3 -&gt; as the root partition.
@@ -141,9 +141,9 @@ When the <code>install.sh</code> script finish, you need to run the postinstall 
 </div>
 </div>
 
-<div id="outline-container-orgfe79b16" class="outline-3">
-<h3 id="orgfe79b16">Running postinstall.sh</h3>
-<div class="outline-text-3" id="text-orgfe79b16">
+<div id="outline-container-org80592e2" class="outline-3">
+<h3 id="org80592e2">Running postinstall.sh</h3>
+<div class="outline-text-3" id="text-org80592e2">
 <p>
 This script its going to create some configuration files, like: <code>fstab</code>, <code>rc.conf</code>,
 change the password of <code>root</code>, and add user(s).
@@ -176,9 +176,9 @@ the <b>X server</b> and some other "necessary" packages.
 </div>
 
 
-<div id="outline-container-org3af9a60" class="outline-2">
-<h2 id="org3af9a60">The custom.sh script</h2>
-<div class="outline-text-2" id="text-org3af9a60">
+<div id="outline-container-org3845e10" class="outline-2">
+<h2 id="org3845e10">The custom.sh script</h2>
+<div class="outline-text-2" id="text-org3845e10">
 <p>
 This is going to install my personal dotfiles, and a specific packages that I use:
 </p>
@@ -199,9 +199,9 @@ sh custom.sh -b dev # especify the name of a custom branch in case of needed.
 </div>
 </div>
 
-<div id="outline-container-orgfcf6598" class="outline-2">
-<h2 id="orgfcf6598">References:</h2>
-<div class="outline-text-2" id="text-orgfcf6598">
+<div id="outline-container-org303cf53" class="outline-2">
+<h2 id="org303cf53">References:</h2>
+<div class="outline-text-2" id="text-org303cf53">
 <ul class="org-ul">
 <li><a href="https://codeberg.org/jpacheco/voidstrap">Voidstrap.</a></li>
 <li><a href="https://docs.voidlinux.org/">Voidlinux Documentation.</a></li>
