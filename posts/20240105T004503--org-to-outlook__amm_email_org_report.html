@@ -43,13 +43,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf40f818">Copy html source from org files to the clipboard.</a>
+<li><a href="#orgd867b5d">Copy html source from org files to the clipboard.</a>
 <ul>
-<li><a href="#org29cdfc9">Installing <code>htmlize</code>:</a></li>
-<li><a href="#org4d6b1fd">Explaining the functions:</a>
+<li><a href="#orgdcd4e1b">Installing <code>htmlize</code>:</a></li>
+<li><a href="#org945855c">Explaining the functions:</a>
 <ul>
-<li><a href="#orgcb7fc5a">Export file and copy to the clipboard.</a></li>
-<li><a href="#org24ef6b4">Add some CSS to the file.</a></li>
+<li><a href="#org3af6be5">Export file and copy to the clipboard.</a></li>
+<li><a href="#org584bd69">Add some CSS to the file.</a></li>
 </ul>
 </li>
 </ul>
@@ -60,7 +60,7 @@
 <p>
 
 </p>
-<div class="PREVIEW" id="org1e37730">
+<div class="PREVIEW" id="org3a3b095">
 <p>
 If you uses email a lot like me in your job, but also use emacs, you wonder if is possible
 to export your org files to <code>html</code>, and paste in to your email, well, we are in emacs,
@@ -70,9 +70,9 @@ that help me to make my workflow more efficient.
 
 </div>
 
-<div id="outline-container-orgf40f818" class="outline-2">
-<h2 id="orgf40f818">Copy html source from org files to the clipboard.</h2>
-<div class="outline-text-2" id="text-orgf40f818">
+<div id="outline-container-orgd867b5d" class="outline-2">
+<h2 id="orgd867b5d">Copy html source from org files to the clipboard.</h2>
+<div class="outline-text-2" id="text-orgd867b5d">
 <p>
 First of all we only need a dependency for make this couple of functions to work:
 </p>
@@ -84,9 +84,9 @@ Make sure you got this installed in emacs.
 </p>
 </div>
 
-<div id="outline-container-org29cdfc9" class="outline-3">
-<h3 id="org29cdfc9">Installing <code>htmlize</code>:</h3>
-<div class="outline-text-3" id="text-org29cdfc9">
+<div id="outline-container-orgdcd4e1b" class="outline-3">
+<h3 id="orgdcd4e1b">Installing <code>htmlize</code>:</h3>
+<div class="outline-text-3" id="text-orgdcd4e1b">
 <div class="org-src-container">
 <label class="org-src-name"><span class="listing-number">Listing 1: </span>This is an example using use-package:</label><pre class="src src-elisp">(<span class="org-keyword">use-package</span> htmlize
   <span class="org-builtin">:ensure</span> t)
@@ -95,13 +95,13 @@ Make sure you got this installed in emacs.
 </div>
 </div>
 
-<div id="outline-container-org4d6b1fd" class="outline-3">
-<h3 id="org4d6b1fd">Explaining the functions:</h3>
-<div class="outline-text-3" id="text-org4d6b1fd">
+<div id="outline-container-org945855c" class="outline-3">
+<h3 id="org945855c">Explaining the functions:</h3>
+<div class="outline-text-3" id="text-org945855c">
 </div>
-<div id="outline-container-orgcb7fc5a" class="outline-4">
-<h4 id="orgcb7fc5a">Export file and copy to the clipboard.</h4>
-<div class="outline-text-4" id="text-orgcb7fc5a">
+<div id="outline-container-org3af6be5" class="outline-4">
+<h4 id="org3af6be5">Export file and copy to the clipboard.</h4>
+<div class="outline-text-4" id="text-org3af6be5">
 <div class="org-src-container">
 <pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">export-org-email</span> ()
   <span class="org-doc">"Export the current email org buffer and copy it to the</span>
@@ -115,81 +115,24 @@ Make sure you got this installed in emacs.
     (message <span class="org-string">"HTML copied to clipboard"</span>)))
 </pre>
 </div>
-<ul class="org-ul">
-<li>(defun export-org-email () &#x2026;):</li>
-</ul>
-<p>
-Defines a new Emacs Lisp function named export-org-email with no arguments.
-</p>
 
-<ul class="org-ul">
-<li>"Export the current email org buffer and copy it to the clipboard":</li>
-</ul>
-<p>
-This is a documentation string, providing a brief explanation of what the function does.
-</p>
-
-<ul class="org-ul">
-<li>(interactive):</li>
-</ul>
-<p>
-Makes this function interactive, allowing it to be called with M-x export-org-email or through key bindings.
-</p>
-
-<ul class="org-ul">
-<li>let block:</li>
-</ul>
-<p>
-Sets local variables specific to this function.
-</p>
-
-<ul class="org-ul">
-<li>org-export-show-temporary-export-buffer nil:</li>
-</ul>
-<p>
-Prevents the display of a temporary buffer during the export process.
-</p>
-
-<ul class="org-ul">
-<li>(org-html-head (org-email-html-head)):</li>
-</ul>
-<p>
-Assigns the value returned by the function org-email-html-head to org-html-head. Presumably, org-email-html-head generates the HTML head content for the exported email.
-</p>
-
-<ul class="org-ul">
-<li>(org-html-export-as-html):</li>
-</ul>
-<p>
-Initiates the export process of the current Org mode buffer to HTML format using org-html-export-as-html.
-</p>
-
-<ul class="org-ul">
-<li>(with-current-buffer "<b>Org HTML Export</b>" &#x2026;):</li>
-</ul>
-<p>
-Accesses the buffer named "Org HTML Export" where the HTML export results are stored.
-</p>
-
-<ul class="org-ul">
-<li>(kill-new (buffer-string)):</li>
-</ul>
-<p>
-Grabs the content of the "Org HTML Export" buffer using (buffer-string) and copies it to the system clipboard using kill-new.
-</p>
-
-<ul class="org-ul">
-<li>(message "HTML copied to clipboard"):</li>
-</ul>
-<p>
-Displays a message in the minibuffer indicating that the HTML content has been successfully copied to the clipboard.
-</p>
+<dl class="org-dl">
+<dt>(defun export-org-email () &#x2026;)</dt><dd>Defines a new Emacs Lisp function named <code>export-org-email</code> with no arguments.</dd>
+<dt>(interactive)</dt><dd>Makes this function interactive, allowing it to be called with <code>M-x export-org-email</code> or through <code>key bindings</code>.</dd>
+<dt>let block</dt><dd>Sets local variables specific to this function.</dd>
+<dt>org-export-show-temporary-export-buffer nil</dt><dd>Prevents the display of a temporary buffer during the export process.</dd>
+<dt>(org-html-head (org-email-html-head))</dt><dd>Assigns the value returned by the function <code>org-email-html-head</code> to <code>org-html-head</code>. <code>org-email-html-head</code> generates the HTML head content for the exported email.</dd>
+<dt>(org-html-export-as-html)</dt><dd>Initiates the export process of the current <code>Org</code> mode buffer to HTML format using <code>org-html-export-as-html</code>.</dd>
+<dt>(with-current-buffer "<b>Org HTML Export</b>" &#x2026;)</dt><dd>Accesses the buffer named <code>Org HTML Export</code> where the HTML export results are stored.</dd>
+<dt><b>(kill-new (buffer-string))</b></dt><dd>Grabs the content of the <code>Org HTML Export</code> buffer using (buffer-string) and copies it to the system clipboard using <code>kill-new</code>.</dd>
+<dt>(message "HTML copied to clipboard")</dt><dd>Displays a message in the minibuffer indicating that the HTML content has been successfully copied to the clipboard.</dd>
+</dl>
 </div>
 </div>
 
-<div id="outline-container-org24ef6b4" class="outline-4">
-<h4 id="org24ef6b4">Add some CSS to the file.</h4>
-<div class="outline-text-4" id="text-org24ef6b4">
+<div id="outline-container-org584bd69" class="outline-4">
+<h4 id="org584bd69">Add some CSS to the file.</h4>
+<div class="outline-text-4" id="text-org584bd69">
 <p>
 This snippet is only for add a custom <code>css</code> "touch" to your copied <code>html</code> org file.
 </p>
