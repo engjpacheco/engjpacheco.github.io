@@ -7,14 +7,165 @@
 <generator>Emacs webfeeder.el</generator>
 <link>https://jpacheco.codeberg.page/</link>
 <atom:link href="https://jpacheco.codeberg.page/rss.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Wed, 03 Jan 2024 08:57:40 -0600</lastBuildDate>
+<lastBuildDate>Fri, 05 Jan 2024 19:23:04 -0600</lastBuildDate>
+<item>
+  <title>Copy html source from org files to the clipboard.</title>
+  <description><![CDATA[<div id="content" class="content">
+ <p>
+
+</p>
+ <div class="PREVIEW" id="org1e37730">
+ <p>
+If you uses email a lot like me in your job, but also use emacs, you wonder if is possible
+to export your org files to  <code>html</code>, and paste in to your email, well, we are in emacs,
+everything is possible within emacs, so in this post, I'll show you a couple of functions
+that help me to make my workflow more efficient.
+</p>
+
+</div>
+
+ <div id="outline-container-orgf40f818" class="outline-2">
+ <h2 id="orgf40f818">Copy html source from org files to the clipboard.</h2>
+ <div class="outline-text-2" id="text-orgf40f818">
+ <p>
+First of all we only need a dependency for make this couple of functions to work:
+</p>
+ <ul class="org-ul"> <li>htmlize</li>
+</ul> <p>
+Make sure you got this installed in emacs.
+</p>
+</div>
+
+ <div id="outline-container-org29cdfc9" class="outline-3">
+ <h3 id="org29cdfc9">Installing  <code>htmlize</code>:</h3>
+ <div class="outline-text-3" id="text-org29cdfc9">
+ <div class="org-src-container">
+ <label class="org-src-name"> <span class="listing-number">Listing 1: </span>This is an example using use-package:</label> <pre class="src src-elisp">( <span class="org-keyword">use-package</span> htmlize
+   <span class="org-builtin">:ensure</span> t)
+</pre>
+</div>
+</div>
+</div>
+
+ <div id="outline-container-org4d6b1fd" class="outline-3">
+ <h3 id="org4d6b1fd">Explaining the functions:</h3>
+ <div class="outline-text-3" id="text-org4d6b1fd">
+</div>
+ <div id="outline-container-orgcb7fc5a" class="outline-4">
+ <h4 id="orgcb7fc5a">Export file and copy to the clipboard.</h4>
+ <div class="outline-text-4" id="text-orgcb7fc5a">
+ <div class="org-src-container">
+ <pre class="src src-elisp">( <span class="org-keyword">defun</span>  <span class="org-function-name">export-org-email</span> ()
+   <span class="org-doc">"Export the current email org buffer and copy it to the</span>
+ <span class="org-doc">clipboard"</span>
+  ( <span class="org-keyword">interactive</span>)
+  ( <span class="org-keyword">let</span> ((org-export-show-temporary-export-buffer nil)
+        (org-html-head (org-email-html-head)))
+    (org-html-export-as-html)
+    ( <span class="org-keyword">with-current-buffer</span>  <span class="org-string">"*Org HTML Export*"</span>
+      (kill-new (buffer-string)))
+    (message  <span class="org-string">"HTML copied to clipboard"</span>)))
+</pre>
+</div>
+ <ul class="org-ul"> <li>(defun export-org-email () …):</li>
+</ul> <p>
+Defines a new Emacs Lisp function named export-org-email with no arguments.
+</p>
+
+ <ul class="org-ul"> <li>"Export the current email org buffer and copy it to the clipboard":</li>
+</ul> <p>
+This is a documentation string, providing a brief explanation of what the function does.
+</p>
+
+ <ul class="org-ul"> <li>(interactive):</li>
+</ul> <p>
+Makes this function interactive, allowing it to be called with M-x export-org-email or through key bindings.
+</p>
+
+ <ul class="org-ul"> <li>let block:</li>
+</ul> <p>
+Sets local variables specific to this function.
+</p>
+
+ <ul class="org-ul"> <li>org-export-show-temporary-export-buffer nil:</li>
+</ul> <p>
+Prevents the display of a temporary buffer during the export process.
+</p>
+
+ <ul class="org-ul"> <li>(org-html-head (org-email-html-head)):</li>
+</ul> <p>
+Assigns the value returned by the function org-email-html-head to org-html-head. Presumably, org-email-html-head generates the HTML head content for the exported email.
+</p>
+
+ <ul class="org-ul"> <li>(org-html-export-as-html):</li>
+</ul> <p>
+Initiates the export process of the current Org mode buffer to HTML format using org-html-export-as-html.
+</p>
+
+ <ul class="org-ul"> <li>(with-current-buffer " <b>Org HTML Export</b>" …):</li>
+</ul> <p>
+Accesses the buffer named "Org HTML Export" where the HTML export results are stored.
+</p>
+
+ <ul class="org-ul"> <li>(kill-new (buffer-string)):</li>
+</ul> <p>
+Grabs the content of the "Org HTML Export" buffer using (buffer-string) and copies it to the system clipboard using kill-new.
+</p>
+
+ <ul class="org-ul"> <li>(message "HTML copied to clipboard"):</li>
+</ul> <p>
+Displays a message in the minibuffer indicating that the HTML content has been successfully copied to the clipboard.
+</p>
+</div>
+</div>
+
+ <div id="outline-container-org24ef6b4" class="outline-4">
+ <h4 id="org24ef6b4">Add some CSS to the file.</h4>
+ <div class="outline-text-4" id="text-org24ef6b4">
+ <p>
+This snippet is only for add a custom  <code>css</code> "touch" to your copied  <code>html</code> org file.
+</p>
+
+ <p>
+In the below example the function looks in my  <code>Downloads</code> folder, but you can  specify 
+another  <code>path</code>.
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-elisp">( <span class="org-keyword">defun</span>  <span class="org-function-name">org-email-html-head</span> ()
+   <span class="org-doc">"Create the header with CSS for use with email"</span>
+  (concat
+    <span class="org-string">"<style type=\"text/css\">\n"</span>
+    <span class="org-string">"<!--/*--><![CDATA[/*><!--*/\n"</span>
+   ( <span class="org-keyword">with-temp-buffer</span>
+     (insert-file-contents
+       <span class="org-string">"~/Downloads/custom.css"</span>)
+     (buffer-string))
+    <span class="org-string">"/*]]>*/-->\n"</span>
+    <span class="org-string">"</style>\n"</span>))
+</pre>
+</div>
+
+ <p>
+And that's it, the next is to paste in to your mail, using the  <code>inspection tools</code> in the
+ <code>browser</code>, or save it with  <code>html</code> format.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>]]></description>
+  <link>https://jpacheco.codeberg.page/posts/./20240105T004503--org-to-outlook__amm_email_org_report.html</link>
+  <guid isPermaLink="false">https://jpacheco.codeberg.page/posts/./20240105T004503--org-to-outlook__amm_email_org_report.html</guid>
+  <pubDate>Fri, 05 Jan 2024 08:00:00 -0600</pubDate>
+</item>
 <item>
   <title>Voidstrap a tui void linux installator</title>
   <description><![CDATA[<div id="content" class="content">
  <p>
 
 </p>
- <div class="PREVIEW" id="org47d2337">
+ <div class="PREVIEW" id="orgf42ad5c">
  <p>
 This is the first post of the 2024, this is a project that I am working on in the last
 year, is a minimialist voidlinux instalator it is based in some recomendations in 
@@ -23,9 +174,9 @@ a guides that some friends of my have but "semiautomated".
 
 </div>
 
- <div id="outline-container-org8b253ad" class="outline-2">
- <h2 id="org8b253ad">VoidStrap installer.</h2>
- <div class="outline-text-2" id="text-org8b253ad">
+ <div id="outline-container-org668585b" class="outline-2">
+ <h2 id="org668585b">VoidStrap installer.</h2>
+ <div class="outline-text-2" id="text-org668585b">
  <p>
 A basic minimalist installer of  <code>void-linux</code> with some packages to get ready to enjoy
 this amazing GNU/Linux distribution.
@@ -33,13 +184,13 @@ this amazing GNU/Linux distribution.
 </div>
 </div>
 
- <div id="outline-container-org1538271" class="outline-2">
- <h2 id="org1538271">Usage:</h2>
- <div class="outline-text-2" id="text-org1538271">
+ <div id="outline-container-org5be6b9e" class="outline-2">
+ <h2 id="org5be6b9e">Usage:</h2>
+ <div class="outline-text-2" id="text-org5be6b9e">
 </div>
- <div id="outline-container-org53b7e1a" class="outline-3">
- <h3 id="org53b7e1a">Running install.sh</h3>
- <div class="outline-text-3" id="text-org53b7e1a">
+ <div id="outline-container-orgb33669c" class="outline-3">
+ <h3 id="orgb33669c">Running install.sh</h3>
+ <div class="outline-text-3" id="text-orgb33669c">
  <p>
 Download the iso, and once in root inside the live, git clone this repo:
 (You need to update inside the iso and install  <code>git</code>)
@@ -54,7 +205,7 @@ NOTE: there are 3  <code>branches:</code>
  <ul class="org-ul"> <li> <b>This branch is tested only with  <code>Windows</code>, I never try it with other distributions.</b></li>
  <li>If you want musl you can change the link to the mirror in the  <code>install.sh</code> script:</li>
 </ul></dd>
-</dl> <pre class="example" id="orgfbbfe13">
+</dl> <pre class="example" id="orga990e02">
 - Change this in line 11:
 export XBPS_ARCH=x86_64 && xbps-install -Suy -R http://mirrors.servercentral.com/voidlinux/current -r /mnt \
 - For this:
@@ -72,7 +223,7 @@ sh install.sh
 Once there the script will open  <code>cfdisk</code>, and you need to format the HDD in this 
 specific format:
 </p>
- <pre class="example" id="orgaf91ace">
+ <pre class="example" id="org65dc412">
 - /dev/sdX1 -> as the boot partition.
 - /dev/sdY2 -> as the swap partition.
 - /dev/sdZ3 -> as the root partition.
@@ -94,9 +245,9 @@ When the  <code>install.sh</code> script finish, you need to run the postinstall
 </div>
 </div>
 
- <div id="outline-container-org937e969" class="outline-3">
- <h3 id="org937e969">Running postinstall.sh</h3>
- <div class="outline-text-3" id="text-org937e969">
+ <div id="outline-container-org7de6ac9" class="outline-3">
+ <h3 id="org7de6ac9">Running postinstall.sh</h3>
+ <div class="outline-text-3" id="text-org7de6ac9">
  <p>
 This script its going to create some configuration files, like:  <code>fstab</code>,  <code>rc.conf</code>,
 change the password of  <code>root</code>, and add user(s).
@@ -129,9 +280,9 @@ the  <b>X server</b> and some other "necessary" packages.
 </div>
 
 
- <div id="outline-container-orgcd12bc8" class="outline-2">
- <h2 id="orgcd12bc8">The custom.sh script</h2>
- <div class="outline-text-2" id="text-orgcd12bc8">
+ <div id="outline-container-orge95046d" class="outline-2">
+ <h2 id="orge95046d">The custom.sh script</h2>
+ <div class="outline-text-2" id="text-orge95046d">
  <p>
 This is going to install my personal dotfiles, and a specific packages that I use:
 </p>
@@ -152,9 +303,9 @@ sh custom.sh -b dev # especify the name of a custom branch in case of needed.
 </div>
 </div>
 
- <div id="outline-container-org8e615eb" class="outline-2">
- <h2 id="org8e615eb">References:</h2>
- <div class="outline-text-2" id="text-org8e615eb">
+ <div id="outline-container-org6378e00" class="outline-2">
+ <h2 id="org6378e00">References:</h2>
+ <div class="outline-text-2" id="text-org6378e00">
  <ul class="org-ul"> <li> <a href="https://codeberg.org/jpacheco/voidstrap">Voidstrap.</a></li>
  <li> <a href="https://docs.voidlinux.org/">Voidlinux Documentation.</a></li>
  <li> <a href="https://git.disroot.org/tuxliban/tutoriales_void/src/branch/master/Gu%C3%ADas">Tuxliban guides.</a></li>
@@ -172,7 +323,7 @@ sh custom.sh -b dev # especify the name of a custom branch in case of needed.
 
 </p>
 
- <div class="PREVIEW" id="orgffe95e8">
+ <div class="PREVIEW" id="org6d8c6b3">
  <p>
 In this post I'll demostrate how to add a button to copy the content of a 
 src block generated by ox-publish in emacs within org-mode, this script
@@ -184,10 +335,10 @@ generate when create the web-page content.
 
  <div class="org-center">
 
- <figure id="orga9bee31"> <img src="./img/20231229T170308--copy-org-blocks-to-clipboard/copy.gif" alt="copy.gif"></img> <figcaption> <span class="figure-number">Figure 1: </span>How the buttons looks like.</figcaption></figure></div>
- <div id="outline-container-org942ff64" class="outline-2">
- <h2 id="org942ff64">The first issue.</h2>
- <div class="outline-text-2" id="text-org942ff64">
+ <figure id="org8f96592"> <img src="./img/20231229T170308--copy-org-blocks-to-clipboard/copy.gif" alt="copy.gif"></img> <figcaption> <span class="figure-number">Figure 1: </span>How the buttons looks like.</figcaption></figure></div>
+ <div id="outline-container-orgf79aba9" class="outline-2">
+ <h2 id="orgf79aba9">The first issue.</h2>
+ <div class="outline-text-2" id="text-orgf79aba9">
  <p>
 When I started to looking in how to add a copy button to my org-block-src blocks,
 I was getting a little confused because of the lack of information about it (or maybe
@@ -199,9 +350,9 @@ so I have been force to use my brain instead of only copy the scripts.
 </div>
 </div>
 
- <div id="outline-container-org4fdd362" class="outline-2">
- <h2 id="org4fdd362">The Javascript code.</h2>
- <div class="outline-text-2" id="text-org4fdd362">
+ <div id="outline-container-org5a01385" class="outline-2">
+ <h2 id="org5a01385">The Javascript code.</h2>
+ <div class="outline-text-2" id="text-org5a01385">
  <p>
 The code below can be improved? yes, but at this point for me it works and its ok,
 may be can be a little mess, but it do the job.
@@ -283,9 +434,9 @@ createCopyButtonForDivs();
 </div>
 </div>
 
- <div id="outline-container-orgdb97caa" class="outline-3">
- <h3 id="orgdb97caa">What the javascript script actually do:</h3>
- <div class="outline-text-3" id="text-orgdb97caa">
+ <div id="outline-container-org8e1194e" class="outline-3">
+ <h3 id="org8e1194e">What the javascript script actually do:</h3>
+ <div class="outline-text-3" id="text-org8e1194e">
  <p>
 The provided code is a JavaScript script that aims to add functionality to copy text from <pre> elements with specific classes when a corresponding button is clicked. Here's a breakdown of what each part of the code does:
 </p>
@@ -325,9 +476,9 @@ This script aims to enhance the functionality of  <code><div></code> containers 
 </div>
 </div>
 
- <div id="outline-container-org84c8197" class="outline-2">
- <h2 id="org84c8197">How to run the script file?</h2>
- <div class="outline-text-2" id="text-org84c8197">
+ <div id="outline-container-org0859345" class="outline-2">
+ <h2 id="org0859345">How to run the script file?</h2>
+ <div class="outline-text-2" id="text-org0859345">
  <p>
 To run this script automatically, when a org-src block appear in html I do this in
 the  <code>head.html</code> file in my org project:
@@ -345,13 +496,13 @@ the  <code>head.html</code> file in my org project:
 </div>
 </div>
 
- <div id="outline-container-orgc0b3393" class="outline-2">
- <h2 id="orgc0b3393">Test the buttons:</h2>
- <div class="outline-text-2" id="text-orgc0b3393">
+ <div id="outline-container-org6f185ce" class="outline-2">
+ <h2 id="org6f185ce">Test the buttons:</h2>
+ <div class="outline-text-2" id="text-org6f185ce">
 </div>
- <div id="outline-container-orgbb4caf2" class="outline-3">
- <h3 id="orgbb4caf2">Python</h3>
- <div class="outline-text-3" id="text-orgbb4caf2">
+ <div id="outline-container-org5ecdf93" class="outline-3">
+ <h3 id="org5ecdf93">Python</h3>
+ <div class="outline-text-3" id="text-org5ecdf93">
  <div class="org-src-container">
  <pre class="src src-python"> <span class="org-keyword">import</span> calendar
  <span class="org-keyword">for</span> i  <span class="org-keyword">in</span>  <span class="org-builtin">range</span>(100):
@@ -361,9 +512,9 @@ the  <code>head.html</code> file in my org project:
 </div>
 </div>
 
- <div id="outline-container-orgd381a3b" class="outline-3">
- <h3 id="orgd381a3b">Emacs-lisp</h3>
- <div class="outline-text-3" id="text-orgd381a3b">
+ <div id="outline-container-orgb87bae9" class="outline-3">
+ <h3 id="orgb87bae9">Emacs-lisp</h3>
+ <div class="outline-text-3" id="text-orgb87bae9">
  <div class="org-src-container">
  <pre class="src src-emacs-lisp">(message  <span class="org-string">"hello World"</span>)
 </pre>
@@ -371,9 +522,9 @@ the  <code>head.html</code> file in my org project:
 </div>
 </div>
 
- <div id="outline-container-org34d1275" class="outline-3">
- <h3 id="org34d1275">C</h3>
- <div class="outline-text-3" id="text-org34d1275">
+ <div id="outline-container-org570e8eb" class="outline-3">
+ <h3 id="org570e8eb">C</h3>
+ <div class="outline-text-3" id="text-org570e8eb">
  <div class="org-src-container">
  <pre class="src src-c"> <span class="org-preprocessor">#include</span>  <span class="org-string"><stdio></span>
  <span class="org-type">int</span>  <span class="org-function-name">main</span>( <span class="org-type">int</span>  <span class="org-variable-name">argc</span>,  <span class="org-type">char</span> * <span class="org-variable-name">argv</span>[])
@@ -396,7 +547,7 @@ the  <code>head.html</code> file in my org project:
  <p>
 
 </p>
- <div class="PREVIEW" id="org3ebabc7">
+ <div class="PREVIEW" id="org6056d3d">
  <p>
 Hello.
 </p>
@@ -410,14 +561,14 @@ So, this is the preview and read this post to see what I'm trying to do.
 
 </div>
 
- <div id="outline-container-org26fa7da" class="outline-2">
- <h2 id="org26fa7da">Rss Feeds.</h2>
- <div class="outline-text-2" id="text-org26fa7da">
+ <div id="outline-container-org2a4938d" class="outline-2">
+ <h2 id="org2a4938d">Rss Feeds.</h2>
+ <div class="outline-text-2" id="text-org2a4938d">
  <p>
 First, what is  <code>rss feeds</code>?
 This is what wikipedia have in their page:
 </p>
- <pre class="example" id="orgf28b679">
+ <pre class="example" id="orgac5608f">
 RSS (RDF Site Summary or Really Simple Syndication) is a web feed that allows users and applications to access updates to websites in a standardized, computer-readable format. Subscribing to RSS feeds can allow a user to keep track of many different websites in a single news aggregator, which constantly monitor sites for new content, removing the need for the user to manually check them. News aggregators (or "RSS readers") can be built into a browser, installed on a desktop computer, or installed on a mobile device.
 </pre>
 
@@ -428,9 +579,9 @@ and stored in my host  <code>codeberg pages</code>, well that is the goal, but I
 </div>
 </div>
 
- <div id="outline-container-org2fc21ad" class="outline-2">
- <h2 id="org2fc21ad">Packages needed:</h2>
- <div class="outline-text-2" id="text-org2fc21ad">
+ <div id="outline-container-orgb5d228e" class="outline-2">
+ <h2 id="orgb5d228e">Packages needed:</h2>
+ <div class="outline-text-2" id="text-orgb5d228e">
  <p>
 These are the packages that we need to use to make the rss file:
 </p>
@@ -457,9 +608,9 @@ and these need to be in the  <code>build-site.el</code> script:
 </div>
 </div>
 
- <div id="outline-container-orga2df985" class="outline-2">
- <h2 id="orga2df985">Functions to use:</h2>
- <div class="outline-text-2" id="text-orga2df985">
+ <div id="outline-container-org1fdb65e" class="outline-2">
+ <h2 id="org1fdb65e">Functions to use:</h2>
+ <div class="outline-text-2" id="text-org1fdb65e">
  <p>
 Now declare some functions to parse in the public folder that we create for save the
 exported  <code>html</code> files.
@@ -497,9 +648,9 @@ exported  <code>html</code> files.
 </div>
 </div>
 
- <div id="outline-container-org6e20bed" class="outline-2">
- <h2 id="org6e20bed">Testing.</h2>
- <div class="outline-text-2" id="text-org6e20bed">
+ <div id="outline-container-org5747343" class="outline-2">
+ <h2 id="org5747343">Testing.</h2>
+ <div class="outline-text-2" id="text-org5747343">
  <p>
 Well, this post ends here, now in a few minutes this post is going to be uploaded,
 and I'll see if rss feeds generator actually works whit the functions and  commands
@@ -518,7 +669,7 @@ above.
  <p>
 
 </p>
- <div class="PREVIEW" id="org5e560e1">
+ <div class="PREVIEW" id="orgbcf19f1">
  <p>
 I have been reading some thing information about denote, and its powerful tools
 that the good  <code>prots</code> give to us the mortals. I am starting this "post" thing, and 
@@ -529,22 +680,22 @@ in the creation of notes.
 
 </div>
 
- <div id="outline-container-orga1e9a21" class="outline-2">
- <h2 id="orga1e9a21">Use custom commands to select a silo.</h2>
- <div class="outline-text-2" id="text-orga1e9a21">
+ <div id="outline-container-orgd3fcd9d" class="outline-2">
+ <h2 id="orgd3fcd9d">Use custom commands to select a silo.</h2>
+ <div class="outline-text-2" id="text-orgd3fcd9d">
  <p>
 As you can read in the tittle,  <code>prots</code> creates this singular  <i>elsip</i> function, that  prompts
 for a entry point directory and then a denote function.
 </p>
 </div>
 
- <div id="outline-container-org0cd29b7" class="outline-3">
- <h3 id="org0cd29b7">The Silo funcitons:</h3>
- <div class="outline-text-3" id="text-org0cd29b7">
+ <div id="outline-container-org8f579b4" class="outline-3">
+ <h3 id="org8f579b4">The Silo funcitons:</h3>
+ <div class="outline-text-3" id="text-org8f579b4">
 </div>
- <div id="outline-container-orgb0118e6" class="outline-4">
- <h4 id="orgb0118e6">First part of the function:</h4>
- <div class="outline-text-4" id="text-orgb0118e6">
+ <div id="outline-container-orga68f4e2" class="outline-4">
+ <h4 id="orga68f4e2">First part of the function:</h4>
+ <div class="outline-text-4" id="text-orga68f4e2">
  <p>
 Define a list of directories. This is very convenient, because whit this I can separate
 my notes directory of my posts directory:
@@ -565,9 +716,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
- <div id="outline-container-org03f615a" class="outline-4">
- <h4 id="org03f615a">Then define a list of the denote commands that usually I use:</h4>
- <div class="outline-text-4" id="text-org03f615a">
+ <div id="outline-container-orgae49d1f" class="outline-4">
+ <h4 id="orgae49d1f">Then define a list of the denote commands that usually I use:</h4>
+ <div class="outline-text-4" id="text-orgae49d1f">
  <div class="org-src-container">
  <pre class="src src-emacs-lisp">( <span class="org-keyword">defvar</span>  <span class="org-variable-name">my-denote-commands-for-silos</span>
   '(denote
@@ -583,9 +734,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
- <div id="outline-container-orgd00382f" class="outline-4">
- <h4 id="orgd00382f">The Silo Command in action:</h4>
- <div class="outline-text-4" id="text-orgd00382f">
+ <div id="outline-container-org562c7ec" class="outline-4">
+ <h4 id="org562c7ec">The Silo Command in action:</h4>
+ <div class="outline-text-4" id="text-org562c7ec">
  <div class="org-src-container">
  <pre class="src src-emacs-lisp">( <span class="org-keyword">defun</span>  <span class="org-function-name">my-denote-pick-silo-then-command</span> (silo command)
    <span class="org-doc">"Select SILO and run Denote COMMAND in it.</span>
@@ -603,9 +754,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
- <div id="outline-container-org828e2f2" class="outline-4">
- <h4 id="org828e2f2"> <b>The complete functions:</b></h4>
- <div class="outline-text-4" id="text-org828e2f2">
+ <div id="outline-container-orga2cae00" class="outline-4">
+ <h4 id="orga2cae00"> <b>The complete functions:</b></h4>
+ <div class="outline-text-4" id="text-orga2cae00">
  <div class="org-src-container">
  <pre class="src src-emacs-lisp">( <span class="org-keyword">defvar</span>  <span class="org-variable-name">my-denote-silo-directories</span>
   `( <span class="org-string">"/home/prot/Videos/recordings"</span>
@@ -655,9 +806,9 @@ that  <code>protesilaos</code> provide to us, so, Thank you  <code>prot</code>.
 </div>
 </div>
 
- <div id="outline-container-org85239a3" class="outline-2">
- <h2 id="org85239a3">Reference:</h2>
- <div class="outline-text-2" id="text-org85239a3">
+ <div id="outline-container-org60db410" class="outline-2">
+ <h2 id="org60db410">Reference:</h2>
+ <div class="outline-text-2" id="text-org60db410">
  <dl class="org-dl"> <dt> <a href="https://protesilaos.com/emacs/denote#h:0f72e6ea-97f0-42e1-8fd4-0684af0422e0">Protesilaos web page</a></dt> <dd>3.5.1. Use custom commands to select a silo</dd>
 </dl></div>
 </div>
@@ -672,7 +823,7 @@ that  <code>protesilaos</code> provide to us, so, Thank you  <code>prot</code>.
  <p>
 
 </p>
- <div class="PREVIEW" id="org6bbc24a">
+ <div class="PREVIEW" id="org7914142">
  <p>
 This is the first of a few posts I'm creating this "web" only for my knowledge,
 and contribute with some of it.
