@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs Fetching tool - efetch.el</title>
+<meta name="generator" content="Org Mode" />
+<!-- <link rel="stylesheet" type="text/css" href="/ox.css"/> -->
+<link rel="stylesheet" type="text/css" href="/custom.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- copy org-blocks to clipboard  -->
+<script src="/cpbtn.js"></script>
+<script>
+  window.onload = function() {
+      // Call the function to create copy buttons in each org-src-container div
+      createCopyButtonForDivs();
+  };
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<hr style="border-top: 1px solid black;">
+<div class='topnav' style='display: flex; justify-content: space-between; align-items: center;'>
+  <h2 style='margin-top: 0; margin-bottom: 0; margin-left:0px;'>Javier Pacheco</h2> 
+  <div>
+    <a href='/index.html' style='font-weight:bold;'>Home</a> |
+    <a href='/archive.html' style='font-weight:bold;'>Blog</a> | 
+    <a href='/about.html' style='font-weight:bold;'>About Me</a> | 
+	<a href="/rss.xml">
+	  <i class="fas">&#xf09e;</i>
+	</a>
+  </div>
+</div>
+<hr style="border-top: 1px solid black;">
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Emacs Fetching tool - efetch.el</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org46d6236">Overview</a></li>
+<li><a href="#org1ec4b4b">Features</a></li>
+<li><a href="#org79083d2">How to Use</a></li>
+<li><a href="#org84e51b8">Customization</a></li>
+<li><a href="#org32b07fa">Contribution</a></li>
+<li><a href="#org7041816">Get Started</a></li>
+</ul>
+</div>
+</nav>
+<p>
+
+</p>
+
+<div class="PREVIEW" id="org703b03a">
+<p>
+Embrace a new level of Emacs mastery with `efetch.el` – a powerful and user-friendly Emacs Fetching Tool. Designed for enthusiasts who crave insights into their Emacs environment, `efetch.el` provides a seamless way to peek under the hood of your setup. With just a simple command, unlock a left-side buffer showcasing key details such as Emacs version, host information, user details, installed packages, active theme, and default font. Customizable and accessible, this tool not only delivers a quick snapshot of your Emacs configuration but also opens the door for collaborative enhancements. Join the community on [GitHub](<a href="https://github.com/engjpacheco/efetch.el">https://github.com/engjpacheco/efetch.el</a>), contribute your ideas, and elevate your Emacs experience with `efetch.el` today!
+</p>
+
+</div>
+
+<div class="org-center">
+
+<figure id="orgee0832c">
+<img src="./img/efetch/efetch.png" alt="efetch.png">
+
+<figcaption><span class="figure-number">Figure 1: </span>How the buttons looks like.</figcaption>
+</figure>
+</div>
+
+<div id="outline-container-org46d6236" class="outline-2">
+<h2 id="org46d6236">Overview</h2>
+<div class="outline-text-2" id="text-org46d6236">
+<p>
+Are you an Emacs enthusiast who loves to keep track of your environment details? Look no further! We are excited to introduce `efetch.el` - the Emacs Fetching Tool. This nifty extension provides a quick and informative snapshot of your Emacs setup, helping you stay in the know about your environment configuration.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1ec4b4b" class="outline-2">
+<h2 id="org1ec4b4b">Features</h2>
+<div class="outline-text-2" id="text-org1ec4b4b">
+<ul class="org-ul">
+<li><b><b>Quick Access</b></b>: Invoke `efetch` with a simple command to access a left-side buffer displaying essential information about your Emacs environment.</li>
+
+<li><b><b>Information at a Glance</b></b>: Get a concise overview, including Emacs version, host details, user information, installed packages, active theme, and default font.</li>
+
+<li><b><b>Customization</b></b>: Tailor the appearance and information displayed in the `efetch` buffer to suit your preferences.</li>
+
+<li><b><b>Convenient Keyboard Shortcut</b></b>: Close the `efetch` buffer and its window effortlessly with the `q` key.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org79083d2" class="outline-2">
+<h2 id="org79083d2">How to Use</h2>
+<div class="outline-text-2" id="text-org79083d2">
+<ol class="org-ol">
+<li><p>
+<b><b>Installation</b></b>: Add the following line to your Emacs configuration:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">require</span> '<span class="org-constant">efetch</span>)
+</pre>
+</div></li>
+</ol>
+
+<p>
+Ensure the `efetch.el` file is in a directory included in your `load-path`.
+</p>
+
+<ol class="org-ol">
+<li><b><b>Usage</b></b>: Invoke `efetch` interactively using:</li>
+</ol>
+
+<pre class="example" id="org537066a">
+M-x efetch
+</pre>
+
+<p>
+The information will be displayed in a left-side buffer named <b>efetch-popup</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org84e51b8" class="outline-2">
+<h2 id="org84e51b8">Customization</h2>
+<div class="outline-text-2" id="text-org84e51b8">
+<p>
+Feel free to customize the appearance or the information displayed in the `efetch` buffer by modifying the relevant sections in the `efetch` function.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org32b07fa" class="outline-2">
+<h2 id="org32b07fa">Contribution</h2>
+<div class="outline-text-2" id="text-org32b07fa">
+<p>
+We welcome contributions and feedback! `efetch.el` is hosted on <a href="https://github.com/engjpacheco/efetch.el">github</a>. Feel free to <a href="https://github.com/engjpacheco/efetch.el/fork">fork the repository</a> and submit pull requests. 
+The project is open to changes, improvements, and collaborations.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7041816" class="outline-2">
+<h2 id="org7041816">Get Started</h2>
+<div class="outline-text-2" id="text-org7041816">
+<p>
+Enhance your Emacs experience with `efetch.el`! Stay informed about your environment effortlessly. Download and integrate it into your Emacs setup today.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2024-01-14 Sun 11:58</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6)</p>
+</div>
+</body>
+</html>
