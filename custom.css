@@ -12,27 +12,27 @@ body {
 
 .title {
     margin: .8em auto;
-    color: #E06C75;
+    color: #cc6666;
 }
 
 h1 {
 	font-size: 2em;
 	margin: 5em 0;
 	
-	color: #56B6C2;}
+	color: #81a2be;}
 
 h2 {
     font-family:  'JetBrains Mono', serif;
-    color: #E06C75;
+    color: #cc6666;
 }
 
 h3 {
     font-style: : italic;
-    color: #C678DD;
+    color: #b294bb;
 }
 
 h4 {
-    color: #D19A66;
+    color: #de935f;
     font-style: italic;
 }
 
@@ -214,7 +214,7 @@ textarea {
 
 body {
     color: #000;
-    background-color: #21252B
+    background-color: #171717
 }
 .org-alert-high {
 	color: #ff8c00;
@@ -2720,7 +2720,7 @@ pre.example {
 :not(pre)>code {
 	padding: 2px 5px;
 	margin: auto 1px;
-	border: 1px solid #ddd;
+	border: 2px solid #ddd;
 	border-radius: 3px;
 	background-clip: padding-box;
 	background: #282828;
