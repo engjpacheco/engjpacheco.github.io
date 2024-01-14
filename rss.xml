@@ -7,7 +7,7 @@
 <generator>Emacs webfeeder.el</generator>
 <link>https://jpacheco.codeberg.page/</link>
 <atom:link href="https://jpacheco.codeberg.page/rss.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Sun, 14 Jan 2024 12:15:21 -0600</lastBuildDate>
+<lastBuildDate>Sun, 14 Jan 2024 12:22:37 -0600</lastBuildDate>
 <item>
   <title>Emacs Fetching tool - efetch.el</title>
   <description><![CDATA[<div id="content" class="content">
@@ -15,42 +15,42 @@
 
 </p>
 
- <div class="PREVIEW" id="orgdb79205">
+ <div class="PREVIEW" id="orgddf3eaf">
  <p>
-Embrace a new level of Emacs mastery with `efetch.el` – a powerful and user-friendly Emacs Fetching Tool. Designed for enthusiasts who crave insights into their Emacs environment, `efetch.el` provides a seamless way to peek under the hood of your setup. With just a simple command, unlock a left-side buffer showcasing key details such as Emacs version, host information, user details, installed packages, active theme, and default font. Customizable and accessible, this tool not only delivers a quick snapshot of your Emacs configuration but also opens the door for collaborative enhancements. Join the community on [GitHub]( <a href="https://github.com/engjpacheco/efetch.el">https://github.com/engjpacheco/efetch.el</a>), contribute your ideas, and elevate your Emacs experience with `efetch.el` today!
+Embrace a new level of Emacs mastery with  <code>efetch.el</code> – a powerful and user-friendly Emacs Fetching Tool. Designed for enthusiasts who crave insights into their Emacs environment,  <code>efetch.el</code> provides a seamless way to peek under the hood of your setup. With just a simple command, unlock a left-side buffer showcasing key details such as Emacs version, host information, user details, installed packages, active theme, and default font. Customizable and accessible, this tool not only delivers a quick snapshot of your Emacs configuration but also opens the door for collaborative enhancements. Join the community on [GitHub]( <a href="https://github.com/engjpacheco/efetch.el">https://github.com/engjpacheco/efetch.el</a>), contribute your ideas, and elevate your Emacs experience with  <code>efetch.el</code> today!
 </p>
 
 </div>
 
  <div class="org-center">
 
- <figure id="orga7257d7"> <img src="./img/efetch/efetch.png" alt="efetch.png"></img> <figcaption> <span class="figure-number">Figure 1: </span>efetch.el tool in the left side of the frame.</figcaption></figure></div>
+ <figure id="orgd2e86a6"> <img src="./img/efetch/efetch.png" alt="efetch.png"></img> <figcaption> <span class="figure-number">Figure 1: </span>efetch.el tool in the left side of the frame.</figcaption></figure></div>
 
- <div id="outline-container-org84be765" class="outline-2">
- <h2 id="org84be765">Overview</h2>
- <div class="outline-text-2" id="text-org84be765">
+ <div id="outline-container-org2638cb1" class="outline-2">
+ <h2 id="org2638cb1">Overview</h2>
+ <div class="outline-text-2" id="text-org2638cb1">
  <p>
-Are you an Emacs enthusiast who loves to keep track of your environment details? Look no further! We are excited to introduce `efetch.el` - the Emacs Fetching Tool. This nifty extension provides a quick and informative snapshot of your Emacs setup, helping you stay in the know about your environment configuration.
+Are you an Emacs enthusiast who loves to keep track of your environment details? Look no further! We are excited to introduce  <code>efetch.el</code> - the Emacs Fetching Tool. This nifty extension provides a quick and informative snapshot of your Emacs setup, helping you stay in the know about your environment configuration.
 </p>
 </div>
 </div>
 
- <div id="outline-container-org83bd507" class="outline-2">
- <h2 id="org83bd507">Features</h2>
- <div class="outline-text-2" id="text-org83bd507">
- <ul class="org-ul"> <li> <b> <b>Quick Access</b></b>: Invoke `efetch` with a simple command to access a left-side buffer displaying essential information about your Emacs environment.</li>
+ <div id="outline-container-orgd2cd70e" class="outline-2">
+ <h2 id="orgd2cd70e">Features</h2>
+ <div class="outline-text-2" id="text-orgd2cd70e">
+ <ul class="org-ul"> <li> <b> <b>Quick Access</b></b>: Invoke  <code>efetch</code> with a simple command to access a left-side buffer displaying essential information about your Emacs environment.</li>
 
  <li> <b> <b>Information at a Glance</b></b>: Get a concise overview, including Emacs version, host details, user information, installed packages, active theme, and default font.</li>
 
- <li> <b> <b>Customization</b></b>: Tailor the appearance and information displayed in the `efetch` buffer to suit your preferences.</li>
+ <li> <b> <b>Customization</b></b>: Tailor the appearance and information displayed in the  <code>efetch</code> buffer to suit your preferences.</li>
 
- <li> <b> <b>Convenient Keyboard Shortcut</b></b>: Close the `efetch` buffer and its window effortlessly with the `q` key.</li>
+ <li> <b> <b>Convenient Keyboard Shortcut</b></b>: Close the  <code>efetch</code> buffer and its window effortlessly with the  <code>q</code> key.</li>
 </ul></div>
 </div>
 
- <div id="outline-container-orge29cbd7" class="outline-2">
- <h2 id="orge29cbd7">How to Use</h2>
- <div class="outline-text-2" id="text-orge29cbd7">
+ <div id="outline-container-orgecf7b2e" class="outline-2">
+ <h2 id="orgecf7b2e">How to Use</h2>
+ <div class="outline-text-2" id="text-orgecf7b2e">
  <ol class="org-ol"> <li> <p>
  <b> <b>Installation</b></b>: Add the following line to your Emacs configuration:
 </p>
@@ -60,11 +60,11 @@ Are you an Emacs enthusiast who loves to keep track of your environment details?
 </pre>
 </div></li>
 </ol> <p>
-Ensure the `efetch.el` file is in a directory included in your `load-path`.
+Ensure the  <code>efetch.el</code> file is in a directory included in your  <code>load-path</code>.
 </p>
 
- <ol class="org-ol"> <li> <b> <b>Usage</b></b>: Invoke `efetch` interactively using:</li>
-</ol> <pre class="example" id="org582da46">
+ <ol class="org-ol"> <li> <b> <b>Usage</b></b>: Invoke  <code>efetch</code> interactively using:</li>
+</ol> <pre class="example" id="orgd10515c">
 M-x efetch
 </pre>
 
@@ -74,30 +74,30 @@ The information will be displayed in a left-side buffer named  <b>efetch-popup</
 </div>
 </div>
 
- <div id="outline-container-org39b5a43" class="outline-2">
- <h2 id="org39b5a43">Customization</h2>
- <div class="outline-text-2" id="text-org39b5a43">
+ <div id="outline-container-org4338aa1" class="outline-2">
+ <h2 id="org4338aa1">Customization</h2>
+ <div class="outline-text-2" id="text-org4338aa1">
  <p>
-Feel free to customize the appearance or the information displayed in the `efetch` buffer by modifying the relevant sections in the `efetch` function.
+Feel free to customize the appearance or the information displayed in the  <code>efetch</code> buffer by modifying the relevant sections in the  <code>efetch</code> function.
 </p>
 </div>
 </div>
 
- <div id="outline-container-org870d32e" class="outline-2">
- <h2 id="org870d32e">Contribution</h2>
- <div class="outline-text-2" id="text-org870d32e">
+ <div id="outline-container-orgbf40739" class="outline-2">
+ <h2 id="orgbf40739">Contribution</h2>
+ <div class="outline-text-2" id="text-orgbf40739">
  <p>
-We welcome contributions and feedback! `efetch.el` is hosted on  <a href="https://github.com/engjpacheco/efetch.el">github</a>. Feel free to  <a href="https://github.com/engjpacheco/efetch.el/fork">fork the repository</a> and submit pull requests. 
+We welcome contributions and feedback!  <code>efetch.el</code> is hosted on  <a href="https://github.com/engjpacheco/efetch.el">github</a>. Feel free to  <a href="https://github.com/engjpacheco/efetch.el/fork">fork the repository</a> and submit pull requests. 
 The project is open to changes, improvements, and collaborations.
 </p>
 </div>
 </div>
 
- <div id="outline-container-org759a63b" class="outline-2">
- <h2 id="org759a63b">Get Started</h2>
- <div class="outline-text-2" id="text-org759a63b">
+ <div id="outline-container-orge8998dc" class="outline-2">
+ <h2 id="orge8998dc">Get Started</h2>
+ <div class="outline-text-2" id="text-orge8998dc">
  <p>
-Enhance your Emacs experience with `efetch.el`! Stay informed about your environment effortlessly. Download and integrate it into your Emacs setup today.
+Enhance your Emacs experience with  <code>efetch.el</code>! Stay informed about your environment effortlessly. Download and integrate it into your Emacs setup today.
 </p>
 </div>
 </div>
@@ -112,7 +112,7 @@ Enhance your Emacs experience with `efetch.el`! Stay informed about your environ
  <p>
 
 </p>
- <div class="PREVIEW" id="orgefe62ca">
+ <div class="PREVIEW" id="org4d96ba2">
  <p>
 If you uses email a lot like me in your job, but also use emacs, you wonder if is possible
 to export your org files to  <code>html</code>, and paste in to your email, well, we are in emacs,
@@ -122,9 +122,9 @@ that help me to make my workflow more efficient.
 
 </div>
 
- <div id="outline-container-org943c8dd" class="outline-2">
- <h2 id="org943c8dd">Copy html source from org files to the clipboard.</h2>
- <div class="outline-text-2" id="text-org943c8dd">
+ <div id="outline-container-org560660f" class="outline-2">
+ <h2 id="org560660f">Copy html source from org files to the clipboard.</h2>
+ <div class="outline-text-2" id="text-org560660f">
  <p>
 First of all we only need a dependency for make this couple of functions to work:
 </p>
@@ -134,9 +134,9 @@ Make sure you got this installed in emacs.
 </p>
 </div>
 
- <div id="outline-container-orgbc66711" class="outline-3">
- <h3 id="orgbc66711">Installing  <code>htmlize</code>:</h3>
- <div class="outline-text-3" id="text-orgbc66711">
+ <div id="outline-container-org37ced7b" class="outline-3">
+ <h3 id="org37ced7b">Installing  <code>htmlize</code>:</h3>
+ <div class="outline-text-3" id="text-org37ced7b">
  <div class="org-src-container">
  <label class="org-src-name"> <span class="listing-number">Listing 1: </span>This is an example using use-package:</label> <pre class="src src-emacs-lisp">( <span class="org-keyword">use-package</span> htmlize
    <span class="org-builtin">:ensure</span> t)
@@ -145,13 +145,13 @@ Make sure you got this installed in emacs.
 </div>
 </div>
 
- <div id="outline-container-org0b69eca" class="outline-3">
- <h3 id="org0b69eca">Explaining the functions:</h3>
- <div class="outline-text-3" id="text-org0b69eca">
+ <div id="outline-container-org9c8f676" class="outline-3">
+ <h3 id="org9c8f676">Explaining the functions:</h3>
+ <div class="outline-text-3" id="text-org9c8f676">
 </div>
- <div id="outline-container-org49275d7" class="outline-4">
- <h4 id="org49275d7">Export file and copy to the clipboard.</h4>
- <div class="outline-text-4" id="text-org49275d7">
+ <div id="outline-container-org75f4575" class="outline-4">
+ <h4 id="org75f4575">Export file and copy to the clipboard.</h4>
+ <div class="outline-text-4" id="text-org75f4575">
  <div class="org-src-container">
  <pre class="src src-emacs-lisp">( <span class="org-keyword">defun</span>  <span class="org-function-name">export-org-email</span> ()
    <span class="org-doc">"Export the current email org buffer and copy it to the</span>
@@ -178,9 +178,9 @@ Make sure you got this installed in emacs.
 </dl></div>
 </div>
 
- <div id="outline-container-org9c41ffe" class="outline-4">
- <h4 id="org9c41ffe">Add some CSS to the file.</h4>
- <div class="outline-text-4" id="text-org9c41ffe">
+ <div id="outline-container-orgcdbd71f" class="outline-4">
+ <h4 id="orgcdbd71f">Add some CSS to the file.</h4>
+ <div class="outline-text-4" id="text-orgcdbd71f">
  <p>
 This snippet is only for add a custom  <code>css</code> "touch" to your copied  <code>html</code> org file.
 </p>
@@ -337,7 +337,7 @@ And that's it, the next is to paste in to your mail, using the  <code>inspection
  <p>
 
 </p>
- <div class="PREVIEW" id="org8cd8706">
+ <div class="PREVIEW" id="orgb5f3a67">
  <p>
 This is the first post of the 2024, this is a project that I am working on in the last
 year, is a minimialist voidlinux instalator it is based in some recomendations in 
@@ -346,9 +346,9 @@ a guides that some friends of my have but "semiautomated".
 
 </div>
 
- <div id="outline-container-org0d55d0c" class="outline-2">
- <h2 id="org0d55d0c">VoidStrap installer.</h2>
- <div class="outline-text-2" id="text-org0d55d0c">
+ <div id="outline-container-org0ad09f1" class="outline-2">
+ <h2 id="org0ad09f1">VoidStrap installer.</h2>
+ <div class="outline-text-2" id="text-org0ad09f1">
  <p>
 A basic minimalist installer of  <code>void-linux</code> with some packages to get ready to enjoy
 this amazing GNU/Linux distribution.
@@ -356,13 +356,13 @@ this amazing GNU/Linux distribution.
 </div>
 </div>
 
- <div id="outline-container-org6c89321" class="outline-2">
- <h2 id="org6c89321">Usage:</h2>
- <div class="outline-text-2" id="text-org6c89321">
+ <div id="outline-container-org3875ce9" class="outline-2">
+ <h2 id="org3875ce9">Usage:</h2>
+ <div class="outline-text-2" id="text-org3875ce9">
 </div>
- <div id="outline-container-org6f237c2" class="outline-3">
- <h3 id="org6f237c2">Running install.sh</h3>
- <div class="outline-text-3" id="text-org6f237c2">
+ <div id="outline-container-org085922c" class="outline-3">
+ <h3 id="org085922c">Running install.sh</h3>
+ <div class="outline-text-3" id="text-org085922c">
  <p>
 Download the iso, and once in root inside the live, git clone this repo:
 (You need to update inside the iso and install  <code>git</code>)
@@ -377,7 +377,7 @@ NOTE: there are 3  <code>branches:</code>
  <ul class="org-ul"> <li> <b>This branch is tested only with  <code>Windows</code>, I never try it with other distributions.</b></li>
  <li>If you want musl you can change the link to the mirror in the  <code>install.sh</code> script:</li>
 </ul></dd>
-</dl> <pre class="example" id="orge50bbf5">
+</dl> <pre class="example" id="org060eb09">
 - Change this in line 11:
 export XBPS_ARCH=x86_64 && xbps-install -Suy -R http://mirrors.servercentral.com/voidlinux/current -r /mnt \
 - For this:
@@ -395,7 +395,7 @@ sh install.sh
 Once there the script will open  <code>cfdisk</code>, and you need to format the HDD in this 
 specific format:
 </p>
- <pre class="example" id="orgb3a5b98">
+ <pre class="example" id="orga8c77e5">
 - /dev/sdX1 -> as the boot partition.
 - /dev/sdY2 -> as the swap partition.
 - /dev/sdZ3 -> as the root partition.
@@ -417,9 +417,9 @@ When the  <code>install.sh</code> script finish, you need to run the postinstall
 </div>
 </div>
 
- <div id="outline-container-orgc68fcf1" class="outline-3">
- <h3 id="orgc68fcf1">Running postinstall.sh</h3>
- <div class="outline-text-3" id="text-orgc68fcf1">
+ <div id="outline-container-orgfdec775" class="outline-3">
+ <h3 id="orgfdec775">Running postinstall.sh</h3>
+ <div class="outline-text-3" id="text-orgfdec775">
  <p>
 This script its going to create some configuration files, like:  <code>fstab</code>,  <code>rc.conf</code>,
 change the password of  <code>root</code>, and add user(s).
@@ -452,9 +452,9 @@ the  <b>X server</b> and some other "necessary" packages.
 </div>
 
 
- <div id="outline-container-org9745764" class="outline-2">
- <h2 id="org9745764">The custom.sh script</h2>
- <div class="outline-text-2" id="text-org9745764">
+ <div id="outline-container-org8f7ebb9" class="outline-2">
+ <h2 id="org8f7ebb9">The custom.sh script</h2>
+ <div class="outline-text-2" id="text-org8f7ebb9">
  <p>
 This is going to install my personal dotfiles, and a specific packages that I use:
 </p>
@@ -475,9 +475,9 @@ sh custom.sh -b dev # especify the name of a custom branch in case of needed.
 </div>
 </div>
 
- <div id="outline-container-org5c0df31" class="outline-2">
- <h2 id="org5c0df31">References:</h2>
- <div class="outline-text-2" id="text-org5c0df31">
+ <div id="outline-container-org9c7b38f" class="outline-2">
+ <h2 id="org9c7b38f">References:</h2>
+ <div class="outline-text-2" id="text-org9c7b38f">
  <ul class="org-ul"> <li> <a href="https://codeberg.org/jpacheco/voidstrap">Voidstrap.</a></li>
  <li> <a href="https://docs.voidlinux.org/">Voidlinux Documentation.</a></li>
  <li> <a href="https://git.disroot.org/tuxliban/tutoriales_void/src/branch/master/Gu%C3%ADas">Tuxliban guides.</a></li>
@@ -495,7 +495,7 @@ sh custom.sh -b dev # especify the name of a custom branch in case of needed.
 
 </p>
 
- <div class="PREVIEW" id="org80dba26">
+ <div class="PREVIEW" id="org40cb499">
  <p>
 In this post I'll demostrate how to add a button to copy the content of a 
 src block generated by ox-publish in emacs within org-mode, this script
@@ -507,10 +507,10 @@ generate when create the web-page content.
 
  <div class="org-center">
 
- <figure id="orgaac8d23"> <img src="./img/20231229T170308--copy-org-blocks-to-clipboard/copy.gif" alt="copy.gif"></img> <figcaption> <span class="figure-number">Figure 1: </span>How the buttons looks like.</figcaption></figure></div>
- <div id="outline-container-orga94cc83" class="outline-2">
- <h2 id="orga94cc83">The first issue.</h2>
- <div class="outline-text-2" id="text-orga94cc83">
+ <figure id="org1365b34"> <img src="./img/20231229T170308--copy-org-blocks-to-clipboard/copy.gif" alt="copy.gif"></img> <figcaption> <span class="figure-number">Figure 1: </span>How the buttons looks like.</figcaption></figure></div>
+ <div id="outline-container-orgc4794c4" class="outline-2">
+ <h2 id="orgc4794c4">The first issue.</h2>
+ <div class="outline-text-2" id="text-orgc4794c4">
  <p>
 When I started to looking in how to add a copy button to my org-block-src blocks,
 I was getting a little confused because of the lack of information about it (or maybe
@@ -522,9 +522,9 @@ so I have been force to use my brain instead of only copy the scripts.
 </div>
 </div>
 
- <div id="outline-container-org233f24c" class="outline-2">
- <h2 id="org233f24c">The Javascript code.</h2>
- <div class="outline-text-2" id="text-org233f24c">
+ <div id="outline-container-org0c627b5" class="outline-2">
+ <h2 id="org0c627b5">The Javascript code.</h2>
+ <div class="outline-text-2" id="text-org0c627b5">
  <p>
 The code below can be improved? yes, but at this point for me it works and its ok,
 may be can be a little mess, but it do the job.
@@ -606,9 +606,9 @@ createCopyButtonForDivs();
 </div>
 </div>
 
- <div id="outline-container-orgd722f67" class="outline-3">
- <h3 id="orgd722f67">What the javascript script actually do:</h3>
- <div class="outline-text-3" id="text-orgd722f67">
+ <div id="outline-container-orgd413f97" class="outline-3">
+ <h3 id="orgd413f97">What the javascript script actually do:</h3>
+ <div class="outline-text-3" id="text-orgd413f97">
  <p>
 The provided code is a JavaScript script that aims to add functionality to copy text from <pre> elements with specific classes when a corresponding button is clicked. Here's a breakdown of what each part of the code does:
 </p>
@@ -648,9 +648,9 @@ This script aims to enhance the functionality of  <code><div></code> containers 
 </div>
 </div>
 
- <div id="outline-container-orgadab296" class="outline-2">
- <h2 id="orgadab296">How to run the script file?</h2>
- <div class="outline-text-2" id="text-orgadab296">
+ <div id="outline-container-orgbded186" class="outline-2">
+ <h2 id="orgbded186">How to run the script file?</h2>
+ <div class="outline-text-2" id="text-orgbded186">
  <p>
 To run this script automatically, when a org-src block appear in html I do this in
 the  <code>head.html</code> file in my org project:
@@ -668,13 +668,13 @@ the  <code>head.html</code> file in my org project:
 </div>
 </div>
 
- <div id="outline-container-org6479bc9" class="outline-2">
- <h2 id="org6479bc9">Test the buttons:</h2>
- <div class="outline-text-2" id="text-org6479bc9">
+ <div id="outline-container-org868fd51" class="outline-2">
+ <h2 id="org868fd51">Test the buttons:</h2>
+ <div class="outline-text-2" id="text-org868fd51">
 </div>
- <div id="outline-container-org69f5ac1" class="outline-3">
- <h3 id="org69f5ac1">Python</h3>
- <div class="outline-text-3" id="text-org69f5ac1">
+ <div id="outline-container-org498de30" class="outline-3">
+ <h3 id="org498de30">Python</h3>
+ <div class="outline-text-3" id="text-org498de30">
  <div class="org-src-container">
  <pre class="src src-python"> <span class="org-keyword">import</span> calendar
  <span class="org-keyword">for</span> i  <span class="org-keyword">in</span>  <span class="org-builtin">range</span>(100):
@@ -684,9 +684,9 @@ the  <code>head.html</code> file in my org project:
 </div>
 </div>
 
- <div id="outline-container-org8c92b1e" class="outline-3">
- <h3 id="org8c92b1e">Emacs-lisp</h3>
- <div class="outline-text-3" id="text-org8c92b1e">
+ <div id="outline-container-org192b59c" class="outline-3">
+ <h3 id="org192b59c">Emacs-lisp</h3>
+ <div class="outline-text-3" id="text-org192b59c">
  <div class="org-src-container">
  <pre class="src src-emacs-lisp">(message  <span class="org-string">"hello World"</span>)
 </pre>
@@ -694,9 +694,9 @@ the  <code>head.html</code> file in my org project:
 </div>
 </div>
 
- <div id="outline-container-org6d75911" class="outline-3">
- <h3 id="org6d75911">C</h3>
- <div class="outline-text-3" id="text-org6d75911">
+ <div id="outline-container-org9f53792" class="outline-3">
+ <h3 id="org9f53792">C</h3>
+ <div class="outline-text-3" id="text-org9f53792">
  <div class="org-src-container">
  <pre class="src src-c"> <span class="org-preprocessor">#include</span>  <span class="org-string"><stdio></span>
  <span class="org-type">int</span>  <span class="org-function-name">main</span>( <span class="org-type">int</span>  <span class="org-variable-name">argc</span>,  <span class="org-type">char</span> * <span class="org-variable-name">argv</span>[])
@@ -719,7 +719,7 @@ the  <code>head.html</code> file in my org project:
  <p>
 
 </p>
- <div class="PREVIEW" id="org887795e">
+ <div class="PREVIEW" id="orgbb04a89">
  <p>
 Hello.
 </p>
@@ -733,14 +733,14 @@ So, this is the preview and read this post to see what I'm trying to do.
 
 </div>
 
- <div id="outline-container-orgce43f84" class="outline-2">
- <h2 id="orgce43f84">Rss Feeds.</h2>
- <div class="outline-text-2" id="text-orgce43f84">
+ <div id="outline-container-org48be48d" class="outline-2">
+ <h2 id="org48be48d">Rss Feeds.</h2>
+ <div class="outline-text-2" id="text-org48be48d">
  <p>
 First, what is  <code>rss feeds</code>?
 This is what wikipedia have in their page:
 </p>
- <pre class="example" id="orgf4d9ddf">
+ <pre class="example" id="org534c78b">
 RSS (RDF Site Summary or Really Simple Syndication) is a web feed that allows users and applications to access updates to websites in a standardized, computer-readable format. Subscribing to RSS feeds can allow a user to keep track of many different websites in a single news aggregator, which constantly monitor sites for new content, removing the need for the user to manually check them. News aggregators (or "RSS readers") can be built into a browser, installed on a desktop computer, or installed on a mobile device.
 </pre>
 
@@ -751,9 +751,9 @@ and stored in my host  <code>codeberg pages</code>, well that is the goal, but I
 </div>
 </div>
 
- <div id="outline-container-org5d12937" class="outline-2">
- <h2 id="org5d12937">Packages needed:</h2>
- <div class="outline-text-2" id="text-org5d12937">
+ <div id="outline-container-org9372082" class="outline-2">
+ <h2 id="org9372082">Packages needed:</h2>
+ <div class="outline-text-2" id="text-org9372082">
  <p>
 These are the packages that we need to use to make the rss file:
 </p>
@@ -780,9 +780,9 @@ and these need to be in the  <code>build-site.el</code> script:
 </div>
 </div>
 
- <div id="outline-container-orgbd8d96d" class="outline-2">
- <h2 id="orgbd8d96d">Functions to use:</h2>
- <div class="outline-text-2" id="text-orgbd8d96d">
+ <div id="outline-container-org5da0edb" class="outline-2">
+ <h2 id="org5da0edb">Functions to use:</h2>
+ <div class="outline-text-2" id="text-org5da0edb">
  <p>
 Now declare some functions to parse in the public folder that we create for save the
 exported  <code>html</code> files.
@@ -820,9 +820,9 @@ exported  <code>html</code> files.
 </div>
 </div>
 
- <div id="outline-container-org84ae722" class="outline-2">
- <h2 id="org84ae722">Testing.</h2>
- <div class="outline-text-2" id="text-org84ae722">
+ <div id="outline-container-org8f679ef" class="outline-2">
+ <h2 id="org8f679ef">Testing.</h2>
+ <div class="outline-text-2" id="text-org8f679ef">
  <p>
 Well, this post ends here, now in a few minutes this post is going to be uploaded,
 and I'll see if rss feeds generator actually works whit the functions and  commands
@@ -841,7 +841,7 @@ above.
  <p>
 
 </p>
- <div class="PREVIEW" id="orgc3cc52d">
+ <div class="PREVIEW" id="org42f4437">
  <p>
 I have been reading some thing information about denote, and its powerful tools
 that the good  <code>prots</code> give to us the mortals. I am starting this "post" thing, and 
@@ -852,22 +852,22 @@ in the creation of notes.
 
 </div>
 
- <div id="outline-container-org1e49fb6" class="outline-2">
- <h2 id="org1e49fb6">Use custom commands to select a silo.</h2>
- <div class="outline-text-2" id="text-org1e49fb6">
+ <div id="outline-container-orgfe92522" class="outline-2">
+ <h2 id="orgfe92522">Use custom commands to select a silo.</h2>
+ <div class="outline-text-2" id="text-orgfe92522">
  <p>
 As you can read in the tittle,  <code>prots</code> creates this singular  <i>elsip</i> function, that  prompts
 for a entry point directory and then a denote function.
 </p>
 </div>
 
- <div id="outline-container-orgf20359a" class="outline-3">
- <h3 id="orgf20359a">The Silo funcitons:</h3>
- <div class="outline-text-3" id="text-orgf20359a">
+ <div id="outline-container-org12a9ede" class="outline-3">
+ <h3 id="org12a9ede">The Silo funcitons:</h3>
+ <div class="outline-text-3" id="text-org12a9ede">
 </div>
- <div id="outline-container-org509d281" class="outline-4">
- <h4 id="org509d281">First part of the function:</h4>
- <div class="outline-text-4" id="text-org509d281">
+ <div id="outline-container-org93234e0" class="outline-4">
+ <h4 id="org93234e0">First part of the function:</h4>
+ <div class="outline-text-4" id="text-org93234e0">
  <p>
 Define a list of directories. This is very convenient, because whit this I can separate
 my notes directory of my posts directory:
@@ -888,9 +888,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
- <div id="outline-container-org6e546f9" class="outline-4">
- <h4 id="org6e546f9">Then define a list of the denote commands that usually I use:</h4>
- <div class="outline-text-4" id="text-org6e546f9">
+ <div id="outline-container-org02a7074" class="outline-4">
+ <h4 id="org02a7074">Then define a list of the denote commands that usually I use:</h4>
+ <div class="outline-text-4" id="text-org02a7074">
  <div class="org-src-container">
  <pre class="src src-emacs-lisp">( <span class="org-keyword">defvar</span>  <span class="org-variable-name">my-denote-commands-for-silos</span>
   '(denote
@@ -906,9 +906,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
- <div id="outline-container-org2890c06" class="outline-4">
- <h4 id="org2890c06">The Silo Command in action:</h4>
- <div class="outline-text-4" id="text-org2890c06">
+ <div id="outline-container-org820ae88" class="outline-4">
+ <h4 id="org820ae88">The Silo Command in action:</h4>
+ <div class="outline-text-4" id="text-org820ae88">
  <div class="org-src-container">
  <pre class="src src-emacs-lisp">( <span class="org-keyword">defun</span>  <span class="org-function-name">my-denote-pick-silo-then-command</span> (silo command)
    <span class="org-doc">"Select SILO and run Denote COMMAND in it.</span>
@@ -926,9 +926,9 @@ my notes directory of my posts directory:
 </div>
 </div>
 
- <div id="outline-container-org03638ac" class="outline-4">
- <h4 id="org03638ac"> <b>The complete functions:</b></h4>
- <div class="outline-text-4" id="text-org03638ac">
+ <div id="outline-container-org98f2ea9" class="outline-4">
+ <h4 id="org98f2ea9"> <b>The complete functions:</b></h4>
+ <div class="outline-text-4" id="text-org98f2ea9">
  <div class="org-src-container">
  <pre class="src src-emacs-lisp">( <span class="org-keyword">defvar</span>  <span class="org-variable-name">my-denote-silo-directories</span>
   `( <span class="org-string">"/home/prot/Videos/recordings"</span>
@@ -978,9 +978,9 @@ that  <code>protesilaos</code> provide to us, so, Thank you  <code>prot</code>.
 </div>
 </div>
 
- <div id="outline-container-orgecb3b44" class="outline-2">
- <h2 id="orgecb3b44">Reference:</h2>
- <div class="outline-text-2" id="text-orgecb3b44">
+ <div id="outline-container-org9be4aae" class="outline-2">
+ <h2 id="org9be4aae">Reference:</h2>
+ <div class="outline-text-2" id="text-org9be4aae">
  <dl class="org-dl"> <dt> <a href="https://protesilaos.com/emacs/denote#h:0f72e6ea-97f0-42e1-8fd4-0684af0422e0">Protesilaos web page</a></dt> <dd>3.5.1. Use custom commands to select a silo</dd>
 </dl></div>
 </div>
@@ -995,7 +995,7 @@ that  <code>protesilaos</code> provide to us, so, Thank you  <code>prot</code>.
  <p>
 
 </p>
- <div class="PREVIEW" id="org6a3c520">
+ <div class="PREVIEW" id="org0864b3a">
  <p>
 This is the first of a few posts I'm creating this "web" only for my knowledge,
 and contribute with some of it.
