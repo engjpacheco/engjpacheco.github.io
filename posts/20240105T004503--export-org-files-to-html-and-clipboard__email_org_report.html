@@ -43,13 +43,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgeddc192">Copy html source from org files to the clipboard.</a>
+<li><a href="#org132561f">Copy html source from org files to the clipboard.</a>
 <ul>
-<li><a href="#orgfaaab29">Installing <code>htmlize</code>:</a></li>
-<li><a href="#org04d51da">Explaining the functions:</a>
+<li><a href="#orgd9ff732">Installing <code>htmlize</code>:</a></li>
+<li><a href="#org1b120b7">Explaining the functions:</a>
 <ul>
-<li><a href="#org002bc89">Export file and copy to the clipboard.</a></li>
-<li><a href="#org8071c1a">Add some CSS to the file.</a></li>
+<li><a href="#org1362a41">Export file and copy to the clipboard.</a></li>
+<li><a href="#org83660e4">Add some CSS to the file.</a></li>
 </ul>
 </li>
 </ul>
@@ -60,7 +60,7 @@
 <p>
 
 </p>
-<div class="PREVIEW" id="org16c31f6">
+<div class="PREVIEW" id="org112972f">
 <p>
 If you uses email a lot like me in your job, but also use emacs, you wonder if is possible
 to export your org files to <code>html</code>, and paste in to your email, well, we are in emacs,
@@ -70,9 +70,9 @@ that help me to make my workflow more efficient.
 
 </div>
 
-<div id="outline-container-orgeddc192" class="outline-2">
-<h2 id="orgeddc192">Copy html source from org files to the clipboard.</h2>
-<div class="outline-text-2" id="text-orgeddc192">
+<div id="outline-container-org132561f" class="outline-2">
+<h2 id="org132561f">Copy html source from org files to the clipboard.</h2>
+<div class="outline-text-2" id="text-org132561f">
 <p>
 First of all we only need a dependency for make this couple of functions to work:
 </p>
@@ -84,9 +84,9 @@ Make sure you got this installed in emacs.
 </p>
 </div>
 
-<div id="outline-container-orgfaaab29" class="outline-3">
-<h3 id="orgfaaab29">Installing <code>htmlize</code>:</h3>
-<div class="outline-text-3" id="text-orgfaaab29">
+<div id="outline-container-orgd9ff732" class="outline-3">
+<h3 id="orgd9ff732">Installing <code>htmlize</code>:</h3>
+<div class="outline-text-3" id="text-orgd9ff732">
 <div class="org-src-container">
 <label class="org-src-name"><span class="listing-number">Listing 1: </span>This is an example using use-package:</label><pre class="src src-emacs-lisp">(<span class="org-keyword">use-package</span> htmlize
   <span class="org-builtin">:ensure</span> t)
@@ -95,13 +95,13 @@ Make sure you got this installed in emacs.
 </div>
 </div>
 
-<div id="outline-container-org04d51da" class="outline-3">
-<h3 id="org04d51da">Explaining the functions:</h3>
-<div class="outline-text-3" id="text-org04d51da">
+<div id="outline-container-org1b120b7" class="outline-3">
+<h3 id="org1b120b7">Explaining the functions:</h3>
+<div class="outline-text-3" id="text-org1b120b7">
 </div>
-<div id="outline-container-org002bc89" class="outline-4">
-<h4 id="org002bc89">Export file and copy to the clipboard.</h4>
-<div class="outline-text-4" id="text-org002bc89">
+<div id="outline-container-org1362a41" class="outline-4">
+<h4 id="org1362a41">Export file and copy to the clipboard.</h4>
+<div class="outline-text-4" id="text-org1362a41">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">export-org-email</span> ()
   <span class="org-doc">"Export the current email org buffer and copy it to the</span>
@@ -130,9 +130,9 @@ Make sure you got this installed in emacs.
 </div>
 </div>
 
-<div id="outline-container-org8071c1a" class="outline-4">
-<h4 id="org8071c1a">Add some CSS to the file.</h4>
-<div class="outline-text-4" id="text-org8071c1a">
+<div id="outline-container-org83660e4" class="outline-4">
+<h4 id="org83660e4">Add some CSS to the file.</h4>
+<div class="outline-text-4" id="text-org83660e4">
 <p>
 This snippet is only for add a custom <code>css</code> "touch" to your copied <code>html</code> org file.
 </p>
@@ -169,7 +169,7 @@ And that's it, the next is to paste in to your mail, using the <code>inspection 
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2024-01-05 Fri 00:45</p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.2 (<a href="https://orgmode.org">Org</a> mode 9.6.15)</p>
 </div>
 </body>
 </html>
