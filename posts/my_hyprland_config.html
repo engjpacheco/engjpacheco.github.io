@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Hyprland Config</title>
+<meta name="description" content="My Hyprland configuration" />
+<meta name="generator" content="Org Mode" />
+<!-- <link rel="stylesheet" type="text/css" href="/ox.css"/> -->
+<link rel="stylesheet" type="text/css" href="/custom.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- copy org-blocks to clipboard  -->
+<script src="/cpbtn.js"></script>
+<script>
+  window.onload = function() {
+      // Call the function to create copy buttons in each org-src-container div
+      createCopyButtonForDivs();
+  };
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<hr style="border-top: 1px solid black;">
+<div class='topnav' style='display: flex; justify-content: space-between; align-items: center;'>
+  <h2 style='margin-top: 0; margin-bottom: 0; margin-left:0px;'>Javier Pacheco</h2> 
+  <div>
+    <a href='/index.html' style='font-weight:bold;'>Home</a> |
+    <a href='/archive.html' style='font-weight:bold;'>Blog</a> | 
+    <a href='/about.html' style='font-weight:bold;'>About Me</a> | 
+	<a href="/rss.xml">
+	  <i class="fas">&#xf09e;</i>
+	</a>
+  </div>
+</div>
+<hr style="border-top: 1px solid black;">
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">My Hyprland Config</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org5e54a9b">My hyprland configuration.</a>
+<ul>
+<li><a href="#orgef7e1c5">hyprland.conf</a></li>
+<li><a href="#org258d41d">init.conf</a></li>
+<li><a href="#orgfc0984e">general.conf</a>
+<ul>
+<li><a href="#orgc122e44">general.</a></li>
+<li><a href="#orge7456d5">input</a></li>
+<li><a href="#orgf56e336">decorations</a></li>
+<li><a href="#orgd43f38e">Animations</a></li>
+<li><a href="#org0218562">misc</a></li>
+<li><a href="#orgb239720">dwindle</a></li>
+<li><a href="#orgb615d46">master</a></li>
+<li><a href="#org5723731">gestures</a></li>
+</ul>
+</li>
+<li><a href="#org7001dbf">env.conf</a></li>
+<li><a href="#orgf78db6b">keybinds.conf</a>
+<ul>
+<li><a href="#org3b231c2">Main and most useful keybinds</a></li>
+<li><a href="#org5f0e70f">Keychords.</a></li>
+<li><a href="#org8525752">Window management.</a></li>
+<li><a href="#orgc6261cd">Media Keys</a></li>
+</ul>
+</li>
+<li><a href="#org86c4aa6">scratchpads.conf</a>
+<ul>
+<li><a href="#orgfab2906">Pyprland</a></li>
+<li><a href="#orgd919838">keybinds and rules.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<p>
+
+</p>
+
+<div class="PREVIEW" id="org85e0c6c">
+<p>
+Hello, in this post I'm going to share and explain a little bit my <code>Hyprland</code> configuration, I'm not an expert in this window manager, but I really like it, I think this WM have a great future, and for me, this one is the best out there, of course there are some more, more solids if you will, but this is awesome.
+</p>
+
+</div>
+
+
+<div id="outline-container-org5e54a9b" class="outline-2">
+<h2 id="org5e54a9b">My hyprland configuration.</h2>
+<div class="outline-text-2" id="text-org5e54a9b">
+<p>
+My <code>Hyprland</code> configuration is split in multiple files for readable and a better understanding comprehension to me.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-example">./
+├── hyprland.conf*
+├── pyprland.toml
+└── src/
+    ├── env.conf*
+    ├── init.conf*
+    ├── general.conf*
+    ├── keybinds.conf*
+    ├── scratchpads.conf
+    └── windowrules.conf
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgef7e1c5" class="outline-3">
+<h3 id="orgef7e1c5">hyprland.conf</h3>
+<div class="outline-text-3" id="text-orgef7e1c5">
+<p>
+This is the main <code>hyprland</code> configuration file, this file will source every single file in the src folder.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-comment-delimiter"># </span><span class="org-comment">[[ Javier Hyprland configuration ]]</span>
+
+<span class="org-variable-name">source</span> = ~/.config/hypr/src/init.conf
+<span class="org-variable-name">source</span> = ~/.config/hypr/src/general.conf
+<span class="org-variable-name">source</span> = ~/.config/hypr/src/env.conf
+<span class="org-variable-name">source</span> = ~/.config/hypr/src/keybinds.conf
+<span class="org-variable-name">source</span> = ~/.config/hypr/src/scratchpads.conf
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org258d41d" class="outline-3">
+<h3 id="org258d41d">init.conf</h3>
+<div class="outline-text-3" id="text-org258d41d">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-comment-delimiter"># </span><span class="org-comment">Prgrams that I run when Hyprland starts.</span>
+
+<span class="org-variable-name">exec-once</span> = pypr
+<span class="org-comment-delimiter"># </span><span class="org-comment">exec-once = swww init</span>
+<span class="org-variable-name">exec-once</span> = cron -f ~/.config/cron/cron.conf
+<span class="org-variable-name">exec-once</span> = waybar
+<span class="org-variable-name">exec-once</span> = mpd --no-daemon <span class="org-string">"$HOME"</span>/.config/mpd/mpd.conf
+<span class="org-variable-name">exec-once</span> = pipewire
+<span class="org-variable-name">exec-once</span> = pipewire-pulse
+<span class="org-variable-name">exec-once</span> = wireplumber
+<span class="org-variable-name">exec-once</span> = foot --server
+<span class="org-variable-name">exec-once</span> = swayidle -w timeout 500 <span class="org-string">'swaylock'</span> 
+<span class="org-variable-name">exec-once</span> = xrdb ~/.config/.Xdefaults
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfc0984e" class="outline-3">
+<h3 id="orgfc0984e">general.conf</h3>
+<div class="outline-text-3" id="text-orgfc0984e">
+<p>
+This file contains the monitor, keyboard, mouse, effects configuration.
+</p>
+</div>
+
+<div id="outline-container-orgc122e44" class="outline-4">
+<h4 id="orgc122e44">general.</h4>
+<div class="outline-text-4" id="text-orgc122e44">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-type">general</span> {
+    <span class="org-variable-name">gaps_in</span> = 5
+    <span class="org-variable-name">gaps_out</span> = 10
+    <span class="org-variable-name">border_size</span> = 2
+    <span class="org-variable-name">no_border_on_floating</span> = 0
+    <span class="org-variable-name">col.active_border</span> = rgba(999999bb)
+    <span class="org-variable-name">col.inactive_border</span> = rgba(595959aa)
+    <span class="org-variable-name">layout</span> = master
+    <span class="org-variable-name">allow_tearing</span> = false
+    <span class="org-variable-name">cursor_inactive_timeout</span> = 2
+    <span class="org-variable-name">resize_corner</span> = 3
+}
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge7456d5" class="outline-4">
+<h4 id="orge7456d5">input</h4>
+<div class="outline-text-4" id="text-orge7456d5">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-type">input</span> {
+    <span class="org-variable-name">kb_layout</span> = gb,us
+    <span class="org-variable-name">kb_options</span>=grp:win_space_toggle 
+    <span class="org-variable-name">kb_variant</span> = 
+    <span class="org-variable-name">kb_model</span> =
+    <span class="org-variable-name">numlock_by_default</span> = true
+    <span class="org-variable-name">kb_options</span> = ctrl:nocaps
+    <span class="org-variable-name">kb_rules</span> =
+
+    <span class="org-variable-name">follow_mouse</span> = 1
+
+    <span class="org-type">touchpad</span> {
+        <span class="org-variable-name">natural_scroll</span> = no
+    }
+
+    <span class="org-variable-name">sensitivity</span> = 0 <span class="org-comment-delimiter"># </span><span class="org-comment">-1.0 - 1.0, 0 means no modification.</span>
+}
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf56e336" class="outline-4">
+<h4 id="orgf56e336">decorations</h4>
+<div class="outline-text-4" id="text-orgf56e336">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-type">decoration</span> {
+    <span class="org-variable-name">rounding</span> = 0
+    <span class="org-type">blur</span> {
+    <span class="org-variable-name">size</span> = 1
+    <span class="org-variable-name">passes</span> = 2
+    <span class="org-variable-name">new_optimizations</span> = true
+    <span class="org-variable-name">xray</span> = false
+    <span class="org-variable-name">ignore_opacity</span> = true
+    }
+
+    <span class="org-variable-name">drop_shadow</span> = no
+    <span class="org-variable-name">shadow_range</span> = 4
+    <span class="org-variable-name">shadow_render_power</span> = 3
+    <span class="org-variable-name">col.shadow</span> = rgba(1a1a1aee)
+    <span class="org-variable-name">blurls</span> = waybar
+}
+  
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd43f38e" class="outline-4">
+<h4 id="orgd43f38e">Animations</h4>
+<div class="outline-text-4" id="text-orgd43f38e">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-type">animations</span> {
+    <span class="org-variable-name">enabled</span> = no
+    <span class="org-comment-delimiter"># </span><span class="org-comment">bezier = myBezier, 0.05, 0.9, 0.1, 1.05</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">animation = windows, 1, 7, myBezier</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">animation = windowsOut, 1, 7, default, popin 80%</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">animation = border, 1, 10, default</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">animation = borderangle, 1, 8, default</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">animation = fade, 1, 7, default</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">animation = workspaces, 1, 6, default</span>
+    <span class="org-variable-name">animation</span>=windows,1,8,default,popin 20%
+}
+  
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0218562" class="outline-4">
+<h4 id="org0218562">misc</h4>
+<div class="outline-text-4" id="text-org0218562">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-type">misc</span> {
+    <span class="org-comment-delimiter"># </span><span class="org-comment">See https:/wiki.hyprland.org/.configuring/Variables/ for more</span>
+    <span class="org-variable-name">force_default_wallpaper</span> = 0 
+    <span class="org-variable-name">focus_on_activate</span> = 1
+    <span class="org-variable-name">enable_swallow</span> = 1
+    <span class="org-variable-name">swallow_regex</span> = ^(Alacritty|foot|footclient)$
+}
+  
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb239720" class="outline-4">
+<h4 id="orgb239720">dwindle</h4>
+<div class="outline-text-4" id="text-orgb239720">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-type">dwindle</span> {
+    <span class="org-comment-delimiter"># </span><span class="org-comment">See https:/wiki.hyprland.org/.configuring/Dwindle-Layout/ for more</span>
+    <span class="org-variable-name">pseudotile</span> = yes <span class="org-comment-delimiter"># </span><span class="org-comment">master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below</span>
+    <span class="org-variable-name">preserve_split</span> = yes <span class="org-comment-delimiter"># </span><span class="org-comment">you probably want this</span>
+}
+  
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb615d46" class="outline-4">
+<h4 id="orgb615d46">master</h4>
+<div class="outline-text-4" id="text-orgb615d46">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-type">master</span> {
+    <span class="org-variable-name">new_is_master</span> = false
+    <span class="org-variable-name">drop_at_cursor</span> = false
+}
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5723731" class="outline-4">
+<h4 id="org5723731">gestures</h4>
+<div class="outline-text-4" id="text-org5723731">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-type">gestures</span> {
+    <span class="org-comment-delimiter"># </span><span class="org-comment">See https:/wiki.hyprland.org/.configuring/Variables/ for more</span>
+    <span class="org-variable-name">workspace_swipe</span> = 1
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7001dbf" class="outline-3">
+<h3 id="org7001dbf">env.conf</h3>
+<div class="outline-text-3" id="text-org7001dbf">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-comment-delimiter"># </span><span class="org-comment">hyprland env's</span>
+
+<span class="org-variable-name">env</span> = QT_QPA_PLATFORM,wayland
+<span class="org-variable-name">env</span> = HYPRCURSOR_THEME,Breeze_Dark
+<span class="org-variable-name">env</span> = HYPRCURSOR_SIZE,24
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Set variables</span>
+<span class="org-variable-name">monitor</span>=eDP-1,1920x1080@60,0x0,1
+<span class="org-variable-name">$terminal</span> = footclient
+<span class="org-variable-name">$menu</span> = fuzzel_run
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf78db6b" class="outline-3">
+<h3 id="orgf78db6b">keybinds.conf</h3>
+<div class="outline-text-3" id="text-orgf78db6b">
+<p>
+This are my keybinds that I use the most, 
+Here are some tips for the bind flags:
+</p>
+<div class="org-src-container">
+<pre class="src src-example">Flags:
+
+l -&gt; locked, aka. works also when an input inhibitor (e.g. a lockscreen) is active.
+r -&gt; release, will trigger on release of a key.
+e -&gt; repeat, will repeat when held.
+n -&gt; non-consuming, key/mouse events will be passed to the active window in addition to triggering the dispatcher.
+m -&gt; mouse, see below
+t -&gt; transparent, cannot be shadowed by other binds.
+i -&gt; ignore mods, will ignore modifiers.
+
+bind(flag) = command
+bindr = command
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3b231c2" class="outline-4">
+<h4 id="org3b231c2">Main and most useful keybinds</h4>
+<div class="outline-text-4" id="text-org3b231c2">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-comment-delimiter"># </span><span class="org-comment">[[ Keybinds ]]</span>
+
+<span class="org-variable-name">$mainMod</span> = SUPER
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Custom Keybinds.</span>
+<span class="org-variable-name">bind</span> = $mainMod, return, exec, $terminal
+<span class="org-variable-name">bindr</span>= $mainMod, D, exec, $menu
+<span class="org-variable-name">bind</span> = $mainMod, w, exec, chromium
+<span class="org-variable-name">bind</span> = SUPER_SHIFT, w, exec, webcam
+      <span class="org-variable-name">bind</span> = ALT SHIFT, a, exec, toggle-animations
+<span class="org-variable-name">bind</span> = $mainMod, f, exec, hyprctl dispatch togglefloating; pkill -SIGRTMIN+8 waybar <span class="org-comment-delimiter"># </span><span class="org-comment">hyprctl dispatch right in your script just so you can exec at the same time</span>
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, f, fullscreen, 
+<span class="org-variable-name">bind</span> = SUPER_SHIFT, l, exec, swaylock
+<span class="org-variable-name">bind</span> = $mainMod, q, killactive, 
+<span class="org-variable-name">bind</span> = SUPER_SHIFT, q, exec, sysact 
+<span class="org-variable-name">bind</span> = ,Print, exec, grimblast -n copy screen
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, r , exec, screencast
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, s, exec, grimblast -n copy area
+<span class="org-variable-name">bind</span> = ALT,m , exec, pypr menu
+<span class="org-variable-name">bind</span> = $mainMod SHIFT,Print, exec, shareurl.sh
+<span class="org-variable-name">bind</span> = ALT SHIFT, Return , exec, pypr expose
+<span class="org-variable-name">bind</span> = ,XF86PowerOff, exec, doas zzz -z
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5f0e70f" class="outline-4">
+<h4 id="org5f0e70f">Keychords.</h4>
+<div class="outline-text-4" id="text-org5f0e70f">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-comment-delimiter"># </span><span class="org-comment">[[ KeyChords ]]</span>
+<span class="org-variable-name">bind</span> = $mainMod, SPACE , submap, menusubmap
+<span class="org-variable-name">submap</span> = menusubmap
+<span class="org-variable-name">bind</span> = ,i,exec,foot -e nsxiv ~/pics/classic/art -t -g 1500x700
+<span class="org-variable-name">bind</span> = ,i,submap,reset
+<span class="org-variable-name">bind</span> = ,m,exec,dmenumount
+<span class="org-variable-name">bind</span> = ,m,submap,reset
+<span class="org-variable-name">bind</span> = ,u,exec,dmenuumount
+<span class="org-variable-name">bind</span> = ,u,submap,reset
+<span class="org-variable-name">bind</span> = ,q,exec,sysact
+<span class="org-variable-name">bind</span> = ,q,submap,reset
+<span class="org-variable-name">bind</span>=,escape,submap,reset 
+<span class="org-variable-name">submap</span> = reset
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8525752" class="outline-4">
+<h4 id="org8525752">Window management.</h4>
+<div class="outline-text-4" id="text-org8525752">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-comment-delimiter"># </span><span class="org-comment">[[ Window management ]]</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">Move focus with mainMod + arrow keys</span>
+<span class="org-variable-name">bind</span> = $mainMod, J, layoutmsg,cyclenext
+<span class="org-variable-name">bind</span> = $mainMod, K, layoutmsg,cycleprev
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Swap windows</span>
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, J, swapnext, next
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, K, swapnext, prev
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Resize windows</span>
+<span class="org-variable-name">bind</span> = $mainMod, l, resizeactive, 40 0
+<span class="org-variable-name">bind</span> = $mainMod, h, resizeactive, -40 0
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Switch workspaces with mainMod + [0-9]</span>
+<span class="org-variable-name">bind</span> = $mainMod, 1, workspace, 1
+<span class="org-variable-name">bind</span> = $mainMod, 2, workspace, 2
+<span class="org-variable-name">bind</span> = $mainMod, 3, workspace, 3
+<span class="org-variable-name">bind</span> = $mainMod, 4, workspace, 4
+<span class="org-variable-name">bind</span> = $mainMod, 5, workspace, 5
+<span class="org-variable-name">bind</span> = $mainMod, 6, workspace, 6
+<span class="org-variable-name">bind</span> = $mainMod, 7, workspace, 7
+<span class="org-variable-name">bind</span> = $mainMod, 8, workspace, 8
+<span class="org-variable-name">bind</span> = $mainMod, 9, workspace, 9
+<span class="org-variable-name">bind</span> = $mainMod, 0, workspace, 10
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Cycle through ocuped workspaces</span>
+<span class="org-variable-name">bind</span> = ALT, Tab, workspace, m+1
+<span class="org-variable-name">bind</span> = ALT SHIFT, Tab, workspace, m-1
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Move active window to a workspace with mainMod + SHIFT + [0-9]</span>
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, 1, movetoworkspacesilent, 1
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, 2, movetoworkspacesilent, 2
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, 3, movetoworkspacesilent, 3
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, 4, movetoworkspacesilent, 4
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, 5, movetoworkspacesilent, 5
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, 6, movetoworkspacesilent, 6
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, 7, movetoworkspacesilent, 7
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, 8, movetoworkspacesilent, 8
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, 9, movetoworkspacesilent, 9
+<span class="org-variable-name">bind</span> = $mainMod SHIFT, 0, movetoworkspacesilent, 10
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Scroll through existing workspaces with mainMod + scroll</span>
+<span class="org-variable-name">bind</span> = $mainMod, mouse_down, workspace, e+1
+<span class="org-variable-name">bind</span> = $mainMod, mouse_up, workspace, e-1
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Move/resize windows with mainMod + LMB/RMB and dragging</span>
+<span class="org-variable-name">bindm</span> = $mainMod, mouse:272, movewindow
+<span class="org-variable-name">bindm</span> = $mainMod, mouse:273, resizewindow
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc6261cd" class="outline-4">
+<h4 id="orgc6261cd">Media Keys</h4>
+<div class="outline-text-4" id="text-orgc6261cd">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="org-comment-delimiter"># </span><span class="org-comment">Audio MPC commands</span>
+<span class="org-variable-name">bind</span> = ,XF86AudioPlay, exec, mpc toggle
+<span class="org-variable-name">bind</span> = ,XF86AudioStop, exec, mpc stop
+<span class="org-variable-name">bind</span> = ,XF86AudioNext, exec, mpc next
+<span class="org-variable-name">bind</span> = ,XF86AudioPrev, exec, mpc prev
+<span class="org-variable-name">binde</span> = , XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+<span class="org-variable-name">binde</span> = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+<span class="org-variable-name">bindl</span> = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Screen Brightness</span>
+<span class="org-variable-name">bind</span>=,XF86MonBrightnessUp,exec,doas brightnessctl set +10%
+<span class="org-variable-name">bind</span>=,XF86MonBrightnessDown,exec,doas brightnessctl set 10%-
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org86c4aa6" class="outline-3">
+<h3 id="org86c4aa6">scratchpads.conf</h3>
+<div class="outline-text-3" id="text-org86c4aa6">
+<p>
+In order to make the scratchpads works, you need to install pyprland package through python pip package installation.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">pip install pyprland
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgfab2906" class="outline-4">
+<h4 id="orgfab2906">Pyprland</h4>
+<div class="outline-text-4" id="text-orgfab2906">
+<p>
+this is the config file for declare the plugins that are used within <code>pypr</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-toml">[<span class="org-type">pyprland</span>]
+<span class="org-variable-name">plugins</span> = [
+  <span class="org-string">"scratchpads"</span>,
+  <span class="org-string">"shortcuts_menu"</span>,
+  <span class="org-string">"expose"</span>
+]
+
+[<span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type">scratchpads.term</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>]
+<span class="org-variable-name">animation</span> = <span class="org-string">"fromTop"</span>
+<span class="org-variable-name">command</span> = <span class="org-string">"foot -a term"</span>
+<span class="org-variable-name">class</span> = <span class="org-string">"term"</span>
+<span class="org-variable-name">size</span> = <span class="org-string">"75% 60%"</span>
+<span class="org-variable-name">max_size</span> = <span class="org-string">"1920px 100%"</span>
+<span class="org-variable-name">margin</span> = 50
+
+[<span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type">scratchpads.music_player</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>]
+<span class="org-variable-name">animation</span> = <span class="org-string">"fromRight"</span>
+<span class="org-variable-name">command</span> = <span class="org-string">"foot -a music_player -e ncmpcpp"</span>
+<span class="org-variable-name">class</span> = <span class="org-string">"music_player"</span>
+<span class="org-variable-name">size</span> = <span class="org-string">"75% 60%"</span>
+<span class="org-variable-name">max_size</span> = <span class="org-string">"1920px 100%"</span>
+<span class="org-variable-name">margin</span> = 50
+
+[<span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type">scratchpads.nnn</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>]
+<span class="org-variable-name">animation</span> = <span class="org-string">"fromLeft"</span>
+<span class="org-variable-name">command</span> = <span class="org-string">"foot -a nnn -e nnn"</span>
+<span class="org-variable-name">class</span> = <span class="org-string">"nnn"</span>
+<span class="org-variable-name">size</span> = <span class="org-string">"50% 40%"</span>
+<span class="org-variable-name">position</span> = <span class="org-string">"5% 10%"</span>
+<span class="org-variable-name">max_size</span> = <span class="org-string">"1920px 100%"</span>
+<span class="org-variable-name">margin</span> = 50
+
+[<span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type">scratchpads.fetch</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>]
+<span class="org-variable-name">animation</span> = <span class="org-string">"fromLeft"</span>
+<span class="org-variable-name">command</span> = <span class="org-string">"foot -a venom_fetch"</span>
+<span class="org-variable-name">class</span> = <span class="org-string">"venom_fetch"</span>
+<span class="org-variable-name">size</span> = <span class="org-string">"23% 48%"</span>
+<span class="org-variable-name">position</span> = <span class="org-string">"5% 10%"</span>
+<span class="org-variable-name">max_size</span> = <span class="org-string">"1920px 100%"</span>
+<span class="org-variable-name">margin</span> = 50
+
+
+[<span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type">shortcuts_menu</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>]
+<span class="org-variable-name">engine</span> = <span class="org-string">"fuzzel --dmenu"</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">parameters = "-p '[prompt] &#127856; ' -dmenu -matching fuzzy -i"</span>
+<span class="org-variable-name">command_start</span> = <span class="org-string">"&#128128;"</span>
+
+[<span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type"><span class="org-type">shortcuts_menu.entries</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>]
+
+<span class="org-string">"Restart Waybar"</span> = <span class="org-string">"pkill -9 waybar ; setsid waybar"</span>
+<span class="org-string">"Telegram"</span> = <span class="org-string">"xdg-open https:/web.telegram.org/a/#-1421253041"</span>
+<span class="org-string">"Cinny"</span> = <span class="org-string">"xdg-open https:/app.cinny.in/"</span>
+
+<span class="org-string">"Scratch"</span> = [
+  <span class="org-variable-name">{name</span>=<span class="org-string">"action"</span>, options=[<span class="org-string">"sync"</span>, <span class="org-string">"sysup"</span> ]},
+  <span class="org-string">"foot -e doas scratch [action]"</span>
+  ]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd919838" class="outline-4">
+<h4 id="orgd919838">keybinds and rules.</h4>
+<div class="outline-text-4" id="text-orgd919838">
+<p>
+The structure that I use is the bind, and next the window rule, I have this window rules apart from the <code>window management configuration</code> because I want to keep the binds an rules in the same file.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-conf">  <span class="org-comment-delimiter"># </span><span class="org-comment">[[ Scratchpads rules ]]</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">Keybind</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">window rules</span>
+
+<span class="org-variable-name">bind</span> = $mainMod Shift,Return,exec,pypr toggle term
+<span class="org-variable-name">$dropterm</span>  = (term)$
+<span class="org-variable-name">windowrule</span> = float,$dropterm
+<span class="org-variable-name">windowrule</span> = workspace special silent,$dropterm
+<span class="org-variable-name">windowrule</span> = size 75% 60%,$dropterm
+
+<span class="org-variable-name">bind</span> = ALT,Return,exec,pypr toggle fetch
+<span class="org-variable-name">$fetch</span>  = (venom_fetch)$
+<span class="org-variable-name">windowrule</span> = float,$fetch
+<span class="org-variable-name">windowrule</span> = workspace special silent,$fetch
+<span class="org-variable-name">windowrule</span> = size 75% 60%,$fetch
+
+<span class="org-variable-name">bind</span> = $mainMod,m,exec,pypr toggle music_player
+<span class="org-variable-name">$music_player</span>  = (music_player)$
+<span class="org-variable-name">windowrule</span> = float,$music_player
+<span class="org-variable-name">windowrule</span> = workspace special silent,$music_player
+<span class="org-variable-name">windowrule</span> = size 75% 60%,$music_player
+
+<span class="org-variable-name">bind</span> = $mainMod,e,exec,pypr toggle nnn
+<span class="org-variable-name">$nnn</span>  = (nnn)$
+<span class="org-variable-name">windowrule</span> = float,$nnn
+<span class="org-variable-name">windowrule</span> = workspace special silent,$nnn
+<span class="org-variable-name">windowrule</span> = size 75% 60%,$nnn
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15)</p>
+</div>
+</body>
+</html>
