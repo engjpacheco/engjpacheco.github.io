@@ -1,12 +1,0 @@
-#+title: Testing the build-site.
-#+author: Javier Pacheco
-#+date: [2023-12-23 Sat 21:34]
-#+filetags: :personal:post:
-
-#+BEGIN_PREVIEW
-Probando el script para crear mi web page desde elisp
-#+END_PREVIEW
-
-** Este es un titulo de prueba
-Este se supone que es un parrafo.
-/ademas de que toru es gei/

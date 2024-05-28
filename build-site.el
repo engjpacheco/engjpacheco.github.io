@@ -73,10 +73,10 @@ https://ogbe.net/blog/blogging_with_org.html"
       (list
        (list "org-site:main"
              :recursive t
-             :base-directory "/home/javier/repos/jpacheco.xyz/content"
-             :publishing-directory "/home/javier/repos/jpacheco.xyz/"
+             :base-directory "./content"
+             :publishing-directory "./"
              :publishing-function 'org-html-publish-to-html
-             :html-preamble (file-contents "/home/javier/repos/jpacheco.xyz/assets/html_preamble.html")
+             :html-preamble (file-contents "assets/html_preamble.html")
              :with-author nil
              :with-creator t
              :with-toc t
@@ -92,22 +92,22 @@ https://ogbe.net/blog/blogging_with_org.html"
              :html-doctype "html5"
              :html-html5-fancy t
              :htmlized-source t
-             :exclude "/home/javier/repos/jpacheco.xyz/posts/drafts/.*"  ; Exclude drafts directory from publishing
+             :exclude ".*/posts/drafts/.*"  ; Exclude drafts directory from publishing
              )
        (list "org-site:static"
-             :base-directory "/home/javier/repos/jpacheco.xyz/content/"
+             :base-directory "./content/"
              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|svg"
-             :publishing-directory "/home/javier/repos/jpacheco.xyz/"
+             :publishing-directory "./"
              :recursive t
              :publishing-function 'org-publish-attachment
-             :exclude "/home/javier/repos/jpacheco.xyz/posts/drafts/.*"  ; Exclude drafts directory from publishing
+             :exclude ".*/posts/drafts/.*"  ; Exclude drafts directory from publishing
              )
         ))
 
 ;;; additional settings
 (setq org-html-validation-link nil
       org-html-htmlize-output-type 'css
-      org-html-style-default (file-contents "/home/javier/repos/jpacheco.xyz/assets/head.html")
+      org-html-style-default (file-contents "assets/head.html")
       org-export-use-babel nil)
 
 ;;; generate site output
