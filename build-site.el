@@ -74,7 +74,7 @@ https://ogbe.net/blog/blogging_with_org.html"
        (list "org-site:main"
              :recursive t
              :base-directory "/home/javier/repos/jpacheco.xyz/content"
-             :publishing-directory "./"
+             :publishing-directory "/home/javier/repos/jpacheco.xyz/"
              :publishing-function 'org-html-publish-to-html
              :html-preamble (file-contents "/home/javier/repos/jpacheco.xyz/assets/html_preamble.html")
              :with-author nil
@@ -97,7 +97,7 @@ https://ogbe.net/blog/blogging_with_org.html"
        (list "org-site:static"
              :base-directory "/home/javier/repos/jpacheco.xyz/content/"
              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|svg"
-             :publishing-directory "./"
+             :publishing-directory "/home/javier/repos/jpacheco.xyz/"
              :recursive t
              :publishing-function 'org-publish-attachment
              :exclude "/home/javier/repos/jpacheco.xyz/posts/drafts/.*"  ; Exclude drafts directory from publishing
