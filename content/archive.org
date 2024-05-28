@@ -1,0 +1,5 @@
+#+TITLE: Posts Archive
+#+Author: Javier Pacheco
+#+OPTIONS: toc:nil
+
+#+INCLUDE: sitemap.org::*posts :only-contents t

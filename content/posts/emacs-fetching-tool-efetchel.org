@@ -1,0 +1,55 @@
+#+title: Emacs Fetching tool - efetch.el
+#+author: Javier Pacheco
+#+date: [2024-01-14 Sun 11:58]
+#+filetags: :emacsfetch:
+#+identifier: 20240114T115853
+
+
+#+BEGIN_PREVIEW
+Embrace a new level of Emacs mastery with =efetch.el= – a powerful and user-friendly Emacs Fetching Tool. Designed for enthusiasts who crave insights into their Emacs environment, =efetch.el= provides a seamless way to peek under the hood of your setup. With just a simple command, unlock a left-side buffer showcasing key details such as Emacs version, host information, user details, installed packages, active theme, and default font. Customizable and accessible, this tool not only delivers a quick snapshot of your Emacs configuration but also opens the door for collaborative enhancements. Join the community on [[https://github.com/engjpacheco/efetch.el][GitHub]], contribute your ideas, and elevate your Emacs experience with =efetch.el= today!
+#+END_PREVIEW
+
+#+begin_center
+#+CAPTION: efetch.el tool in the left side of the frame.
+[[./img/efetch/efetch.png]]
+#+end_center
+
+* Overview
+Are you an Emacs enthusiast who loves to keep track of your environment details? Look no further! We are excited to introduce =efetch.el= - the Emacs Fetching Tool. This nifty extension provides a quick and informative snapshot of your Emacs setup, helping you stay in the know about your environment configuration.
+
+* Features
+- **Quick Access**: Invoke =efetch= with a simple command to access a left-side buffer displaying essential information about your Emacs environment.
+
+- **Information at a Glance**: Get a concise overview, including Emacs version, host details, user information, installed packages, active theme, and default font.
+
+- **Customization**: Tailor the appearance and information displayed in the =efetch= buffer to suit your preferences.
+
+- **Convenient Keyboard Shortcut**: Close the =efetch= buffer and its window effortlessly with the =q= key.
+
+* How to Use
+1. **Installation**: Add the following line to your Emacs configuration:
+
+ #+BEGIN_SRC emacs-lisp
+(require 'efetch)
+ #+END_SRC
+
+Ensure the =efetch.el= file is in a directory included in your =load-path=.
+
+2. **Usage**: Invoke =efetch= interactively using:
+
+#+begin_example
+M-x efetch
+#+end_example
+
+The information will be displayed in a left-side buffer named *efetch-popup*.
+
+* Customization
+Feel free to customize the appearance or the information displayed in the =efetch= buffer by modifying the relevant sections in the =efetch= function.
+
+* Contribution
+We welcome contributions and feedback! =efetch.el= is hosted on [[https://github.com/engjpacheco/efetch.el][github]]. Feel free to [[https://github.com/engjpacheco/efetch.el/fork][fork the repository]] and submit pull requests. 
+The project is open to changes, improvements, and collaborations.
+
+* Get Started
+
+Enhance your Emacs experience with =efetch.el=! Stay informed about your environment effortlessly. Download and integrate it into your Emacs setup today.

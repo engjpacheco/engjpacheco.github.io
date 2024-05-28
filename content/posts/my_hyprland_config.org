@@ -1,0 +1,427 @@
+#+title: My Hyprland Config
+#+AUTHOR: Javier Pacheco
+#+DESCRIPTION: My Hyprland configuration
+
+
+#+BEGIN_PREVIEW
+Hello, in this post I'm going to share and explain a little bit my =Hyprland= configuration, I'm not an expert in this window manager, but I really like it, I think this WM have a great future, and for me, this one is the best out there, of course there are some more, more solids if you will, but this is awesome.
+#+END_PREVIEW
+
+
+* My hyprland configuration.
+My =Hyprland= configuration is split in multiple files for readable and a better understanding comprehension to me.
+
+#+begin_src example
+./
+├── hyprland.conf*
+├── pyprland.toml
+└── src/
+    ├── env.conf*
+    ├── init.conf*
+    ├── general.conf*
+    ├── keybinds.conf*
+    ├── scratchpads.conf
+    └── windowrules.conf
+#+end_src
+
+** hyprland.conf
+This is the main =hyprland= configuration file, this file will source every single file in the src folder.
+ 
+#+begin_src conf
+# [[ Javier Hyprland configuration ]]
+
+source = ~/.config/hypr/src/init.conf
+source = ~/.config/hypr/src/general.conf
+source = ~/.config/hypr/src/env.conf
+source = ~/.config/hypr/src/keybinds.conf
+source = ~/.config/hypr/src/scratchpads.conf
+#+end_src
+
+** init.conf
+
+#+begin_src conf
+# Prgrams that I run when Hyprland starts.
+
+exec-once = pypr
+# exec-once = swww init
+exec-once = cron -f ~/.config/cron/cron.conf
+exec-once = waybar
+exec-once = mpd --no-daemon "$HOME"/.config/mpd/mpd.conf
+exec-once = pipewire
+exec-once = pipewire-pulse
+exec-once = wireplumber
+exec-once = foot --server
+exec-once = swayidle -w timeout 500 'swaylock' 
+exec-once = xrdb ~/.config/.Xdefaults
+
+#+end_src
+
+** general.conf
+This file contains the monitor, keyboard, mouse, effects configuration.
+
+*** general.
+#+begin_src conf
+general {
+    gaps_in = 5
+    gaps_out = 10
+    border_size = 2
+    no_border_on_floating = 0
+    col.active_border = rgba(999999bb)
+    col.inactive_border = rgba(595959aa)
+    layout = master
+    allow_tearing = false
+    cursor_inactive_timeout = 2
+    resize_corner = 3
+}
+
+#+end_src
+
+*** input
+#+begin_src conf
+input {
+    kb_layout = gb,us
+    kb_options=grp:win_space_toggle 
+    kb_variant = 
+    kb_model =
+    numlock_by_default = true
+    kb_options = ctrl:nocaps
+    kb_rules =
+
+    follow_mouse = 1
+
+    touchpad {
+        natural_scroll = no
+    }
+
+    sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+}
+
+#+end_src
+
+*** decorations
+#+begin_src conf
+decoration {
+    rounding = 0
+    blur {
+    size = 1
+    passes = 2
+    new_optimizations = true
+    xray = false
+    ignore_opacity = true
+    }
+
+    drop_shadow = no
+    shadow_range = 4
+    shadow_render_power = 3
+    col.shadow = rgba(1a1a1aee)
+    blurls = waybar
+}
+  
+#+end_src
+
+*** Animations
+#+begin_src conf
+animations {
+    enabled = no
+    # bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+    # animation = windows, 1, 7, myBezier
+    # animation = windowsOut, 1, 7, default, popin 80%
+    # animation = border, 1, 10, default
+    # animation = borderangle, 1, 8, default
+    # animation = fade, 1, 7, default
+    # animation = workspaces, 1, 6, default
+    animation=windows,1,8,default,popin 20%
+}
+  
+#+end_src
+
+*** misc 
+#+begin_src conf
+misc {
+    # See https:/wiki.hyprland.org/.configuring/Variables/ for more
+    force_default_wallpaper = 0 
+    focus_on_activate = 1
+    enable_swallow = 1
+    swallow_regex = ^(Alacritty|foot|footclient)$
+}
+  
+#+end_src
+
+*** dwindle 
+#+begin_src conf
+dwindle {
+    # See https:/wiki.hyprland.org/.configuring/Dwindle-Layout/ for more
+    pseudotile = yes # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+    preserve_split = yes # you probably want this
+}
+  
+#+end_src
+
+*** master 
+#+begin_src conf
+master {
+    new_is_master = false
+    drop_at_cursor = false
+}
+
+#+end_src
+
+*** gestures 
+#+begin_src conf
+gestures {
+    # See https:/wiki.hyprland.org/.configuring/Variables/ for more
+    workspace_swipe = 1
+}
+#+end_src
+
+** env.conf
+#+begin_src conf
+# hyprland env's
+
+env = QT_QPA_PLATFORM,wayland
+env = HYPRCURSOR_THEME,Breeze_Dark
+env = HYPRCURSOR_SIZE,24
+
+# Set variables
+monitor=eDP-1,1920x1080@60,0x0,1
+$terminal = footclient
+$menu = fuzzel_run
+
+#+end_src
+
+** keybinds.conf
+This are my keybinds that I use the most, 
+Here are some tips for the bind flags:
+#+begin_src example :tangle no
+Flags:
+
+l -> locked, aka. works also when an input inhibitor (e.g. a lockscreen) is active.
+r -> release, will trigger on release of a key.
+e -> repeat, will repeat when held.
+n -> non-consuming, key/mouse events will be passed to the active window in addition to triggering the dispatcher.
+m -> mouse, see below
+t -> transparent, cannot be shadowed by other binds.
+i -> ignore mods, will ignore modifiers.
+
+bind(flag) = command
+bindr = command
+#+end_src
+
+*** Main and most useful keybinds
+#+begin_src conf
+# [[ Keybinds ]]
+
+$mainMod = SUPER
+
+# Custom Keybinds.
+bind = $mainMod, return, exec, $terminal
+bindr= $mainMod, D, exec, $menu
+bind = $mainMod, w, exec, chromium
+bind = SUPER_SHIFT, w, exec, webcam
+      bind = ALT SHIFT, a, exec, toggle-animations
+bind = $mainMod, f, exec, hyprctl dispatch togglefloating; pkill -SIGRTMIN+8 waybar # hyprctl dispatch right in your script just so you can exec at the same time
+bind = $mainMod SHIFT, f, fullscreen, 
+bind = SUPER_SHIFT, l, exec, swaylock
+bind = $mainMod, q, killactive, 
+bind = SUPER_SHIFT, q, exec, sysact 
+bind = ,Print, exec, grimblast -n copy screen
+bind = $mainMod SHIFT, r , exec, screencast
+bind = $mainMod SHIFT, s, exec, grimblast -n copy area
+bind = ALT,m , exec, pypr menu
+bind = $mainMod SHIFT,Print, exec, shareurl.sh
+bind = ALT SHIFT, Return , exec, pypr expose
+bind = ,XF86PowerOff, exec, doas zzz -z
+
+#+end_src
+
+*** Keychords.
+#+begin_src conf
+# [[ KeyChords ]]
+bind = $mainMod, SPACE , submap, menusubmap
+submap = menusubmap
+bind = ,i,exec,foot -e nsxiv ~/pics/classic/art -t -g 1500x700
+bind = ,i,submap,reset
+bind = ,m,exec,dmenumount
+bind = ,m,submap,reset
+bind = ,u,exec,dmenuumount
+bind = ,u,submap,reset
+bind = ,q,exec,sysact
+bind = ,q,submap,reset
+bind=,escape,submap,reset 
+submap = reset
+
+#+end_src
+
+*** Window management.
+#+begin_src conf
+# [[ Window management ]]
+# Move focus with mainMod + arrow keys
+bind = $mainMod, J, layoutmsg,cyclenext
+bind = $mainMod, K, layoutmsg,cycleprev
+
+# Swap windows
+bind = $mainMod SHIFT, J, swapnext, next
+bind = $mainMod SHIFT, K, swapnext, prev
+
+# Resize windows
+bind = $mainMod, l, resizeactive, 40 0
+bind = $mainMod, h, resizeactive, -40 0
+
+# Switch workspaces with mainMod + [0-9]
+bind = $mainMod, 1, workspace, 1
+bind = $mainMod, 2, workspace, 2
+bind = $mainMod, 3, workspace, 3
+bind = $mainMod, 4, workspace, 4
+bind = $mainMod, 5, workspace, 5
+bind = $mainMod, 6, workspace, 6
+bind = $mainMod, 7, workspace, 7
+bind = $mainMod, 8, workspace, 8
+bind = $mainMod, 9, workspace, 9
+bind = $mainMod, 0, workspace, 10
+
+# Cycle through ocuped workspaces
+bind = ALT, Tab, workspace, m+1
+bind = ALT SHIFT, Tab, workspace, m-1
+
+# Move active window to a workspace with mainMod + SHIFT + [0-9]
+bind = $mainMod SHIFT, 1, movetoworkspacesilent, 1
+bind = $mainMod SHIFT, 2, movetoworkspacesilent, 2
+bind = $mainMod SHIFT, 3, movetoworkspacesilent, 3
+bind = $mainMod SHIFT, 4, movetoworkspacesilent, 4
+bind = $mainMod SHIFT, 5, movetoworkspacesilent, 5
+bind = $mainMod SHIFT, 6, movetoworkspacesilent, 6
+bind = $mainMod SHIFT, 7, movetoworkspacesilent, 7
+bind = $mainMod SHIFT, 8, movetoworkspacesilent, 8
+bind = $mainMod SHIFT, 9, movetoworkspacesilent, 9
+bind = $mainMod SHIFT, 0, movetoworkspacesilent, 10
+
+# Scroll through existing workspaces with mainMod + scroll
+bind = $mainMod, mouse_down, workspace, e+1
+bind = $mainMod, mouse_up, workspace, e-1
+
+# Move/resize windows with mainMod + LMB/RMB and dragging
+bindm = $mainMod, mouse:272, movewindow
+bindm = $mainMod, mouse:273, resizewindow
+
+#+end_src
+
+*** Media Keys
+#+begin_src conf
+# Audio MPC commands
+bind = ,XF86AudioPlay, exec, mpc toggle
+bind = ,XF86AudioStop, exec, mpc stop
+bind = ,XF86AudioNext, exec, mpc next
+bind = ,XF86AudioPrev, exec, mpc prev
+binde = , XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+binde = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindl = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+# Screen Brightness
+bind=,XF86MonBrightnessUp,exec,doas brightnessctl set +10%
+bind=,XF86MonBrightnessDown,exec,doas brightnessctl set 10%-
+
+#+end_src
+
+** scratchpads.conf
+In order to make the scratchpads works, you need to install pyprland package through python pip package installation.
+
+#+begin_src shell
+pip install pyprland
+#+end_src
+
+*** Pyprland
+this is the config file for declare the plugins that are used within =pypr=.
+
+#+begin_src toml
+[pyprland]
+plugins = [
+  "scratchpads",
+  "shortcuts_menu",
+  "expose"
+]
+
+[scratchpads.term]
+animation = "fromTop"
+command = "foot -a term"
+class = "term"
+size = "75% 60%"
+max_size = "1920px 100%"
+margin = 50
+
+[scratchpads.music_player]
+animation = "fromRight"
+command = "foot -a music_player -e ncmpcpp"
+class = "music_player"
+size = "75% 60%"
+max_size = "1920px 100%"
+margin = 50
+
+[scratchpads.nnn]
+animation = "fromLeft"
+command = "foot -a nnn -e nnn"
+class = "nnn"
+size = "50% 40%"
+position = "5% 10%"
+max_size = "1920px 100%"
+margin = 50
+
+[scratchpads.fetch]
+animation = "fromLeft"
+command = "foot -a venom_fetch"
+class = "venom_fetch"
+size = "23% 48%"
+position = "5% 10%"
+max_size = "1920px 100%"
+margin = 50
+
+
+[shortcuts_menu]
+engine = "fuzzel --dmenu"
+# parameters = "-p '[prompt] 🍰 ' -dmenu -matching fuzzy -i"
+command_start = "💀"
+
+[shortcuts_menu.entries]
+
+"Restart Waybar" = "pkill -9 waybar ; setsid waybar"
+"Telegram" = "xdg-open https:/web.telegram.org/a/#-1421253041"
+"Cinny" = "xdg-open https:/app.cinny.in/"
+
+"Scratch" = [
+  {name="action", options=["sync", "sysup" ]},
+  "foot -e doas scratch [action]"
+  ]
+#+end_src
+
+*** keybinds and rules.
+The structure that I use is the bind, and next the window rule, I have this window rules apart from the =window management configuration= because I want to keep the binds an rules in the same file.
+
+#+begin_src conf
+  # [[ Scratchpads rules ]]
+# Keybind
+# window rules
+
+bind = $mainMod Shift,Return,exec,pypr toggle term
+$dropterm  = (term)$
+windowrule = float,$dropterm
+windowrule = workspace special silent,$dropterm
+windowrule = size 75% 60%,$dropterm
+
+bind = ALT,Return,exec,pypr toggle fetch
+$fetch  = (venom_fetch)$
+windowrule = float,$fetch
+windowrule = workspace special silent,$fetch
+windowrule = size 75% 60%,$fetch
+
+bind = $mainMod,m,exec,pypr toggle music_player
+$music_player  = (music_player)$
+windowrule = float,$music_player
+windowrule = workspace special silent,$music_player
+windowrule = size 75% 60%,$music_player
+
+bind = $mainMod,e,exec,pypr toggle nnn
+$nnn  = (nnn)$
+windowrule = float,$nnn
+windowrule = workspace special silent,$nnn
+windowrule = size 75% 60%,$nnn
+
+#+end_src

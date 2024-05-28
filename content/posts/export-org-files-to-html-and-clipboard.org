@@ -1,0 +1,73 @@
+#+title: Copy html source from org files to the clipboard.
+#+author: Javier Pacheco
+#+date: [2024-01-05 vie. 00:45]
+#+filetags: :email:org:report:
+#+identifier: 20240105T004503
+
+#+BEGIN_PREVIEW
+If you uses email a lot like me in your job, but also use emacs, you wonder if is possible
+to export your org files to =html=, and paste in to your email, well, we are in emacs,
+everything is possible within emacs, so in this post, I'll show you a couple of functions
+that help me to make my workflow more efficient.
+#+END_PREVIEW
+
+* Copy html source from org files to the clipboard.
+First of all we only need a dependency for make this couple of functions to work:
+- htmlize
+Make sure you got this installed in emacs.
+
+** Installing =htmlize=:
+#+CAPTION: This is an example using use-package:
+#+BEGIN_SRC emacs-lisp
+(use-package htmlize
+  :ensure t)
+#+END_SRC
+
+** Explaining the functions:
+*** Export file and copy to the clipboard.
+#+BEGIN_SRC emacs-lisp
+(defun export-org-email ()
+  "Export the current email org buffer and copy it to the
+clipboard"
+  (interactive)
+  (let ((org-export-show-temporary-export-buffer nil)
+        (org-html-head (org-email-html-head)))
+    (org-html-export-as-html)
+    (with-current-buffer "*Org HTML Export*"
+      (kill-new (buffer-string)))
+    (message "HTML copied to clipboard")))
+#+END_SRC
+
+- (defun export-org-email () ...) :: Defines a new Emacs Lisp function named =export-org-email= with no arguments.
+- (interactive) :: Makes this function interactive, allowing it to be called with =M-x export-org-email= or through =key bindings=.
+- let block :: Sets local variables specific to this function.
+- org-export-show-temporary-export-buffer nil :: Prevents the display of a temporary buffer during the export process.
+- (org-html-head (org-email-html-head)) :: Assigns the value returned by the function =org-email-html-head= to =org-html-head=. =org-email-html-head= generates the HTML head content for the exported email.
+- (org-html-export-as-html) :: Initiates the export process of the current =Org= mode buffer to HTML format using =org-html-export-as-html=.
+- (with-current-buffer "*Org HTML Export*" ...) :: Accesses the buffer named =Org HTML Export= where the HTML export results are stored.
+- *(kill-new (buffer-string))* :: Grabs the content of the =Org HTML Export= buffer using (buffer-string) and copies it to the system clipboard using =kill-new=.
+- (message "HTML copied to clipboard") :: Displays a message in the minibuffer indicating that the HTML content has been successfully copied to the clipboard.
+
+*** Add some CSS to the file.
+This snippet is only for add a custom =css= "touch" to your copied =html= org file.
+
+In the below example the function looks in my =Downloads= folder, but you can  specify 
+another =path=.
+
+
+#+BEGIN_SRC emacs-lisp
+(defun org-email-html-head ()
+  "Create the header with CSS for use with email"
+  (concat
+   "<style type=\"text/css\">\n"
+   "<!--/*--><![CDATA[/*><!--*/\n"
+   (with-temp-buffer
+     (insert-file-contents
+      "~/Downloads/custom.css")
+     (buffer-string))
+   "/*]]>*/-->\n"
+   "</style>\n"))
+#+END_SRC
+
+And that's it, the next is to paste in to your mail, using the =inspection tools= in the
+=browser=, or save it with =html= format.

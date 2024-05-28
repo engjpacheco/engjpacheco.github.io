@@ -1,0 +1,30 @@
+#+TITLE: About Me
+#+OPTIONS: toc:nil
+
+#+ATTR_HTML: :width 200px :style float:left;margin:0px 10px 10px 0px;
+[[./jp.jpg]]
+
+Greetings! I'm Javier Pacheco, a dedicated Industrial Maintenance Engineer with a rich academic foundation from the prestigious *UTM* in *H. Matamoros Tamaulipas,Mexico*. Over the span of 12 fruitful years, I've been an integral part of the automotive industry, contributing my expertise in a multitude of critical domains.
+
+My journey began with a profound fascination for the intricate mechanisms that power manufacturing and industrial processes. At UTM, I honed my skills, diving deep into the realms of engineering, automation, and problem-solving. This foundation paved the way for my foray into the dynamic world of industrial maintenance.
+
+Within the automotive landscape, I've carved my niche in handling Programmable Logic Controllers (PLCs), robotics, and programming, orchestrating seamless operations and bolstering efficiency. My prowess extends beyond conventional boundaries—I harness the power of CAD software to craft intricate designs that harmonize innovation with practicality.
+
+Programming is not just a skill set; it's an intrinsic part of my identity. The allure of languages such as Python, C, and Lisp captivates me, compelling me to unravel their complexities and harness their capabilities to engineer groundbreaking solutions.
+
+My career is a testament to my unwavering commitment to innovation and continuous learning. Each challenge fuels my passion, propelling me to explore new horizons and revolutionize conventional practices. I thrive in environments that demand ingenuity and embrace the convergence of technology and creativity.
+
+Beyond the technical facets, I am deeply invested in collaborative endeavors, fostering a culture of knowledge exchange and mentorship. I firmly believe that sharing insights and empowering others amplifies the impact of technological advancements.
+
+#+ATTR_HTML: :target _blank
+/See my whole information [[file:cv_francisco_javier_pacheco_murillo.pdf][here]]./
+
+
+* Where to Find Me
+- [[https://github.com/engjpacheco][GitHub.]]
+- [[https://www.linkedin.com/in/jpachecom4/][LinkedIn.]]
+- [[https://youtube.com/@jp.codepath][Youtube.]]
+
+* Projects that I'm currently develop.
+- [[https://github.com/engjpacheco/voidstrap][Void linux installation script.]]
+- [[https://github.com/engjpacheco/noobemacs][Noobemacs, a minimal emacs configuration with evil mode.]]
