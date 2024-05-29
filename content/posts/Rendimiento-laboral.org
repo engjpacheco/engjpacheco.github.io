@@ -1,0 +1,13 @@
+
+#+title: Rendimiento laboral
+#+AUTHOR: Javier Pacheco
+#+DESCRIPTION: Un post mediocre.
+
+
+#+BEGIN_PREVIEW
+En este post estare excribiendo alguno de los muchos problemas y asuntos que me han llevado
+a estar en un modo de trabajo sin animos de nada.
+#+END_PREVIEW
+
+*   
+

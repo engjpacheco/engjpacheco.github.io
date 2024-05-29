@@ -5,6 +5,9 @@
 * [[file:about.org][(2024-05-27) About Me]]
 (No preview)
 * posts
+** [[file:posts/Rendimiento-laboral.org][(2024-05-28) Rendimiento laboral]]
+En este post estare excribiendo alguno de los muchos problemas y asuntos que me han llevado
+a estar en un modo de trabajo sin animos de nada.
 ** [[file:posts/my_hyprland_config.org][(2024-05-27) My Hyprland Config]]
 Hello, in this post I'm going to share and explain a little bit my =Hyprland= configuration, I'm not an expert in this window manager, but I really like it, I think this WM have a great future, and for me, this one is the best out there, of course there are some more, more solids if you will, but this is awesome.
 ** [[file:posts/emacs-fetching-tool-efetchel.org][(2024-01-14) Emacs Fetching tool - efetch.el]]
