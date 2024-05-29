@@ -1,4 +1,4 @@
-#+title: Themes updated
+#+title: Themes again
 #+author: Javier Pacheco
 #+date: [2024-05-28]
 #+filetags: :personal:post:
