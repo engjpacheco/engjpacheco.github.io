@@ -40,13 +40,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8e53666">Copy html source from org files to the clipboard.</a>
+<li><a href="#orgd276e41">Copy html source from org files to the clipboard.</a>
 <ul>
-<li><a href="#org716a293">Installing <code>htmlize</code>:</a></li>
-<li><a href="#org72302b2">Explaining the functions:</a>
+<li><a href="#orgf42f60e">Installing <code>htmlize</code>:</a></li>
+<li><a href="#org1d2cd4b">Explaining the functions:</a>
 <ul>
-<li><a href="#org52ea1cd">Export file and copy to the clipboard.</a></li>
-<li><a href="#orgee842c3">Add some CSS to the file.</a></li>
+<li><a href="#orge3bc196">Export file and copy to the clipboard.</a></li>
+<li><a href="#org200f273">Add some CSS to the file.</a></li>
 </ul>
 </li>
 </ul>
@@ -57,7 +57,7 @@
 <p>
 
 </p>
-<div class="PREVIEW" id="orgcd1e24f">
+<div class="PREVIEW" id="org4122e35">
 <p>
 If you uses email a lot like me in your job, but also use emacs, you wonder if is possible
 to export your org files to <code>html</code>, and paste in to your email, well, we are in emacs,
@@ -67,9 +67,9 @@ that help me to make my workflow more efficient.
 
 </div>
 
-<div id="outline-container-org8e53666" class="outline-2">
-<h2 id="org8e53666">Copy html source from org files to the clipboard.</h2>
-<div class="outline-text-2" id="text-org8e53666">
+<div id="outline-container-orgd276e41" class="outline-2">
+<h2 id="orgd276e41">Copy html source from org files to the clipboard.</h2>
+<div class="outline-text-2" id="text-orgd276e41">
 <p>
 First of all we only need a dependency for make this couple of functions to work:
 </p>
@@ -81,9 +81,9 @@ Make sure you got this installed in emacs.
 </p>
 </div>
 
-<div id="outline-container-org716a293" class="outline-3">
-<h3 id="org716a293">Installing <code>htmlize</code>:</h3>
-<div class="outline-text-3" id="text-org716a293">
+<div id="outline-container-orgf42f60e" class="outline-3">
+<h3 id="orgf42f60e">Installing <code>htmlize</code>:</h3>
+<div class="outline-text-3" id="text-orgf42f60e">
 <div class="org-src-container">
 <label class="org-src-name"><span class="listing-number">Listing 1: </span>This is an example using use-package:</label><pre class="src src-emacs-lisp">(<span class="org-keyword">use-package</span> htmlize
   <span class="org-builtin">:ensure</span> t)
@@ -92,13 +92,13 @@ Make sure you got this installed in emacs.
 </div>
 </div>
 
-<div id="outline-container-org72302b2" class="outline-3">
-<h3 id="org72302b2">Explaining the functions:</h3>
-<div class="outline-text-3" id="text-org72302b2">
+<div id="outline-container-org1d2cd4b" class="outline-3">
+<h3 id="org1d2cd4b">Explaining the functions:</h3>
+<div class="outline-text-3" id="text-org1d2cd4b">
 </div>
-<div id="outline-container-org52ea1cd" class="outline-4">
-<h4 id="org52ea1cd">Export file and copy to the clipboard.</h4>
-<div class="outline-text-4" id="text-org52ea1cd">
+<div id="outline-container-orge3bc196" class="outline-4">
+<h4 id="orge3bc196">Export file and copy to the clipboard.</h4>
+<div class="outline-text-4" id="text-orge3bc196">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">export-org-email</span> ()
   <span class="org-doc">"Export the current email org buffer and copy it to the</span>
@@ -127,9 +127,9 @@ Make sure you got this installed in emacs.
 </div>
 </div>
 
-<div id="outline-container-orgee842c3" class="outline-4">
-<h4 id="orgee842c3">Add some CSS to the file.</h4>
-<div class="outline-text-4" id="text-orgee842c3">
+<div id="outline-container-org200f273" class="outline-4">
+<h4 id="org200f273">Add some CSS to the file.</h4>
+<div class="outline-text-4" id="text-org200f273">
 <p>
 This snippet is only for add a custom <code>css</code> "touch" to your copied <code>html</code> org file.
 </p>
