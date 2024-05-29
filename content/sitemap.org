@@ -5,7 +5,7 @@
 * [[file:about.org][(2024-05-27) About Me]]
 (No preview)
 * posts
-** [[file:posts/test.org][(2024-05-28) Themes again]]
+** [[file:posts/test.org][(2024-05-28) Themes again other tesxt]]
 Some things are happening by a reason, so, instead of see the "bad" things that
 happens; is a better practice to see the good side of the thing, these more or less
 are some phrases that my dad says to me when me and my family have some problems.

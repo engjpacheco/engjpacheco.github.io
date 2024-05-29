@@ -1,4 +1,4 @@
-#+title: Themes again
+#+title: Themes again other tesxt
 #+author: Javier Pacheco
 #+date: [2024-05-28]
 #+filetags: :personal:post:
