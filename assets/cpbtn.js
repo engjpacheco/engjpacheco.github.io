@@ -58,6 +58,7 @@ function createCopyButtonForDivs() {
 						'src.src-python',
 						'src.src-javascript',
 						'src.src-c',
+						'src.src-conf',
 						'src.src-html',
 						'src.src-css']; // Add more classes/languages as needed
 				copyPreTextToClipboard(container, classesToSearch);
